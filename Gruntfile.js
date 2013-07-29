@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 					message: 'pushing to master',
 					base: 'bin',
 					branch: 'master',
-					repo :'git@heroku.com:tusharm.git'
+					repo: 'git@heroku.com:tusharm.git'
 				},
 				src: ['**']
 			}
