@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="M2S6XRgNZy5AWcjY2MUVhaCDJ8uDRDkHfly4lnaz-lI">
+    <meta name="viewport" content="width=device-width">
+    <title>Tushar Mathur's blog
+    </title>
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="content-wrap">
+        <div class="logo">
+          <h1><a href="http://localhost:8080">Tushar Mathur's blog</a></h1>
+          <p class="description">A software developer, physics enthusiast, swimmer and a car geek</p>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article intro">
+          <header>
+            <p class="date"><span>09. July 2013</span></p>
+            <h2><a href="/articles/win7-on-retina-disply-with-virtual-box/">How to configure windows on Mac (retina) using virtual box</a></h2>
+          </header>
+          <section class="content"><p>You don&#39;t have any money left to buy Parallels or Fusion so you are stuck up with Virtual box for the time being. Virtual box unfortunately does not provide a support for retina displays (At the time of writing this&nbsp;document).</p>
+<p>You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic&nbsp;!</p>
+<p>So here are some steps that you could try out to improve your user experience with Virtual Box till the time they don&#39;t provide you with actual retina&nbsp;support.</p>
+<p><strong>Step 1.</strong>
+Determine the number of pixels on your screen. For e.g.- Mac pro 13“ and 15” Retina have 2560 by 1600&nbsp;pixels.</p>
+<p><strong>Step 2.</strong>
+The <span class="caps">VM</span> will respect the resolutions properly only in Scale mode. In scale mode the VM is viewed in a window. A window will not take-up the complete screen. So you need to get the maximum size that a window can take up on your screen (Without going into fullscreen&nbsp;mode). </p>
+<p>What I really mean by that statement is - out of the 2560x1400 px of real estate available on the screen only 2560x700 px can be used by a window to show content. Why ? Because I have a dock at the bottom and a menu bar at the top which takes up some space vertically. So in this step you need to calculate that space. Here is how I did&nbsp;it.</p>
+<p>I personally used the <strong>⌘ + ⇧ + 4</strong> button to take a snapshot of the window and then see the resolution of the image file. So in my particular case I have the dock in the bottom so I need to compromise the height of the screen. Rounding off to the nearest integer the available real estate of a window comes out to be&nbsp;2560x1400.</p>
+<p><strong>Step 3.</strong>
+Now you need to setup this custom resolution on your <span class="caps">VM</span>. So keep the VM on and run the following command on your&nbsp;terminal</p>
+<pre><code class="lang-bash">$ VBoxManage controlvm [VM name] setvideomodehint [Width] [Height] 32</code></pre>
+<p>For e.g. if you want to try this on a mac pro 13&quot;&nbsp;retina</p>
+<pre><code class="lang-bash">$ VBoxManage controlvm Win7 setvideomodehint 2560 1400 32</code></pre>
+<p><strong>Step 4.</strong>
+This would be a really high resolution and you will not be able to read anything on the <span class="caps">VM</span> because the text would be really small. So now go to your VM with win7 installed and follow these steps&nbsp;- </p>
+<ol>
+<li>Open display&nbsp;settings.</li>
+<li>Click on [Set custom size <span class="caps">DPI</span>] from the right hand side Navigation&nbsp;Bar.</li>
+<li>Scale the font size to&nbsp;200%.</li>
+<li>Click ok, Log off and Login&nbsp;again.</li>
+</ol>
+<p>Voila! you will definitely have a better Win7 experience on Mac&nbsp;now.</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>30. June 2013</span></p>
+            <h2><a href="/articles/mt-downloader/">Mt Downloader</a></h2>
+          </header>
+          <section class="content"><p>Mt-downloader is multi threaded downloader which is made in nodejs. It is highly configurable and extremely&nbsp;efficient.</p>
+<p>Installation: <code>$ npm install mt-downloader</code></p>
+<ul>
+<li><p>Supports virtually unlimited number of download threads. This helps in proper utilization of the&nbsp;bandwidth.</p>
+</li>
+<li><p>Saves file download status so that you can start from where you stopped. No need to redownload the complete&nbsp;file.</p>
+</li>
+<li><p>In case data is not recieved for some time the download&nbsp;timesout</p>
+</li>
+</ul>
+<h1>Version&nbsp;0.2.0</h1>
+<ul>
+<li>This has become a nodejs lib and now can be used through the code only <em>(In case you want to use the command line version you will might have to wait)</em>.</li>
+<li>Code has been&nbsp;refactored.</li>
+</ul>
+<h1>How to&nbsp;use</h1>
+<p>Downloads are of two&nbsp;types.</p>
+<ol>
+<li><strong>New Download:</strong> In a new download you have to provide all the download information. Once the download start it will create a new file which will have a <strong>.mtd</strong> extension. This file will contain some meta information regarding the&nbsp;download.</li>
+</ol>
+<pre><code class="lang-javascript"><span class="keyword">var</span> mtd = require(<span class="string">'mt-downloader'</span>);
+
+<span class="keyword">var</span> options = {
+<span class="comment">// Total number of download threads, default: 32</span>
+count: <span class="number">32</span>, 
+
+<span class="comment">// Http method for download (<span class="caps">GET</span>, POST), default: GET</span>
+method: <span class="string">'<span class="caps">GET</span>'</span>,
+
+<span class="comment">//Default Http Port, default: 80</span>
+port: <span class="number">80</span>,
+
+<span class="comment">//Set the range of data in percent that you want to download (Eg: 0-50)</span>
+<span class="comment">//default: 0-100</span>
+range: <span class="string">'0-100'</span>,
+
+<span class="comment">//Download stops if no data is received for this duration of time</span>
+timeout: <span class="number">5000</span>,
+
+};
+
+<span class="keyword">var</span> url = <span class="string">'http://joaomoreno.github.io/thyme/dist/Thyme-0.4.2.dmg'</span>;
+<span class="keyword">var</span> file = <span class="string">'/Users/tusharmathur/Desktop/temp/Thyme-0.4.2.dmg'</span>;
+
+<span class="keyword">var</span> downloader = <span class="keyword">new</span> mtd(file, url, options);
+
+<span class="comment">//Set a call back function that is to be called when the download finishes.</span>
+download.callback = <span class="keyword">function</span>(err, result){
+console.log(<span class="string">'Download complete'</span>);
+};
+
+
+<span class="comment">//To start te download</span>
+downloader.start();</code></pre>
+<ol>
+<li><strong>Re-Download:</strong> This is when you want to restart a download. The download started from where it had stopped the last&nbsp;time.</li>
+</ol>
+<pre><code class="lang-javascript"><span class="keyword">var</span> mtd = require(<span class="string">'mt-downloader'</span>);
+
+<span class="comment">//Open a file with **.mtd** extension.</span>
+
+<span class="keyword">var</span> file = <span class="string">'/Users/tusharmathur/Desktop/temp/Thyme-0.4.2.dmg.mtd'</span>;
+<span class="keyword">var</span> downloader = <span class="keyword">new</span> mtd(file);
+
+downloader.callback = <span class="keyword">function</span>(err, result){
+    console.log(result);
+};
+
+downloader.start();</code></pre>
+
+            <p class="more"><a href="/articles/mt-downloader/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>19. June 2013</span></p>
+            <h2><a href="/articles/gre-analytical-writing-skills/">Analytical writing</a></h2>
+          </header>
+          <section class="content"><h1>Issue Task&nbsp;1</h1>
+<blockquote>
+<p>The desire of corporations to maximize profits creates conflict with the general welfare of the nation at&nbsp;large.</p>
+</blockquote>
+<p>Saying that corporations take untractable advantage of the nation to maximize profits may or may not be true. This will totally depend on the definition of what actually conflicts with the interests of the nation. Corporations cannot work like NGOs. They have their own research and development teams which require a lot of&nbsp;money.</p>
+<p>A lot of software companies charge only for enterprise products, they give away their products for free to students and open-source programs. Though eventually they are marketing their own technology and products for free. The products help students grow in the software field. But just doing something for free is not welfare. One ultimately needs to have a good product and if your product is really good there is no harm in making any profit from it. It&#39;s not wrong if they work on maximizing there profits because they have worked really hard and invested a lot of money in making the product just&nbsp;right.</p>
+<p>Sometimes the corporations do things which are against the general welfare of the nation. But that is the government‘s job to keep a check on these corporates. Corporates can be just held responsible on the basis of ethics but ultimately it’s the government who has to make sure that the corporates don&#39;t take undue advantage of the&nbsp;nation.</p>
+<p>So its all based on how informed the government is. An intelligent government will not let the corporates make profits that are against the general welfare of the&nbsp;nation.</p>
+<h1>Argument Task&nbsp;1</h1>
+<blockquote>
+<p>In surveys Mason City residents rank water sports (swimming, boating, and fishing) among their favorite recreational activities. The Mason River flowing through the city is rarely used for these pursuits, however, and the city park department devotes little of its budget to maintaining riverside recreational facilities. For years there have been complaints from residents about the quality of the river‘s water and the river’s smell. In response, the state has recently announced plans to clean up Mason River. Use of the river for water sports is, therefore, sure to increase. The city government should for that reason devote more money in this year&#39;s budget to riverside recreational&nbsp;facilities.</p>
+</blockquote>
+<p>The argument  assumes to many things to conclude that if the bad smell is removed from the river and the budget is increased for recreational facilities, there are going to be more people who would want to engage in recreational&nbsp;activities.</p>
+<p>First of all there is no guarantee that the river is not used for recreational activities. It is possible that a particular stretch of the river which might be popular for recreational activities was not taken into account while making the argument. Even if there is absolutely no place which is appropriate for recreational activities it is possible that low budget is not the main reason behind it.The budget may be enough but the river could be populated with dangerous animals such as crocodiles and sharks or the river is really fast flowing and people are just scared of going there. Lets assume that the river has nothing to be scared of and water sports is Mason&#39;s favorite sport, even then it might not be popular considering that its expensive and people might just enjoy watching&nbsp;it.</p>
+<p>With so many assumptions there is absolutely no guarantee that even if the bad smell is removed from the river and the budget is increased for recreational facilities, there are going to be more people who would want to engage in recreational&nbsp;activities.</p>
+
+          </section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/archive.html">« Archives</a><a href="/career.html">Career Precis</a><a href="/page/2/">Next page »</a>
+        </div>
+        <section class="about"><p>This is not a technical blog, this blog is a personal space that I have created for my self <em>(why the hell is it on a public domain then?)</em>. I want to maintain invisibility <em>(oh really?)</em></p>
+<p>I feel even though I am on a public domain, people wont be knowing about it so no one would even think about coming here to see whats going on, instead they will see my facebook page, twitter or may be try to hack into my email accounts. Its a reverse psychology archetype <em>(smart ass!)</em>. Something like  this - you put your keys in the car and keep it running so that the potential thieves think that you are around cause obviously no one is that silly, thus keep your car safe. <em>(Just hope that they don&#39;t read your blogs tushar)</em></p>
+<p>So what should you be expecting over here? You should be expecting psychological observations, social observations, some science observations, may be some technical stuff, probably some reviews. I might post some information about my own projects or something that I am proud of. I don&#39;t want comments on my blog but you can always email me at tusharmath@gmail.com with your feed back <em>(dude what happened to your invisibility funda?)</em></p>
+<br><a href="https://twitter.com/tusharmath" data-show-count="false" class="twitter-follow-button">Follow @tusharmath</a>
+          <iframe src="http://ghbtns.com/github-btn.html?user=tusharmath&amp;type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="160" height="20"></iframe>
+        </section>
+        <section class="copy">
+          <p>&copy; 2013 Tushar Mathur
+          </p>
+        </section>
+      </div>
+    </footer>
+    <script src="/js/analytics.js"></script>
+  </body>
+</html>
