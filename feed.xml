@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tushar Mathur's blog</title>
-    <atom:link href="http://localhost:8080/feed.xml" rel="self" type="application/rss+xml"></atom:link>
-    <link>http://localhost:8080</link>
+    <atom:link href="http://tusharm.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://tusharm.com</link>
     <description>A software developer, physics enthusiast, swimmer and a car geek</description>
     <pubDate>Tue, 09 Jul 2013 05:30:00 +0630</pubDate>
     <generator>Tushar Mathur - http://tusharm.com</generator>
     <language>en</language>
     <item>
       <title>How to configure windows on Mac (retina) using virtual box</title>
-      <link>http://localhost:8080/articles/win7-on-retina-disply-with-virtual-box/</link>
+      <link>http://tusharm.com/articles/win7-on-retina-disply-with-virtual-box/</link>
       <pubDate>Tue, 09 Jul 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/win7-on-retina-disply-with-virtual-box/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/win7-on-retina-disply-with-virtual-box/</guid>
       <author></author>
       <description>&lt;p&gt;You don&amp;#39;t have any money left to buy Parallels or Fusion so you are stuck up with Virtual box for the time being. Virtual box unfortunately does not provide a support for retina displays (At the time of writing this document).&lt;/p&gt;
 &lt;p&gt;You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic    !&lt;/p&gt;
@@ -41,19 +41,19 @@ This would be a really high resolution and you will not be able to read anything
     </item>
     <item>
       <title>Mt Downloader</title>
-      <link>http://localhost:8080/articles/mt-downloader/</link>
+      <link>http://tusharm.com/articles/mt-downloader/</link>
       <pubDate>Sun, 30 Jun 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/mt-downloader/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/mt-downloader/</guid>
       <author></author>
       <description>&lt;p&gt;This is a downloader which I have made.
-Let see if this content gets loaded.&lt;/p&gt;
+Let see if this content gets loaded. eeksie&lt;/p&gt;
 </description>
     </item>
     <item>
       <title>Analytical writing</title>
-      <link>http://localhost:8080/articles/gre-analytical-writing-skills/</link>
+      <link>http://tusharm.com/articles/gre-analytical-writing-skills/</link>
       <pubDate>Wed, 19 Jun 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/gre-analytical-writing-skills/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/gre-analytical-writing-skills/</guid>
       <author></author>
       <description>&lt;h1&gt;Issue Task 1&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -74,9 +74,9 @@ Let see if this content gets loaded.&lt;/p&gt;
     </item>
     <item>
       <title>DOs and DON'Ts while making biryani</title>
-      <link>http://localhost:8080/articles/DOs-and-DONTs-while-making-biryani/</link>
+      <link>http://tusharm.com/articles/DOs-and-DONTs-while-making-biryani/</link>
       <pubDate>Tue, 11 Jun 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/DOs-and-DONTs-while-making-biryani/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/DOs-and-DONTs-while-making-biryani/</guid>
       <author></author>
       <description>&lt;p&gt;I tried to copy a lot of biryani recipes that are on the internet and in that process I wasted a lot of meat and rice.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -105,9 +105,9 @@ Let see if this content gets loaded.&lt;/p&gt;
     </item>
     <item>
       <title>Why I don't like cricket?</title>
-      <link>http://localhost:8080/articles/why-i-dont-like-cricket/</link>
+      <link>http://tusharm.com/articles/why-i-dont-like-cricket/</link>
       <pubDate>Tue, 11 Jun 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/why-i-dont-like-cricket/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/why-i-dont-like-cricket/</guid>
       <author></author>
       <description>&lt;p&gt;Cricket is a very popular sport here in India. Even though Hockey is our national game, cricket is more followed and idolized. People are so sentimental about cricket that they don‘t go to offices, in fact some private companies have half days or sometimes full day off when India is playing. People literally go crazy when India has a match with Pakisthan - a country with whom we have had three wars in the past. I don’t have the exact figures but I am pretty sure that the matches have always militated against India&amp;#39;s GDP for that particular day :P&lt;/p&gt;
 &lt;p&gt;My grandfather was a &lt;a href=&quot;http://en.wikipedia.org/wiki/Ranji_Trophy&quot;&gt;Ranji&lt;/a&gt; player and my mother was in the state cricket team representing Rajasthan. Yet I was not that great in cricket, in fact I was bad, really really bad. I was bad in Basketball and Football too and now when I see this pattern it seems like I was bad in every team sport, probably I am not a team player &lt;em&gt;(more about that later)&lt;/em&gt;. I wasn&amp;#39;t bad in badminton, squash and swimming, I loved games where I could perform by my self which is a typical characteristic of an introvert when I had my last introspection &lt;em&gt;(by the way introverts are not shy people, see &lt;a href=&quot;http://www.youtube.com/watch?v=c0KYU2j0TM4&quot;&gt;this&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
@@ -119,9 +119,9 @@ But again batting is more based on technique and less based on strength. Practic
     </item>
     <item>
       <title>Fighting the heat</title>
-      <link>http://localhost:8080/articles/fighting-the-heat/</link>
+      <link>http://tusharm.com/articles/fighting-the-heat/</link>
       <pubDate>Thu, 06 Jun 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/fighting-the-heat/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/fighting-the-heat/</guid>
       <author></author>
       <description>&lt;p&gt;If you are one of those people who keep sweating or have an abnormally high sensitivity towards heat then you are going to benefit from this blog. The idea is to keep your body cool and here are some tips and some science related to it.&lt;/p&gt;
 &lt;p&gt;Firstly you need to understand that hotness and high temperature are two different things. You may be feeling hot but its not always because the temperature is high. Our sensory system reacts to temperature by calculating the rate at which heat energy is gained or lost from the body. The following minute physics video elaborates on this concept.&lt;/p&gt;
@@ -134,9 +134,9 @@ But again batting is more based on technique and less based on strength. Practic
     </item>
     <item>
       <title>Misconceptions about driving at night</title>
-      <link>http://localhost:8080/articles/driving-at-night/</link>
+      <link>http://tusharm.com/articles/driving-at-night/</link>
       <pubDate>Mon, 03 Jun 2013 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/driving-at-night/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/driving-at-night/</guid>
       <author></author>
       <description>&lt;p&gt;The most common misconception that people have about driving at night is - &lt;/p&gt;
 &lt;blockquote&gt;
@@ -169,9 +169,9 @@ But again batting is more based on technique and less based on strength. Practic
     </item>
     <item>
       <title>Super Cache</title>
-      <link>http://localhost:8080/articles/super-cache/</link>
+      <link>http://tusharm.com/articles/super-cache/</link>
       <pubDate>Sat, 01 Dec 2012 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/super-cache/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/super-cache/</guid>
       <author></author>
       <description>&lt;p&gt;Super Cache is a chrome extension that I created to control caching behavior from the client side.&lt;/p&gt;
 &lt;h2&gt;Features&lt;/h2&gt;
@@ -191,9 +191,9 @@ Now if the any page on &lt;em&gt;example.com&lt;/em&gt; links to external script
     </item>
     <item>
       <title>Javelin Forecast Manager</title>
-      <link>http://localhost:8080/articles/forecast-manager/</link>
+      <link>http://tusharm.com/articles/forecast-manager/</link>
       <pubDate>Wed, 01 Jun 2011 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/forecast-manager/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/forecast-manager/</guid>
       <author></author>
       <description>&lt;p&gt;Forecast Manager was my second project in &lt;a href=&quot;http://zsassociates.com/&quot;&gt;Z.S. Associates&lt;/a&gt;. It was a MVC .Net based web application that would help in maintaining forecasting models. These models were designed in MS Excel and could be merged with each other and to create different versions. The application could also render reports on the web and could help in managing access rights in an extremely customized way per user and per client basis.&lt;/p&gt;
 &lt;p&gt;The team size was very dynamic but I was the oldest member of the team and knew the inside out of the web application. As a developer I had two roles- &lt;/p&gt;
@@ -205,9 +205,9 @@ Now if the any page on &lt;em&gt;example.com&lt;/em&gt; links to external script
     </item>
     <item>
       <title>Z.S. Data Integration</title>
-      <link>http://localhost:8080/articles/data-integration/</link>
+      <link>http://tusharm.com/articles/data-integration/</link>
       <pubDate>Tue, 01 Feb 2011 05:30:00 +0630</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/data-integration/</guid>
+      <guid isPermaLink="true">http://tusharm.com/articles/data-integration/</guid>
       <author></author>
       <description>&lt;p&gt;Data Integration was my first project in &lt;a href=&quot;http://zsassociates.com/&quot;&gt;Z.S. Associates&lt;/a&gt;. Our aim was to study and create POCs on various data integration tools. My role was to evaluate &lt;a href=&quot;http://www.boomi.com/&quot;&gt;Boomi&lt;/a&gt; and &lt;a href=&quot;http://integration.pervasive.com/&quot;&gt;Pervasive&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
