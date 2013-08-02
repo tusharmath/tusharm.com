@@ -1,4 +1,5 @@
 {
+	"name": "tusharm.com",
 	"dependencies": {
 		"moment": "2.x",
 		"underscore": "1.4.x",
