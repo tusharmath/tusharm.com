@@ -4,10 +4,9 @@ module.exports = function(grunt) {
 			your_target: {
 				options: {
 					// Task-specific options go here.
-					message: 'pushing to master',
+					message: 'pushing to gh-pages',
 					base: 'bin',
-					branch: 'master',
-					repo: 'git@heroku.com:tusharm.git'
+					branch: 'gh-pages'
 				},
 				src: ['**']
 			}

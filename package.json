@@ -7,8 +7,5 @@
 		"grunt-wintersmith-compile": "*",
 		"grunt-contrib-copy": "*"
 	},
-	"repository": "none",
-	"scripts": {
-		"postdeploy": "node build.js"
-	}
+	"repository": "none"
 }
