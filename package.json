@@ -1,6 +1,5 @@
 {
 	"name": "tusharm.com",
-	"version": "0.0.1",
 	"dependencies": {
 		"moment": "2.x",
 		"underscore": "1.4.x",
