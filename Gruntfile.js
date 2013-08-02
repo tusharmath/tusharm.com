@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 					// Task-specific options go here.
 					message: 'pushing to gh-pages',
 					base: 'bin',
-					branch: 'gh-pages'
+					branch: 'master'
 				},
 				src: ['**']
 			}
