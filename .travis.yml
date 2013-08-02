@@ -4,4 +4,4 @@ node_js:
   - "0.10"
   - "0.8"
   - "0.6"
-after_script: node ./node_modules/bin/grunt release
+after_script: node ./node_modules/grunt-cli/bin/grunt release
