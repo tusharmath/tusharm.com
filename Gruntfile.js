@@ -4,9 +4,10 @@ module.exports = function(grunt) {
 			your_target: {
 				options: {
 					// Task-specific options go here.
-					message: 'pushing to gh-pages',
+					message: 'pushing to master',
 					base: 'bin',
-					branch: 'master'
+					branch: 'master',
+					repo: 'https://github.com/tusharmath/tusharmath.github.io.git'
 				},
 				src: ['**']
 			}
