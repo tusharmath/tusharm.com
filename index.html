@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Tushar Mathur's blog
     </title>
-    <link rel="alternate" href="http://tusharm.com/feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek">
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="/css/main.css" type="text/css">
   </head>
@@ -15,13 +15,28 @@
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
-          <h1><a href="http://tusharm.com">Tushar Mathur's blog</a></h1>
+          <h1><a href="/">Tushar Mathur's blog</a></h1>
           <p class="description">A software developer, physics enthusiast, swimmer and a car geek</p>
         </div>
       </div>
     </header>
     <div id="content">
       <div class="content-wrap">
+        <article class="article intro">
+          <header>
+            <p class="date"><span>03. August 2013</span></p>
+            <h2><a href="/articles/mt-downloader/">Node.js Mt Downloader</a></h2>
+          </header>
+          <section class="content"><p>Why would someone want a <strong>multi threaded downloader</strong>? Well, the answer is quite simple - To increase download&nbsp;speed.</p>
+<p>What it really does is, it makes multiple connections with the server from where the file has to be downloaded. Now since data is sent in packets on those connections. There is always little bit of a lag between these packets. This especially happens if you have a low speed internet connection or there are multiple applications using the internet at the same&nbsp;time.</p>
+<p>When you make multiple connections you minimize that lag period because at any given instance there is at least one thread which is delivering a packet of data. This helps in efficient use of the bandwidth. You won&#39;t get a speed more than that allotted by your <span class="caps">ISP</span> using this&nbsp;process.</p>
+<p>There are quite a few multi threaded downloaders such as <a href="http://dfast.sourceforge.net/">wxDownload</a> and <a href="https://www.macupdate.com/app/mac/33754/progressive-downloader">Progressive Downloader</a> but they din&#39;t really have the flexibility that I wanted in my downloader. I needed something more than just a simple multi threaded downloader. I needed something which could let me stop and resume downloads from the last downloaded byte even if I restarted my computer. There were some downloaders which had these features but I also wanted something which had an api and could be used with my other&nbsp;projects.</p>
+<p>So I created this node.js based http-downloader - <a href="https://github.com/tusharmath/Multi-threaded-downloader">mt-downloader</a>. One very important reason for making this was that I also wanted to learn <strong>node.js</strong> and <strong>improve my javascript skills</strong> which I did&nbsp;eventually. </p>
+<p>Once the library was completed I also created a thin console based wrapper around it and called it <a href="https://github.com/tusharmath/mtd-console">mt-console</a>. This is what I use for my downloads&nbsp;now.</p>
+<p><img src="/articles/mt-downloader/mt-console.png" alt="image"></p>
+
+          </section>
+        </article>
         <article class="article intro">
           <header>
             <p class="date"><span>09. July 2013</span></p>
@@ -50,15 +65,6 @@ This would be a really high resolution and you will not be able to read anything
 <li>Click ok, Log off and Login&nbsp;again.</li>
 </ol>
 <p>Voila! you will definitely have a better Win7 experience on Mac&nbsp;now.</p>
-
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>30. June 2013</span></p>
-            <h2><a href="/articles/mt-downloader/">Mt Downloader</a></h2>
-          </header>
-          <section class="content"><p>This is a&nbsp;dumpling</p>
 
           </section>
         </article>
