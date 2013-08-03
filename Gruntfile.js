@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 					message: 'pushing to master',
 					base: 'bin',
 					branch: 'master',
-					repo: 'https://github.com/tusharmath/tusharmath.github.io.git'
+					remote :'https://github.com/tusharmath/tusharmath.github.io.git'
 				},
 				src: ['**']
 			}
