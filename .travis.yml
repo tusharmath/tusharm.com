@@ -1,11 +1,13 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
-  - "0.8"
-  - "0.6"
+  - '0.11'
 before_script:
   - git config --global user.email "tusharmath@gmail.com"
   - git config --global user.name "Travis-CI"
 after_script:
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - node ./node_modules/grunt-cli/bin/grunt release
+env:
+  global:
+    secure: cLwxkcKYmAYn0d1wXYRU2t9QsZc9bIZ8A7VUkTiF5eWQ7BXa1nvlDy/MUkeviQw6ATOeQP2I4WCH/Vanw8muQwYDNIN8wTdn8dVT7pBTbCnqwSoLOrZJgHCqIQXzWocbgHy22M26+FzmWWXYM3HkHIjaLMr/eeL0RfcKSgLsGHA=
