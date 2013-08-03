@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 					// Task-specific options go here.
 					message: 'pushing to master',
 					base: 'bin',
-					branch: 'master'
+					branch: 'master',
+					repo:'https://github.com/tusharmath/tusharmath.github.io.git'
 				},
 				src: ['**']
 			}
