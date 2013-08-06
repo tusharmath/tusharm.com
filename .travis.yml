@@ -7,12 +7,11 @@ after_script:
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - git config credential.helper "store --file=.git/credentials"
   - cat .git/credentials
-  - git remote set-url origin $REPO
+  - git remote set-url origin "https://github.com/tusharmath/tusharmath.github.io.git"
   - node ./node_modules/grunt-cli/bin/grunt release
 branches:
   only:
     - develop
 env:
   global:
-    - REPO: "https://github.com/tusharmath/tusharmath.github.io.git"
     - secure: SVMzk44xVPgJpAxUmPDqZlWVmouc19l466/XguOvazyWXJjK/YPu+mypemO3ZfHmYtzuAMJdG/0RK+u2NBTe3LQCuoJwdoOyVNXaahhzKXgl1Z1xzV76/yqkze9Fyf/YoZGnP3ruRIOA5Tv5NgGAQC3WfPd8bAsBb++F+LEr288=
