@@ -30,6 +30,7 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+	
 	grunt.loadNpmTasks('grunt-wintersmith-compile');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-copy');
