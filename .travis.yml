@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - '0.11'
 after_script:
-  - git config --global user.email "tusharmath@gmail.com"
-  - git config --global user.name "Travis-CI"
+  - git config --global user.email "support@travis-ci.org"
+  - git config --global user.name "travisbot"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - git config credential.helper "store --file=.git/credentials"
   - cat .git/credentials
