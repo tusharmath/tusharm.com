@@ -6,3 +6,4 @@ template: article.jade
 ---
 
 Hi there!
+This is a test.
