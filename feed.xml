@@ -5,9 +5,18 @@
     <atom:link href="//feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>/</link>
     <description>A software developer, physics enthusiast, swimmer and a car geek</description>
-    <pubDate>Sat, 03  Aug 2013 00:00:00 +0630</pubDate>
+    <pubDate>Sat, 10  Aug 2013 05:30:00 +0630</pubDate>
     <generator>Tushar Mathur - http://tusharm.com</generator>
     <language>en</language>
+    <item>
+      <title>Javascript Notes</title>
+      <link>//articles/Javascript-Notes/</link>
+      <pubDate>Sat, 10  Aug 2013 05:30:00 +0630</pubDate>
+      <guid isPermaLink="true">//articles/Javascript-Notes/</guid>
+      <author></author>
+      <description>&lt;p&gt;Hi there!&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Node.js Mt Downloader</title>
       <link>//articles/mt-downloader/</link>
