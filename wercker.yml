@@ -3,8 +3,8 @@ build:
   steps:
     - npm-install
     - script:
-        name: wintersmith build
-        code: ./node_modules/.bin/wintersmith build -o $WERCKER_OUTPUT_DIR
+        name: Grunt Release
+        code: ./node_modules/.bin/grunt release
 deploy:
   steps:
     - heroku-deploy
