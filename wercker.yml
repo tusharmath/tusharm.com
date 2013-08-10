@@ -5,6 +5,3 @@ build:
     - script:
         name: Grunt Release
         code: ./node_modules/.bin/grunt release
-deploy:
-  steps:
-    - heroku-deploy
