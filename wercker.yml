@@ -2,10 +2,11 @@ box: wercker/nodejs
 build:
   steps:
     - npm-install
-    - ls
-    - ./node_modules/.bin/wintersmith build
+    - script:
+        name: wintersmith build
+        code: ./node_modules/.bin/wintersmith build -v -o ./build
 deploy:
   steps:
-    - tusharm/gh-pages:
-        token: $GH_TOKEN
+    - lukevivier/gh-pages:
+        token: $GIT_TOKEN
         basedir: build
