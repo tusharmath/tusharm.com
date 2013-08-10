@@ -10,3 +10,4 @@ deploy:
     - lukevivier/gh-pages:
         token: $GH_TOKEN
         basedir: build
+        branch: master
