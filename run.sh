@@ -9,7 +9,7 @@ git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-maste
 
 #Remove files
 echo ">> Removing all old files"
-rm -R .github-master
+rm -rfv .github-master/
 
 #Wintersmith build
 echo ">> Wintersmith Build"
