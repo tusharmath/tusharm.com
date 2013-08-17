@@ -9,6 +9,7 @@
 		"grunt-gh-pages": "0.6.x",
 		"grunt": "0.4.x",
 		"grunt-wintersmith-compile": "*",
+		"grunt-shell": "*",
 		"grunt-contrib-copy": "*",
 		"wintersmith": "*"
 	},
