@@ -9,7 +9,7 @@ rm -rf .git
 echo ">> Setup Master branch"
 rm -rf .github-master
 git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
-
+rm -rf .github-master/articles
 
 #Copy files
 echo ">> Copying files"
