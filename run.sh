@@ -1,7 +1,7 @@
 #Configuration
-git config user.email "support@travis-ci.org"
-git config user.name "travisbot"
-git config push.default current
+git config --global user.email "support@travis-ci.org"
+git config --global user.name "travisbot"
+git config --global push.default current
 git config credential.helper "store --file=.git/credentials"
 echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
