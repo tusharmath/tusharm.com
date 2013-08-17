@@ -18,6 +18,8 @@ git config credential.helper "store --file=../.git/credentials"
 #Prepare Commit
 echo ">> Preparing to commit"
 git add --all
+echo ">> Git Status"
+git status
 git commit -m "deploy from Travis [ci skip]"
 
 #Pushing
