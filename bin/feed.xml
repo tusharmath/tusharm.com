@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tushar Mathur's blog</title>
+    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>/</link>
+    <description>A software developer, physics enthusiast, swimmer and a car geek</description>
+    <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
+    <generator>Tushar Mathur - http://tusharm.com</generator>
+    <language>en</language>
+    <item>
+      <title>Questions</title>
+      <link>//articles/Questions/</link>
+      <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/Questions/</guid>
+      <author></author>
+      <description>&lt;h1&gt;Questionare&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The piece of clothing ( she owns ) you think, suits her the best?&lt;br&gt;&lt;em&gt;Everytime she buys something new it looks better than anything ive ever seen&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Where was your first kiss?&lt;br&gt;&lt;em&gt;Bangalore - Krishna Temple Road. She came on to me ;)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;One piece of clothing you think she should wear on your first night?&lt;br&gt;&lt;em&gt;absolutely nothing&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If she were to get a tattoo, what and where should it be?&lt;br&gt;&lt;em&gt;Back, collar bone&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pick out the adjective that suits her the best and why -  &lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;Sexy:&lt;/strong&gt; Her Expression just before smiling.&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;Naughty:&lt;/strong&gt; All the time.&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;Wild:&lt;/strong&gt; When she makes out.&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;Shy:&lt;/strong&gt; When someone talks about all the naughty stuff she does.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;One naughty song you would like her to dance on (make it a hindi item number, we&amp;#39;d love it)&lt;br&gt;&lt;em&gt;Subha hone na de&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In question 6,what would you like her to wear while doing the dance?&lt;br&gt;&lt;em&gt;Bridal clothes&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Where would you like to spend your first night ( if you know what we mean ;))&lt;br&gt;&lt;em&gt;On a single bed no matter where it is&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is your kinky fetish ( roleplaying, massages, handcuffs, spanking etc )?
+&lt;em&gt;Blowjobs and massages&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What scent turns you on ( fruity, vanilla,chocolate etc )?&lt;br&gt;&lt;em&gt;The one that I gave her&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is her most annoying habit?&lt;br&gt;&lt;em&gt;She is so pretty but still gets conscious about her looks.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Among all the nicknames you have given her, which one do you think she like the best.&lt;br&gt;&lt;em&gt;BB, Gunchad, bauble, Guttalz, Guttalipoo, Punchadu (ALL of them)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If she were to pick one of her girlfriends, to do some naughty stuff with, who do you think she would choose?&lt;br&gt;&lt;em&gt;She just turned from Asexual to Sexual, becoming bisexual would is quite far fetched&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When did you know that she was the one for you (time and place ).&lt;br&gt;&lt;em&gt;25th July 1981 … or 1987 a little confused :P&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Where is her most sensitive spot ( well, physically :))?&lt;br&gt;&lt;em&gt;Her Velvety petals, and her tities too ;)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Bb it Boobie puchie time!&lt;/h1&gt;
+</description>
+    </item>
+    <item>
+      <title>Node.js Mt Downloader</title>
+      <link>//articles/mt-downloader/</link>
+      <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/mt-downloader/</guid>
+      <author></author>
+      <description>&lt;p&gt;Why would someone want a &lt;strong&gt;multi threaded downloader&lt;/strong&gt;? Well, the answer is quite simple - To increase download speed.&lt;/p&gt;
+&lt;p&gt;What it really does is, it makes multiple connections with the server from where the file has to be downloaded. Now since data is sent in packets on those connections. There is always little bit of a lag between these packets. This especially happens if you have a low speed internet connection or there are multiple applications using the internet at the same time.&lt;/p&gt;
+&lt;p&gt;When you make multiple connections you minimize that lag period because at any given instance there is at least one thread which is delivering a packet of data. This helps in efficient use of the bandwidth. You won&amp;#39;t get a speed more than that allotted by your ISP using this process.&lt;/p&gt;
+&lt;p&gt;There are quite a few multi threaded downloaders such as &lt;a href=&quot;http://dfast.sourceforge.net/&quot;&gt;wxDownload&lt;/a&gt; and &lt;a href=&quot;https://www.macupdate.com/app/mac/33754/progressive-downloader&quot;&gt;Progressive Downloader&lt;/a&gt; but they din&amp;#39;t really have the flexibility that I wanted in my downloader. I needed something more than just a simple multi threaded downloader. I needed something which could let me stop and resume downloads from the last downloaded byte even if I restarted my computer. There were some downloaders which had these features but I also wanted something which had an api and could be used with my other projects.&lt;/p&gt;
+&lt;p&gt;So I created this node.js based http-downloader - &lt;a href=&quot;https://github.com/tusharmath/Multi-threaded-downloader&quot;&gt;mt-downloader&lt;/a&gt;. One very important reason for making this was that I also wanted to learn &lt;strong&gt;node.js&lt;/strong&gt; and &lt;strong&gt;improve my javascript skills&lt;/strong&gt; which I did eventually. &lt;/p&gt;
+&lt;p&gt;Once the library was completed I also created a thin console based wrapper around it and called it &lt;a href=&quot;https://github.com/tusharmath/mtd-console&quot;&gt;mt-console&lt;/a&gt;. This is what I use for my downloads now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/mt-downloader/mt-console.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>How to configure windows on Mac (retina) using virtual box</title>
+      <link>//articles/win7-on-retina-display-with-virtual-box/</link>
+      <pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/win7-on-retina-display-with-virtual-box/</guid>
+      <author></author>
+      <description>&lt;p&gt;You don&amp;#39;t have any money left to buy Parallels or Fusion so you are stuck up with Virtual box for the time being. Virtual box unfortunately does not provide a support for retina displays (At the time of writing this document).&lt;/p&gt;
+&lt;p&gt;You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic    !&lt;/p&gt;
+&lt;p&gt;So here are some steps that you could try out to improve your user experience with Virtual Box till the time they don&amp;#39;t provide you with actual retina support.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt;
+Determine the number of pixels on your screen. For e.g.- Mac pro 13“ and 15” Retina have 2560 by 1600 pixels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt;
+The VM will respect the resolutions properly only in Scale mode. In scale mode the VM is viewed in a window. A window will not take-up the complete screen. So you need to get the maximum size that a window can take up on your screen (Without going into fullscreen mode). &lt;/p&gt;
+&lt;p&gt;What I really mean by that statement is - out of the 2560x1400 px of real estate available on the screen only 2560x700 px can be used by a window to show content. Why ? Because I have a dock at the bottom and a menu bar at the top which takes up some space vertically. So in this step you need to calculate that space. Here is how I did it.&lt;/p&gt;
+&lt;p&gt;I personally used the &lt;strong&gt;⌘ + ⇧ + 4&lt;/strong&gt; button to take a snapshot of the window and then see the resolution of the image file. So in my particular case I have the dock in the bottom so I need to compromise the height of the screen. Rounding off to the nearest integer the available real estate of a window comes out to be 2560x1400.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3.&lt;/strong&gt;
+Now you need to setup this custom resolution on your VM. So keep the VM on and run the following command on your terminal&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;$ VBoxManage controlvm [VM name] setvideomodehint [Width] [Height] 32&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For e.g. if you want to try this on a mac pro 13&amp;quot; retina&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;$ VBoxManage controlvm Win7 setvideomodehint 2560 1400 32&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 4.&lt;/strong&gt;
+This would be a really high resolution and you will not be able to read anything on the VM because the text would be really small. So now go to your VM with win7 installed and follow these steps - &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open display settings.&lt;/li&gt;
+&lt;li&gt;Click on [Set custom size DPI] from the right hand side Navigation Bar.&lt;/li&gt;
+&lt;li&gt;Scale the font size to 200%.&lt;/li&gt;
+&lt;li&gt;Click ok, Log off and Login again.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Voila! you will definitely have a better Win7 experience on Mac now.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>DOs and DON'Ts while making biryani</title>
+      <link>//articles/DOs-and-DONTs-while-making-biryani/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/DOs-and-DONTs-while-making-biryani/</guid>
+      <author></author>
+      <description>&lt;p&gt;I tried to copy a lot of biryani recipes that are on the internet and in that process I wasted a lot of meat and rice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It‘s all about the proportions ultimately so don’t take it casually&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It took a lot of perseverance in getting the recipe just right. So here are some DOs and DON&amp;#39;Ts for making  mutton dum biryani (&lt;em&gt;same applies for chicken biryani&lt;/em&gt;). These points are an extension of the Hyderabadi style biryani which is cooked in layers of meat and rice.&lt;/p&gt;
+&lt;h1&gt;DOs&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure you use a thick base vessel for cooking so that the heat gets evenly distributed.&lt;/li&gt;
+&lt;li&gt;Best practice is to marinate the meat for 2-3 hours so that all the juices get inside the meat.&lt;/li&gt;
+&lt;li&gt;Use lots of fried onions in the marinade.&lt;/li&gt;
+&lt;li&gt;Add good amount of salt. Generally the salt concentration reduces after you add the meat so make sure you have incorporated that in your calculation.&lt;/li&gt;
+&lt;li&gt;Add good amount of spices, it is possible that the marinade seems spicy at first but trust me on this, after you add the meat the spiciness will decrease considerably.&lt;/li&gt;
+&lt;li&gt;Cook the meat at the lowest flame that is possible in your kitchen. Low heat helps in uniform cooking.&lt;/li&gt;
+&lt;li&gt;Add good amounts of GHEE (&lt;em&gt;clarified butter&lt;/em&gt;) in the marinade.&lt;/li&gt;
+&lt;li&gt;The rice used should be of high quality basmati.&lt;/li&gt;
+&lt;li&gt;Seal the vessel so that the heat doesn&amp;#39;t escape.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;DON&amp;#39;Ts&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Don‘t use too much of curd, it makes the meat bland and tasteless. It only helps in cooking, it does’t add any taste to the biryani.&lt;/li&gt;
+&lt;li&gt;Don&amp;#39;t give direct heat to the meat, put the vessel over a pan or some other metal layer (&lt;em&gt;Heat should be transferred to the vessel through conduction and not convection&lt;/em&gt;). It takes time to cook, mutton might take upto 1:45 hrs to cook and chicken can take upto 1:15 hrs. So have patience.&lt;/li&gt;
+&lt;li&gt;Don&amp;#39;t add raw onions in the marinade, it will not taste good.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>Why I don't like cricket?</title>
+      <link>//articles/why-i-dont-like-cricket/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/why-i-dont-like-cricket/</guid>
+      <author></author>
+      <description>&lt;p&gt;Cricket is a very popular sport here in India. Even though Hockey is our national game, cricket is more followed and idolized. People are so sentimental about cricket that they don‘t go to offices, in fact some private companies have half days or sometimes full day off when India is playing. People literally go crazy when India has a match with Pakisthan - a country with whom we have had three wars in the past. I don’t have the exact figures but I am pretty sure that the matches have always militated against India&amp;#39;s GDP for that particular day :P&lt;/p&gt;
+&lt;p&gt;My grandfather was a &lt;a href=&quot;http://en.wikipedia.org/wiki/Ranji_Trophy&quot;&gt;Ranji&lt;/a&gt; player and my mother was in the state cricket team representing Rajasthan. Yet I was not that great in cricket, in fact I was bad, really really bad. I was bad in Basketball and Football too and now when I see this pattern it seems like I was bad in every team sport, probably I am not a team player &lt;em&gt;(more about that later)&lt;/em&gt;. I wasn&amp;#39;t bad in badminton, squash and swimming, I loved games where I could perform by my self which is a typical characteristic of an introvert when I had my last introspection &lt;em&gt;(by the way introverts are not shy people, see &lt;a href=&quot;http://www.youtube.com/watch?v=c0KYU2j0TM4&quot;&gt;this&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;What I am about to say now might offend a lot of people and the only follower of this blog &lt;em&gt;(My Mother)&lt;/em&gt;. So mom I think that out of the twenty two players in a game of cricket, at a particular instance of time effectively less than 60% players are playing - rest are not even on the ground. Taking a one day match for example - there are 50 overs, which means around 300 balls. If the shots are played in such a way that every fielder gets a fair chance to field then each fielder gets 30 shots to save (300/10, excluding the bowler). A single session would last for around 3 hours &lt;em&gt;(10800 seconds)&lt;/em&gt;. An average shot takes round about 8 seconds, this is the time that it takes for the ball to hit the bat, saved by the fielder and back to either the bowler or the keeper. So effectively a fielder plays for around 2.2% (30*8/10800) of the game time. In the whole game the players are not playing for more than 97% of the time. Interestingly in other sports the players can run behind the balls as it travels at much lower speeds, on the other hand in cricket the ball is much smaller, travels faster and you have to catch it with your bare hands. Ultimately the fielder has to wait for the ball to slow down and come into his hands.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Ok, so fielding isn&amp;#39;t that exciting I get it but what about batting?&lt;/em&gt; As far as batting is concerned I agree that the players do spend a decent amount of energy trying to hit the ball and take runs. Even so - what would happen if all the runs are scored by just two top batsmen? Others don&amp;#39;t get to play which is one of the reasons I never got a chance to bat much :(
+But again batting is more based on technique and less based on strength. Practically it is not possible to predict the path of the ball in such a short duration of time. The batsman can only anticipate the path of the ball and take a chance by positioning their bats in a way they feel will be appropriate. Which is good for them because now if they get out they have no reason to blame themselves for not hitting the ball properly because its technically impossible for the human nervous system to work at such a speed.&lt;/p&gt;
+&lt;p&gt;People still love cricket and I am getting bored because I can‘t watch my favorite programs on the discovery channel. IPL was streamed on TV for two months and now its the challenger cup. I can’t seem to understand why people don&amp;#39;t get bored with cricket. Veritasium2 has a theory about it, check it out -&lt;/p&gt;
+&lt;iframe class='youtube' src=&quot;http://www.youtube.com/embed/vCKUewZEBFM&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>Fighting the heat</title>
+      <link>//articles/fighting-the-heat/</link>
+      <pubDate>Thu, 06 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/fighting-the-heat/</guid>
+      <author></author>
+      <description>&lt;p&gt;If you are one of those people who keep sweating or have an abnormally high sensitivity towards heat then you are going to benefit from this blog. The idea is to keep your body cool and here are some tips and some science related to it.&lt;/p&gt;
+&lt;p&gt;Firstly you need to understand that hotness and high temperature are two different things. You may be feeling hot but its not always because the temperature is high. Our sensory system reacts to temperature by calculating the rate at which heat energy is gained or lost from the body. The following minute physics video elaborates on this concept.&lt;/p&gt;
+&lt;iframe class='youtube' src=&quot;http://www.youtube.com/embed/yXT012us9ng&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;  
+
+
+&lt;p&gt;Your sweat contains urea, minerals, lactate and water. When you get into a cool environment after sweating, the water effectively evaporates not because its cooler but because now there is less perspiration compared to evaporation. So your body dries up leaving behind only the urea, minerals and lactate on the epidermis. Since they are pretty bad conductors of heat even though you are in a cool environment you still feel warm because your sensory system is kind of insulated with these sweat residuals. Thus its a cycle- you sweat once and then you keep on sweating because you can&amp;#39;t feel the coolness. The solution is to try to not sweat at all in the first place or take frequent baths so that you clear up your sweat residual from the epidermis.&lt;/p&gt;
+&lt;p&gt;I know this methodology of &lt;em&gt;try not to sweat&lt;/em&gt; and &lt;em&gt;take frequent baths&lt;/em&gt; is banal but its effective and I have only explained the science behind it. Hope this keeps you cool this summer!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Misconceptions about driving at night</title>
+      <link>//articles/driving-at-night/</link>
+      <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/driving-at-night/</guid>
+      <author></author>
+      <description>&lt;p&gt;The most common misconception that people have about driving at night is - &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The chances of having an accident increase with decrease in intensity of light&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So do you really think so? May be, may be not. The thing is that everybody knows the disadvantages of driving at night but no one really pays attention to the advantages of night driving.&lt;/p&gt;
+&lt;p&gt;I would first like to talk about the different light intensities during twilight.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;First case is the one in which the darkness is subjective to your sensitivity and to your orientation with respect to the sun. So some people would have their head lights switched on and some would have them off. This is a little risky &lt;em&gt;(understating really)&lt;/em&gt;  because not all people have their lights on, your eyes can only see those people who have their lights on, so you are blinded by those lights now and people with their lights switched off will not be visible. That&amp;#39;s the same reason for not being able to see the stars in the day time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The second stage is much better - now its dark for everyone on the road and everyone have their lights on. So you are seeing more people effectively in comparison to the case one. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These are the two cases which depict different visibility conditions in a matter of just 15-20 mins.&lt;/p&gt;
+&lt;p&gt;Now coming back to the main point which is - Is driving at night really that bad?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The thing is that when you are driving in the day time you are not able to communicate with the person driving in front of you. You can honk but its possible that he doesn&amp;#39;t hear you. So basically  the driver in front you is not aware of the fact that you are driving behind him. At night its different you can give a high-low beam pass to the driver which will notify him that you are close to him and he should not change lanes randomly. In pure statistical sense the information for the driver about his surroundings have doubled.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At night the visibility of a car on the road increases because now a car&amp;#39;s position is determined by its tail lights in contrast to the daytime when its the car itself. &lt;em&gt;How is it better?&lt;/em&gt; It&amp;#39;s better because at night the contrast is much more, you are seeing a bright light in a black background. &lt;em&gt;But what about everything that is not glowing?&lt;/em&gt; Good question! Actually this is where having some traffic on the road actually helps. If the car a moving in front of you, you can quite essentially assume that the distance between you and that car is clean and safe to drive because the car in front of you just travelled that distance. So you can without worrying travel that distance at a higher speed than the car in front of you. But wait now you have over taken that car and there is another car in front of you right? Apply the same logic on that car also and you will be able to drive at a speed which is greater than the average speed of the traffic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You might have guessed it by now that all the conclusions are based on a single and a very important assumption which is &amp;gt; there is traffic on the road. &lt;em&gt;So what happens when you have traffic in the day time, shouldn&amp;#39;t I be able to drive at the same speed?&lt;/em&gt; Yes, that&amp;#39;s why I said its not worse if not better. The thinking that &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You are limited to a max of up to hundred meters depending on the range of your head lights.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Which is obviously not true! As we learnt in the second point that you can use the information which has been used by the car moving in front of you.&lt;/p&gt;
+&lt;p&gt;So is it really better or almost the same? Well, if I get some time later I would love to do some mathematics to prove that its safer to drive at night. For now at least I am not biased about day being safer to drive.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I can still write a lot about it, I need to end this post now&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Super Cache</title>
+      <link>//articles/super-cache/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/super-cache/</guid>
+      <author></author>
+      <description>&lt;p&gt;Super Cache is a chrome extension that I created to control caching behavior from the client side.&lt;/p&gt;
+&lt;h2&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Override caching policy that has been set on the server.&lt;/li&gt;
+&lt;li&gt;Select a host on which the caching is required and all requests from a page with that host will be cached.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Caching of static content which are on a different host will also be cached &lt;em&gt;(read Note for further explanation)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Grab it from &lt;a href=&quot;https://chrome.google.com/webstore/detail/super-cache/fglobbnbihckpkodmeefhagijjcjnbeh&quot;&gt;Chrome Webstore&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; say you have a site &lt;em&gt;example.com&lt;/em&gt; on which you have set a caching policy thru the extension.
+Now if the any page on &lt;em&gt;example.com&lt;/em&gt; links to external scripts and sites which are on a different domain such as static.example.com or ajax.googleapis.com, the extension will automatically apply the same caching behavior as that of &lt;em&gt;example.com&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Caution:&lt;/strong&gt; Caching takes up disk space, so use the extension carefully.&lt;/p&gt;
+&lt;iframe src=&quot;http://ghbtns.com/github-btn.html?user=tusharmath&amp;repo=super-cache&amp;type=fork&amp;count=true&quot;
+  allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;auto&quot; height=&quot;auto&quot;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    <item>
+      <title>Javelin Forecast Manager</title>
+      <link>//articles/forecast-manager/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/forecast-manager/</guid>
+      <author></author>
+      <description>&lt;p&gt;Forecast Manager was my second project in &lt;a href=&quot;http://zsassociates.com/&quot;&gt;Z.S. Associates&lt;/a&gt;. It was a MVC .Net based web application that would help in maintaining forecasting models. These models were designed in MS Excel and could be merged with each other and to create different versions. The application could also render reports on the web and could help in managing access rights in an extremely customized way per user and per client basis.&lt;/p&gt;
+&lt;p&gt;The team size was very dynamic but I was the oldest member of the team and knew the inside out of the web application. As a developer I had two roles- &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Design and develop features:&lt;/strong&gt; I had to convert business needs into technical requirements and research on each feature throughout the full software development cycle. &lt;em&gt;I worked on multiple features which I will list later&lt;/em&gt;. Development was done in C# mainly. On the UI side we used knockout.js and jQuery to maintain a MVVM design pattern. On the database side we used Entity Framework as an ORM on top of SQL Server 2006.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automate the deployment process:&lt;/strong&gt; I developed Powershell scripts to be executed on Teamcity so as to automate the process of deployment which effectively reduced the deployment time by 98.7%. Since we had around fifty instances of the application and upgrading all of them in one go would take a lot of time more over we had the overhead of maintaing multiple webconfigs which had to be manually modified every time we upgraded, as all the customizations per client we set in the web.config file. Even our tag creation was not automated initially and since our teams were so dispersed geographically it was very difficult to share signed releases. With all the automation scripts in place we saved around eight man hours weekly.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>Z.S. Data Integration</title>
+      <link>//articles/data-integration/</link>
+      <pubDate>Tue, 01 Feb 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/data-integration/</guid>
+      <author></author>
+      <description>&lt;p&gt;Data Integration was my first project in &lt;a href=&quot;http://zsassociates.com/&quot;&gt;Z.S. Associates&lt;/a&gt;. Our aim was to study and create POCs on various data integration tools. My role was to evaluate &lt;a href=&quot;http://www.boomi.com/&quot;&gt;Boomi&lt;/a&gt; and &lt;a href=&quot;http://integration.pervasive.com/&quot;&gt;Pervasive&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Created various types of POCs with each of the DI tools which would perform data integration between multiple applications such as Salesforce, Javelin Routing Manager, Javelin Call Plan Manager and Javelin Data Manager.&lt;/li&gt;
+&lt;li&gt;Reported a major bug in Boomi while evaluating it.&lt;/li&gt;
+&lt;li&gt;Concluded that Boomi was the best data integration tool which suited ZS’s needs.&lt;/li&gt;
+&lt;li&gt;Trained the consulting team in ZS on how to use Boomi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+  </channel>
+</rss>
