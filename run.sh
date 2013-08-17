@@ -13,7 +13,7 @@ wintersmith build --output='bin'
 
 #Copy files
 echo ">> Copying files"
-copy bin/** .github-master
+cp bin/** .github-master
 
 echo "Change Dir to .github-master"
 cd .github-master
