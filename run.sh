@@ -13,7 +13,7 @@ wintersmith build --output='bin'
 
 #Copy files
 echo ">> Copying files"
-cp -r bin .github-master
+cp -r bin/ .github-master
 
 echo "Change Dir to .github-master"
 cd .github-master
@@ -26,7 +26,7 @@ echo ">> Preparing to commit"
 git add .
 
 echo ">> Comitting"
-git commit -m "deploy from $WERCKER_STARTED_BY"
+git commit -m "deploy from Travis"
 
 echo ">> Saving Credentials"
 git config credential.helper "store --file=.git/credentials"
