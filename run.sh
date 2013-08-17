@@ -27,7 +27,7 @@ git config user.email "support@travis-ci.org"
 git config user.name "travisbot"
 
 echo ">> Preparing to commit"
-git add .
+git add -all .
 
 echo ">> Comitting"
 git commit -m "deploy from Travis"
