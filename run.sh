@@ -4,7 +4,7 @@ git config --global user.name "travisbot"
 git config --global push.default current
 git config credential.helper "store --file=.git/credentials"
 echo "https://$GH_TOKEN:@github.com" > .git/modules/github-master/credentials
-
+echo $GH_TOKEN
 #Generating  Data
 echo ">> Generating Data"
 git checkout develop
