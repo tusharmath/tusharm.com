@@ -9,6 +9,21 @@
     <generator>Tushar Mathur - http://tusharm.com</generator>
     <language>en</language>
     <item>
+      <title>Node.js Mt Downloader</title>
+      <link>//articles/mt-downloader/</link>
+      <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/mt-downloader/</guid>
+      <author></author>
+      <description>&lt;p&gt;Why would someone want a &lt;strong&gt;multi threaded downloader&lt;/strong&gt;? Well, the answer is quite simple - To increase download speed.&lt;/p&gt;
+&lt;p&gt;What it really does is, it makes multiple connections with the server from where the file has to be downloaded. Now since data is sent in packets on those connections. There is always little bit of a lag between these packets. This especially happens if you have a low speed internet connection or there are multiple applications using the internet at the same time.&lt;/p&gt;
+&lt;p&gt;When you make multiple connections you minimize that lag period because at any given instance there is at least one thread which is delivering a packet of data. This helps in efficient use of the bandwidth. You won&amp;#39;t get a speed more than that allotted by your ISP using this process.&lt;/p&gt;
+&lt;p&gt;There are quite a few multi threaded downloaders such as &lt;a href=&quot;http://dfast.sourceforge.net/&quot;&gt;wxDownload&lt;/a&gt; and &lt;a href=&quot;https://www.macupdate.com/app/mac/33754/progressive-downloader&quot;&gt;Progressive Downloader&lt;/a&gt; but they din&amp;#39;t really have the flexibility that I wanted in my downloader. I needed something more than just a simple multi threaded downloader. I needed something which could let me stop and resume downloads from the last downloaded byte even if I restarted my computer. There were some downloaders which had these features but I also wanted something which had an api and could be used with my other projects.&lt;/p&gt;
+&lt;p&gt;So I created this node.js based http-downloader - &lt;a href=&quot;https://github.com/tusharmath/Multi-threaded-downloader&quot;&gt;mt-downloader&lt;/a&gt;. One very important reason for making this was that I also wanted to learn &lt;strong&gt;node.js&lt;/strong&gt; and &lt;strong&gt;improve my javascript skills&lt;/strong&gt; which I did eventually. &lt;/p&gt;
+&lt;p&gt;Once the library was completed I also created a thin console based wrapper around it and called it &lt;a href=&quot;https://github.com/tusharmath/mtd-console&quot;&gt;mt-console&lt;/a&gt;. This is what I use for my downloads now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/mt-downloader/mt-console.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Questions</title>
       <link>//articles/Questions/</link>
       <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
@@ -53,21 +68,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1&gt;Bb it Boobie puchie time!&lt;/h1&gt;
-</description>
-    </item>
-    <item>
-      <title>Node.js Mt Downloader</title>
-      <link>//articles/mt-downloader/</link>
-      <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">//articles/mt-downloader/</guid>
-      <author></author>
-      <description>&lt;p&gt;Why would someone want a &lt;strong&gt;multi threaded downloader&lt;/strong&gt;? Well, the answer is quite simple - To increase download speed.&lt;/p&gt;
-&lt;p&gt;What it really does is, it makes multiple connections with the server from where the file has to be downloaded. Now since data is sent in packets on those connections. There is always little bit of a lag between these packets. This especially happens if you have a low speed internet connection or there are multiple applications using the internet at the same time.&lt;/p&gt;
-&lt;p&gt;When you make multiple connections you minimize that lag period because at any given instance there is at least one thread which is delivering a packet of data. This helps in efficient use of the bandwidth. You won&amp;#39;t get a speed more than that allotted by your ISP using this process.&lt;/p&gt;
-&lt;p&gt;There are quite a few multi threaded downloaders such as &lt;a href=&quot;http://dfast.sourceforge.net/&quot;&gt;wxDownload&lt;/a&gt; and &lt;a href=&quot;https://www.macupdate.com/app/mac/33754/progressive-downloader&quot;&gt;Progressive Downloader&lt;/a&gt; but they din&amp;#39;t really have the flexibility that I wanted in my downloader. I needed something more than just a simple multi threaded downloader. I needed something which could let me stop and resume downloads from the last downloaded byte even if I restarted my computer. There were some downloaders which had these features but I also wanted something which had an api and could be used with my other projects.&lt;/p&gt;
-&lt;p&gt;So I created this node.js based http-downloader - &lt;a href=&quot;https://github.com/tusharmath/Multi-threaded-downloader&quot;&gt;mt-downloader&lt;/a&gt;. One very important reason for making this was that I also wanted to learn &lt;strong&gt;node.js&lt;/strong&gt; and &lt;strong&gt;improve my javascript skills&lt;/strong&gt; which I did eventually. &lt;/p&gt;
-&lt;p&gt;Once the library was completed I also created a thin console based wrapper around it and called it &lt;a href=&quot;https://github.com/tusharmath/mtd-console&quot;&gt;mt-console&lt;/a&gt;. This is what I use for my downloads now.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/mt-downloader/mt-console.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
 </description>
     </item>
     <item>
