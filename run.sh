@@ -28,4 +28,4 @@ echo ">> Comitting"
 git commit -m "deploy from $WERCKER_STARTED_BY"
 
 echo ">> Pushing to Git Hub"
-git push -f remote "https://$GH_TOKEN@github.com/$tusharmath.github.io.git"
+git push -f remote "https://$GH_TOKEN@github.com/$tusharmath"
