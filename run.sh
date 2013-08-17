@@ -1,20 +1,7 @@
 #Generating  Data
 echo ">> Generating Data"
 git checkout develop
-wintersmith build --output='bin'
-rm -rf .git
-
-
-#Setup Master Branch
-echo ">> Setup Master branch"
-rm -rf .github-master
-git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
-rm -rf .github-master/articles
-
-#Copy files
-echo ">> Copying files"
-cp -r bin/ .github-master
-
+wintersmith build --output='.github-master'
 
 #Prepare Commit
 echo ">> Preparing to commit"
