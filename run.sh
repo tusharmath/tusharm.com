@@ -7,6 +7,10 @@ rm -rf .github-master
 echo ">> Cloning repo"
 git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
 
+#Remove files
+echo ">> Removing all old files"
+rm -R .github-master
+
 #Wintersmith build
 echo ">> Wintersmith Build"
 wintersmith build --output='bin'
