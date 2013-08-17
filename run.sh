@@ -12,12 +12,13 @@ git checkout develop
 
 #Change dir
 cd github-master
-git checkout master --force
+git checkout master
 git config credential.helper "store --file=../.git/credentials"
 
 #Prepare Commit
 echo ">> Preparing to commit"
-git commit -am "deploy from Travis"
+git add --all
+git commit -m "deploy from Travis"
 
 #Pushing
 echo ">> Pushing to Git Hub"
