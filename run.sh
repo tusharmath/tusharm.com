@@ -31,4 +31,4 @@ echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
 #Pushing
 echo ">> Pushing to Git Hub"
-git push
+git push origin
