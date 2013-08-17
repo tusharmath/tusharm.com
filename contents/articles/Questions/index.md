@@ -5,7 +5,7 @@ date: 2013-08-3
 category: personal
 template: article.jade
 ---
-Following are the answers to some of the questions that most women want me to answer...
+Answers to a questionnaire from a very special person, who has been naughty for a while ;)
 
 #Questionare
 
