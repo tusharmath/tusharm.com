@@ -2,9 +2,9 @@
 git config --global user.email "support@travis-ci.org"
 git config --global user.name "travisbot"
 git config --global push.default current
-git config credential.helper "store --file=.git/credentials"
+ 	
 echo "https://$GH_TOKEN:@github.com" > .git/modules/github-master/credentials
-echo $GH_TOKEN
+
 #Generating  Data
 echo ">> Generating Data"
 git checkout develop
@@ -12,6 +12,7 @@ git checkout develop
 
 #Change dir
 cd github-master
+git config credential.helper "store --file=.git/modules/github-master/credentials"
 
 #Prepare Commit
 echo ">> Preparing to commit"
