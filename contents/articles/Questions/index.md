@@ -40,7 +40,7 @@ _Bridal clothes_
 8. Where would you like to spend your first night ( if you know what we mean ;))  
 _On a single bed no matter where it is_
 
-9. What is your kinky fetish ( roleplaying, massages, handcuffs, spanking etc )?
+9. What is your kinky fetish ( roleplaying, massages, handcuffs, spanking etc )?  
 _Blowjobs and massages_
 
 10. What scent turns you on ( fruity, vanilla,chocolate etc )?  
