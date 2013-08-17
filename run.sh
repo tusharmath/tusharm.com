@@ -12,7 +12,7 @@ git checkout develop
 
 #Change dir
 cd github-master
-git config credential.helper "store --file=.git/modules/github-master/credentials"
+git config credential.helper "store --file=../.git/modules/github-master/credentials"
 
 #Prepare Commit
 echo ">> Preparing to commit"
