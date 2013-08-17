@@ -5,7 +5,7 @@ rm -rf .github-master
 
 #Clone Repo using https
 echo ">> Cloning repo"
-#git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
+git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
 
 #Wintersmith build
 echo ">> Wintersmith Build"
@@ -15,6 +15,7 @@ wintersmith build --output='bin'
 echo ">> Copying files"
 copy bin/** .github-master
 
+echo "Change Dir to .github-master"
 cd .github-master
 
 echo ">> Setting up user details"
