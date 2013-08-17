@@ -18,7 +18,7 @@ git config credential.helper "store --file=../.git/credentials"
 #Prepare Commit
 echo ">> Preparing to commit"
 git add --all
-git commit -m "deploy from Travis"
+git commit -m "deploy from Travis [ci skip]"
 
 #Pushing
 echo ">> Pushing to Git Hub"
