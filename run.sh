@@ -1,5 +1,3 @@
-GH_TOKEN="d5ab1906e27ad4a3cbd32743fda35b71336f663a"
-
 #Generating  Data
 echo ">> Generating Data"
 git checkout develop
