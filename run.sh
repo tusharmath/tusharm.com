@@ -11,7 +11,7 @@ git config user.name "travisbot"
 git add --all .
 git commit -m "deploy from Travis"
 git config credential.helper "store --file=.git/credentials"
-echo "git://$GH_TOKEN:@github.com" > .git/credentials
+echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
 #Pushing
 echo ">> Pushing to Git Hub"
