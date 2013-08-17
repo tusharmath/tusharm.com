@@ -11,7 +11,6 @@ rm -rf .git
 echo ">> Setup Master branch"
 rm -rf .github-master
 git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
-rm -rfv .github-master/
 
 
 #Copy files
