@@ -4,7 +4,7 @@ rm -rf .github-master
 
 #Clone Repo using https
 echo ">> Cloning repo"
-git clone "git@github.com:tusharmath/tusharmath.github.io.git" .github-master
+git clone "https://github.com/tusharmath/tusharmath.github.io.git" .github-master
 
 #Wintersmith build
 echo ">> Wintersmith Build"
