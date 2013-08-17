@@ -8,7 +8,7 @@ echo "https://$GH_TOKEN:@github.com" > .git/credentials
 #Generating  Data
 echo ">> Generating Data"
 git checkout develop
-wintersmith build --output='github-master'
+./node_modules/wintersmith/bin/wintersmith build --output='github-master'
 
 #Change dir
 cd github-master
