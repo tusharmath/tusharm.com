@@ -1,11 +1,12 @@
 #Configuration
+MODULE_NAME=".deploy-master"
 git config --global user.email "support@travis-ci.org"
 git config --global user.name "travisbot"
 git config --global push.default current 	
 echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
 #Checkout master
-cd github-master
+cd $MODULE_NAME
 git checkout master --force
 git config credential.helper "store --file=../.git/credentials"
 
@@ -14,11 +15,11 @@ git config credential.helper "store --file=../.git/credentials"
 cd ..
 echo ">> Generating Data"
 git checkout develop
-./node_modules/wintersmith/bin/wintersmith build --output='github-master'
+./node_modules/wintersmith/bin/wintersmith build --output='$MODULE_NAME'
 
 
 #Prepare Commit
-cd github-master
+cd $MODULE_NAME
 echo ">> Preparing to commit"
 git add --all
 echo ">> Git Status"	
