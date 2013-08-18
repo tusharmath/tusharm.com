@@ -6,7 +6,7 @@ git config --global push.default current
 echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
 #Checkout master
-cd $MODULE_NAME
+cd "$MODULE_NAME"
 git checkout master --force
 git config credential.helper "store --file=../.git/credentials"
 find . ! -name ".git" -type f | xargs rm -f
@@ -16,11 +16,11 @@ find . ! -name ".git" -type f | xargs rm -f
 cd ..
 echo ">> Generating Data"
 git checkout develop
-./node_modules/wintersmith/bin/wintersmith build --output='$MODULE_NAME'
+./node_modules/wintersmith/bin/wintersmith build --output="$MODULE_NAME"
 
 
 #Prepare Commit
-cd $MODULE_NAME
+cd "$MODULE_NAME"
 echo ">> Preparing to commit"
 git add --all
 echo ">> Git Status"	
