@@ -9,6 +9,7 @@ echo "https://$GH_TOKEN:@github.com" > .git/credentials
 cd $MODULE_NAME
 git checkout master --force
 git config credential.helper "store --file=../.git/credentials"
+find . ! -name ".git" -type f | xargs rm -f
 
 
 #Generating  Data
