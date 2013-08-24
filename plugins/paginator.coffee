@@ -19,6 +19,7 @@ module.exports = (env, callback) ->
     # helper that returns a list of articles found in *contents*
     # note that each article is assumed to have its own directory in the articles directory
     articles = contents[options.articles]._.directories.map (item) -> item.index
+    (articles = articles.filter (article) -> article.metadata.category is type) if type
     articles.sort (a, b) -> b.date - a.date
     return articles
 

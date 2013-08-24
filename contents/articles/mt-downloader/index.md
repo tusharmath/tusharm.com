@@ -6,7 +6,8 @@ category: career
 template: project.jade
 ---
 
-Why would someone want a **multi threaded downloader**? Well, the answer is quite simple - To increase download speed.
+Why would someone want to use **segmented file transfer**? Well, the answer is quite simple - To increase download speed.
+You could checkout this [wiki](http://en.wikipedia.org/wiki/Segmented_file_transfer) to learn more about it or just read on to get a gist if what it does.
 
 What it really does is, it makes multiple connections with the server from where the file has to be downloaded. Now since data is sent in packets on those connections. There is always little bit of a lag between these packets. This especially happens if you have a low speed internet connection or there are multiple applications using the internet at the same time.
 
