@@ -1,1 +1,3 @@
 bin
+.deploy-master
+.git-modules
