@@ -84,14 +84,15 @@ template: article.jade
 
 11.	How is a NULL character represented in Javascript?  
 	Ans. Null character can be represented using '\0' or \u0000
+
 12.	How are RegEx represented in Javascript?  
 	Ans. RegEx are not primitive types but can still be initialized using literals with forward slashes, for e.g.
 	```javascript
 	var pattern = /[1-9][0-9]*/
 	```
 
-13.	What are falsy values in Javascript?  
-	Ans. ```undefined```, ```null```, 0, -0, NaN, "" are all falsy values. When equated to false the result is always true.
+13.	What are *falsy* values in Javascript?  
+	Ans. ```undefined```, ```null```, 0, -0, NaN, "" are all *falsy* values. When equated to false the result is always true. Other than these values everything else is javascript is a *truthy* values.
 
 14.	What is the difference between ```null``` and ```undefined```?  
 	Ans. Comparison of ```null``` and ```undefined``` - 
@@ -102,10 +103,10 @@ template: article.jade
 	* Undefined has a deeper meaning - represents that the variable has not be assigned a value and is generally considered as a system level absence of value.
 	* ```null``` can be considered as a program level absence of value.
 
-15.	What is a method?
+15.	What is a method?  
 	Ans. When functions are referred as properties of objects, they are called as methods.
 	
-16.	If string, number, boolean are of primitive types then why do they have methods and properties associated with them?
+16.	If string, number, boolean are of primitive types then why do they have methods and properties associated with them?  
 	Ans. Whenever a property is accessed in any of the string, number or boolean type object the interpreter creates a temporary object using there constructors. It then refers to the properties and methods and later discards that object.
 	
 17.	What will be the output of the following code?
@@ -127,5 +128,95 @@ template: article.jade
 	```
 	Ans. The output will ```true``` and ```false```. This is because the ```typeof x``` and ```typeof y``` are different as x is a primitive type ```number``` and y is of object type ```object```.
 
+19.	Compare and contrast primitive and object types.  
+	Ans. 
 
+	**Primitive:** ```null```, ```undefined```, ```number```, ```string```, ```boolean```
+	* They are compared using only values and thus are also called as *value type*
+	* They are immutable. You can not modify the values but you can create a copy.
+	
+	**Object:**  ```Function```, ```Object```, ```Array```, ```Date```, ```Error```, ```TypeError```, ```RegEx```
+	* They are *reference type* and two objects are equal only if their references are equal.
+	* They are mutable.
 
+20. Can ```undefined``` and ```null``` be type casted to ```Object``` type?  
+Ans. No, it will throw a ```TypeError``` exception.
+
+21. How are arrays converted to strings?
+Ans.
+	```javascript
+	[].toString() // => ""
+	[1].toString() // => "1" or "a"
+	[1,2,3].toString() // => "1, 2, 3" or "a, b, c"
+	```
+22. How are different types of values converted to number type?  
+Ans.
+	* Strings that can be parsed as numbers are converted to numbers else produce a ```NaN``` value. Empty strings are 0.
+	* ```true``` is 1 and ```false``` is 0.
+	* Arrays with single elements are parsed and the first element is parsed again to check if it can be a number else ```NaN``` is returned by default.
+
+23. How are primitive to Object conversion carried out?  
+Ans. Simply using there wrapper objects.
+
+24. Is is legal to use a variable without declaring it?
+Ans. It is not allowed in Strict mode. In case you still do it you will assign the variable as a property to the global object
+
+25. What happens in the following code - 
+	```javascript 
+	a = 100
+	 
+	(function(){
+		a = 200;
+		b = 300;
+	}());
+	
+	console.log(a+b)
+	```
+	Ans. The answer is ```500```. Because if we use a non declared variable anywhere in the code it is assigned to the Global object as a property.
+	
+26.	What is the output of the following code - 
+	
+	```javascript
+	var _whatIsMyName = function() {
+		console.log(this.name);
+	};
+	
+	var item = {
+		name: 'Grandpa',
+		whatIsMyName: _whatIsMyName,
+		child: {
+			name: 'Father',
+			whatIsMyName: _whatIsMyName,
+			child: {
+				name: 'Son',
+				whatIsMyName: _whatIsMyName
+			}
+		}
+	};
+	
+	item.whatIsMyName();
+	item.child.whatIsMyName();
+	item.child.child.whatIsMyName();
+	```
+	Ans.
+	```bash
+	Grandpa
+	Father
+	Son
+	```
+27.	Determine the output of the following code -
+
+	```javascript 
+	var b = 'mangoes';	
+	var c = 'apples';
+	(function() {
+		console.log(b,c);
+		var b = 100;
+		c = 30;
+	}());
+	```
+	Ans. The output will be ```undefined```. This feature of Javascript is called as *Hoisting*. Accessibility to variables which are yet to be initialized.
+	
+***
+
+More on **Type Conversion** later, till then take a look at this [snapshot](type-conversions.png) from the book.
