@@ -5,7 +5,7 @@ git config --global user.name "travisbot"
 git config --global push.default current 	
 echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
-#Clone master
+#Clone master 
 git clone https://github.com/tusharmath/tusharmath.github.io.git $MODULE_NAME -b master
 cd "$MODULE_NAME"
 git config credential.helper "store --file=../.git/credentials"
