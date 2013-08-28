@@ -5,12 +5,11 @@ git config --global user.name "travisbot"
 git config --global push.default current 	
 echo "https://$GH_TOKEN:@github.com" > .git/credentials
 
-#Checkout master
+#Clone master
+git clone https://github.com/tusharmath/tusharmath.github.io.git $MODULE_NAME -b master
 cd "$MODULE_NAME"
-git checkout master --force
 git config credential.helper "store --file=../.git/credentials"
 find . ! -name ".git" -type f | xargs rm -f
-
 
 #Generating  Data
 cd ..
