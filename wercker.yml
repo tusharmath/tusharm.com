@@ -1,0 +1,5 @@
+deploy:
+  steps:
+    - lukevivier/gh-pages:
+        token: $GH_TOKEN
+        basedir: build
