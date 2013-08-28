@@ -11,4 +11,4 @@ These are my personal notes from [David Flanagan's Javascript the Definitive Gui
 
 ##Index
 * [Chapter 3 - Types, Values and Variables](Chapter-3.html)
-* Chapter 4 - Expressions and Operators *(coming soon)*
+* Chapter 4 - Expressions and Operators *(coming soon...)*
