@@ -1,6 +1,5 @@
 {
 	"template": "words.jade",
-	"author":"tushar-mathur",
 	"title":"Mnemonics Dictionary",
 	"mnemonicsdata": [{
 		"word": "abase",
