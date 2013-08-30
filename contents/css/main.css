@@ -449,3 +449,12 @@ code.lang-markdown .bullet {
   }
 }
 
+.word{
+	margin-bottom: 12px;
+	border-bottom: 1px dashed #D2D2D2;
+	padding-bottom: 12px;
+}
+
+.word .mnemonics{
+	font-size: .7em;
+}
