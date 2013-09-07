@@ -2,7 +2,7 @@
 title: Get PNR Status
 author: tushar-mathur
 date: 2013-09-7
-category: career
+category: project
 template: project.jade
 ---
 

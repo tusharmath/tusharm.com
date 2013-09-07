@@ -3,7 +3,7 @@ title: Geocode your life
 author: tushar-mathur
 date: 2013-sep-3
 template: project.jade
-category: career
+category: project
 ---
 I wanted to write this blog about one of my undergrad projects - **Paunkie**.
 

@@ -2,7 +2,7 @@
 title: Z.S. Data Integration
 author: zs-associates
 date: 2011-02-01
-category: career
+category: project
 template: project.jade
 ---
 

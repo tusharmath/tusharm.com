@@ -2,7 +2,7 @@
 title: Node.js Mt Downloader
 author: tushar-mathur
 date: 2013-08-3
-category: career
+category: project
 template: project.jade
 ---
 
