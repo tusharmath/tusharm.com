@@ -15,6 +15,19 @@ There were quite a few browser extensions that were present. Unfortunately I din
 ##How is this different?
 Well, this keeps polling the server for the latest status and displays it on the screen.
 
+##Installation
+
+```bash
+npm install -g pnr-status
+```
+
+##Usage
+
+Simple pass the PNR number as a parameter to the ```pnr-status``` command.
+```bash
+pnr-status 8216477093
+```
+
 ##Interesting Features
 
 * Notify via email, msg or call once the ticket is booked.
