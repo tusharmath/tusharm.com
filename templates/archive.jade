@@ -10,7 +10,6 @@ block content
 	- for (var archive in archives) {
 	-	archives[archive] = _.groupBy(archives[archive], function(item){return item.date.getMonth();})
 	- }
-
 	- var month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 	section.archive
 		h2 Archive
@@ -23,9 +22,7 @@ block content
 					span.year-label(style='line-height:' + yearHeight+'em')=yearsK[year]
 					ul(style='margin-left:4em')
 						- var monthsK = _.chain(months).keys().reverse().value()
-						- console.log(monthsK)
 						- for(month in monthsK){
-							
 							- var monthHeight = lineHeight * months[monthsK[month]].length
 							li(style='height:' + monthHeight+'em')
 								span.month-label(style='line-height:'+monthHeight+'em')=month_names[monthsK[month]]
