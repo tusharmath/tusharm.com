@@ -1,8 +1,5 @@
----
-view: none
----
-Hi, I am **Tushar Mathur**. I am a software engineer. I see software as something which can help people in making their lives easier. Most of my free time is spent in front of the computer trying to think of solutions to problems in my pet projects. I have worked on ```.net``` ```C#``` ```HTML``` ```JavaScript``` ```Node.js``` and ```CoffeeScript```.
+Hi, I am **Tushar Mathur**. I am the kind of person who constantly tries to make my everyday tasks simpler and software is something that enables me to do so. I have developed a lot of free apps for my friends and myself. I have been working on `.net`, `C#`, `PowerShell`, `HTML`, `JavaScript`, `CoffeeScript`, `node.js` and some other languages. I want to do research in programming languages and want to work on improvising its performance and usability. In my free time I like to get into never ending philosophical conversations. It works as a stress buster for me. I also like to a gourmet from time to time.
 
-*About this blog:* It is not a pure technical blog, this blog is a personal space that I have created for my self. So you should be expecting psychological, social, philosophical and some scientific conversations. Occasionally I may post some technical information. I will also post information about my own projects or something that I am proud off. 
+*About this blog:* This is not a pure technical blog, this blog is a personal space that I have created for my self. If you want to see a sample of the things that I have done so far, then you should checkout my [projects](/projects.html) page.
 
-*Right now:* I am working on JavaScript extensively, not on the client side so much but the server side using Node.js. I am practicing algorithms and data structures using CoffeeScript since I have lost the touch of it.
+*Right now:* I am working on JavaScript and CoffeeScript extensively, not on the client side so much but the server side using Node.js.
