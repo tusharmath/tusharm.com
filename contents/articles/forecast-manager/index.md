@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Javelin Forecast Manager
 author: zs-associates
 date: 2011-06-01

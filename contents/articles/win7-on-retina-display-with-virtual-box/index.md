@@ -1,5 +1,4 @@
 ```metadata
-	
 title: How to configure windows on Mac (retina) using virtual box
 author: tushar-mathur
 date: 2013-07-09

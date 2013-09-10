@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Geocode your life
 author: tushar-mathur
 date: 2013-sep-3

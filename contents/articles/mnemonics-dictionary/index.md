@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Mnemonics Dictionary
 author: tushar-mathur
 date: 2013-08-30

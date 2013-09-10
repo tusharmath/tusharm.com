@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Misconceptions about driving at night
 author: tushar-mathur
 date: 2013-06-03

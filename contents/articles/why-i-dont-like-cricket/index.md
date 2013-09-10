@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Why I don't like cricket?
 author: tushar-mathur
 date: 2013-06-11

@@ -1,5 +1,4 @@
 ```metadata
-	
 title: ShareBill
 author: tushar-mathur
 date: 2012-nov-10

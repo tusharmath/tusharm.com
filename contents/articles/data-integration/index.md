@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Z.S. Data Integration
 filename: /projects/:year/:month/:title.html
 author: zs-associates

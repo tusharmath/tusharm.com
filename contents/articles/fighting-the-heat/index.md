@@ -1,5 +1,4 @@
 ```metadata
-	
 title: Fighting the heat
 author: tushar-mathur
 date: 2013-06-06
