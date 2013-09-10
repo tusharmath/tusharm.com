@@ -17,7 +17,9 @@ block content
 			- var yearsK = _.chain(archives).keys().reverse().value()
 			- for(var year in yearsK)
 				- months = archives[yearsK[year]]
-				- var yearHeight = lineHeight * _.reduce(months, function(memo,month) { return memo + month.length; }, 0);
+				- var yearHeight = lineHeight * _.reduce(months, function(memo,month) { 
+				-	return memo + month.length;
+				- }, 0);
 				li
 					span.year-label(style='line-height:' + yearHeight+'em')=yearsK[year]
 					ul(style='margin-left:4em')
