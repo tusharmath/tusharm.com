@@ -1,9 +1,10 @@
----
+```metadata
+	
 title: Javascript Interview Questions
 author: tushar-mathur
 date: 2013-08-24
 template: article.jade
----
+```
 #Chapter 3 - Types, Values and Variables
 1.	What are the different categories of objects in Javascript?  
 	Ans.	Primitive: ```undefined```, ```null```, String, Boolean, Number

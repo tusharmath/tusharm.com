@@ -1,9 +1,10 @@
----
+```metadata
+	
 title: How to configure windows on Mac (retina) using virtual box
 author: tushar-mathur
 date: 2013-07-09
 template: article.jade
----
+```
 You don't have any money left to buy Parallels or Fusion so you are stuck up with Virtual box for the time being. Virtual box unfortunately does not provide a support for retina displays (At the time of writing this document).
 
 You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic	!

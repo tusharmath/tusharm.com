@@ -1,9 +1,11 @@
----
+```metadata
+	
 title: DOs and DON'Ts while making biryani
+	
 author: tushar-mathur
 date: 2013-06-11
 template: article.jade
----
+```
 I tried to copy a lot of biryani recipes that are on the internet and in that process I wasted a lot of meat and rice.
 
 >It's all about the proportions ultimately so don't take it casually

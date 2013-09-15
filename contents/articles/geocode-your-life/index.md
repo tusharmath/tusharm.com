@@ -1,10 +1,11 @@
----
+```metadata
+	
 title: Geocode your life
 author: tushar-mathur
 date: 2013-sep-3
 template: project.jade
 category: project
----
+```
 I wanted to write this blog about one of my undergrad projects - **Paunkie**.
 
 I was working as an intern in [Indigo Architects](http://indigoarchitects.com/) and was learning web development. I worked on multiple projects while I was there and **Paunkie** was one application I built to showcase some of the things that I had learnt.

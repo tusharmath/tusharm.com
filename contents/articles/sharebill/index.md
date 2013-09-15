@@ -1,10 +1,11 @@
----
+```metadata
+	
 title: ShareBill
 author: tushar-mathur
 date: 2012-nov-10
 category: project
 template: project.jade
----
+```
 
 I had a couple roommates back when I was working in ZS Associates. I had faced a lot issues while calculating shared expenses. Since I always wanted to make sure that we din't make any mistakes in our calculations I spent some time in creating a Google Doc Spreadsheet for it. It worked fine as it served my purpose and the purpose of some of my friends. The problem was that it was just not the right thing to use if you had more than four people in the group which shared expenses. It looked ugly, would be really slow and any one could tamper the formulas.
 

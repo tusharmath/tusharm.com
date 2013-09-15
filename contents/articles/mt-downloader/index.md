@@ -1,10 +1,11 @@
----
+```metadata
+	
 title: Node.js Mt Downloader
 author: tushar-mathur
 date: 2013-08-3
 category: project
 template: project.jade
----
+```
 
 Why would someone want to use **segmented file transfer**? Well, the answer is quite simple - To increase download speed.
 You could checkout this [wiki](http://en.wikipedia.org/wiki/Segmented_file_transfer) to learn more about it or just read on to get a gist if what it does.
