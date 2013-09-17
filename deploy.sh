@@ -5,6 +5,12 @@ PUBLISH_PATH="./build"
 BRANCH="master"
 WINTERSMITH="./node_modules/wintersmith/bin/wintersmith"
 
+# Turn off warnings about SSH keys:
+ echo "Host heroku.com" >> ~/.ssh/config
+ echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+ echo "   CheckHostIP no" >> ~/.ssh/config
+ echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+
 echo "Add Global Credentials"
 git config --global user.email "tusharmath@gmail.com"
 git config --global user.name "Travis-CI"
@@ -14,7 +20,7 @@ echo "https://$HEROKU_API_KEY:@github.com" > .git/credentials
 
 
 echo "Clone Repositoy"
-git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --quiet --force
+git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --quiet
 
 
 echo "Clear Items in master branch"
