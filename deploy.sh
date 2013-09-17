@@ -10,7 +10,8 @@ rm -rf $PUBLISH_PATH
 mkdir $PUBLISH_PATH
 
 #Clone Repositoy and checkout master
-git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --verbose --single-branch
+#adding force to test
+git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --force --verbose --single-branch
 git checkout --force master
 
 #Clear Items in master branch
