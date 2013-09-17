@@ -9,10 +9,8 @@ WINTERSMITH="./node_modules/wintersmith/bin/wintersmith"
 rm -rf $PUBLISH_PATH
 mkdir $PUBLISH_PATH
 
-#Clone Repositoy and checkout master
-#adding force to test
-git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --force --verbose --single-branch
-git checkout --force master
+#Clone Repositoy
+git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --verbose --single-branch
 
 #Clear Items in master branch
 rm -r $PUBLISH_PATH/*
