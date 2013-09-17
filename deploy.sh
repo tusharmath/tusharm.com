@@ -26,6 +26,16 @@ echo "Modified Files"
 git status
 
 
-#Add Credentials
-git commit -m "Deploy from travis"
-git push --repo=$TO_REPOSITORY --force --verbose
+#Add Global Credentials
+git config --global user.email "tusharmath@gmail.com"
+git config --global user.name "Travis-CI"
+
+
+#Set up authentication
+git config credential.helper "store --file=.git/credentials"
+echo "https://${HEROKU_API_KEY}:@github.com" > .git/credentials
+
+
+#Commit and push
+git commit -m "Deploy from travis" --dry-run
+git push --repo=$TO_REPOSITORY --force --verbose --dry-run
