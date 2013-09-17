@@ -1,7 +1,7 @@
 #Statics
 FROM_REPOSITORY="https://github.com/tusharmath/tusharmath.github.io.git"
 TO_REPOSITORY="git@heroku.com:tusharm.git"
-PUBLISH_PATH="./temp/build"
+PUBLISH_PATH="./build"
 BRANCH="master"
 WINTERSMITH="./node_modules/wintersmith/bin/wintersmith"
 
