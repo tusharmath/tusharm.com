@@ -14,7 +14,7 @@ echo "https://$HEROKU_API_KEY:@github.com" > .git/credentials
 
 
 echo "Clone Repositoy"
-git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --verbose --quiet
+git clone $TO_REPOSITORY $PUBLISH_PATH --branch $BRANCH --quiet --force
 
 
 echo "Clear Items in master branch"
