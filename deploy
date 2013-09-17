@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+#Statics
+REPOSITORY="https://github.com/tusharmath/tusharmath.github.io.git"
+PUBLISH_PATH="./temp/build"
+BRANCH="master"
+WINTERSMITH="./Node_Modules/wintersmith/bin/wintersmith"
+
+#Clear Folder
+rm -rf $PUBLISH_PATH
+mkdir $PUBLISH_PATH
+
+#Clone Repositoy
+git clone $REPOSITORY $PUBLISH_PATH --branch $BRANCH --verbose --single-branch
+
+#Clear Items in master branch
+rm -r $PUBLISH_PATH/*
+wintersmith build -o $PUBLISH_PATH
+git add .
+git commit -m "Deploy from travis"
+git push --dry-run --repo=$REPOSITORY --force --verbose
