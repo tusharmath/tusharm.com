@@ -18,23 +18,21 @@ git checkout --force master
 rm -r $PUBLISH_PATH/*
 wintersmith build -o $PUBLISH_PATH
 
+#Remove upper .git folder
+rm -rf ./.git
+
 #Change dir
 cd $PUBLISH_PATH
-git add --all
-
-#Show git Status
-echo "Modified Files"
-git status
-
+git add --all . --verbose
 
 #Add Global Credentials
 git config --global user.email "tusharmath@gmail.com"
 git config --global user.name "Travis-CI"
-
+echo "https://$HEROKU_API_KEY:@github.com" > .git/credentials
 
 #Set up authentication
 git config credential.helper "store --file=.git/credentials"
-echo "https://${HEROKU_API_KEY}:@github.com" > .git/credentials
+
 
 
 #Commit and push
