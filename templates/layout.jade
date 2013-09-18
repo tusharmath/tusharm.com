@@ -32,9 +32,12 @@ html(lang='en')
 					section.about
 						!=contents['about.md'].html						
 						br
-						a(href="https://twitter.com/tusharmath", class="twitter-follow-button", data-show-count="false") Follow @tusharmath
-						iframe(src='http://ghbtns.com/github-btn.html?user=tusharmath&type=follow', allowtransparency='true', frameborder='0', scrolling='0', width='160', height='20')
-
+						div
+							a(href="https://twitter.com/tusharmath", class="twitter-follow-button", data-show-count="false") Follow @tusharmath
+						div
+							iframe(src='http://ghbtns.com/github-btn.html?user=tusharmath&type=follow', allowtransparency='true', frameborder='0', scrolling='0', width='160', height='20')
+						div
+							a(href="/file/cv.pdf") Curriculum Vitae
 					section.copy
 						p &copy; #{ new Date().getFullYear() } #{ locals.owner }
 							//- please leave the "powered by" if you use the design
