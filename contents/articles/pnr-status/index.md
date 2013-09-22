@@ -34,3 +34,12 @@ Here is list of interesting features that I would want to add later.
 * Add a web version
 
 Feel free to share some more features that would be interesting [here](https://github.com/tusharmath/pnr-status/issues) or in the comments below.
+
+
+#Update:
+
+I developed a desktop application for Mac, more updates on it later. Check out the snapshot in the mean time.
+
+![Pnr-Live][2]
+
+[2]: pnr-live.jpeg "Title"
