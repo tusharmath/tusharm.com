@@ -7,6 +7,7 @@ repo="https://github.com/tusharmath/tusharmath.github.io.git"
 ##Remove Folder
 echo "Clearing Files"
 rm -rf $path
+mkdir $path
 
 #Remove remote master branch
 echo "Removing master branch:"
