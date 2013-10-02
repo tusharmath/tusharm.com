@@ -1,4 +1,3 @@
-#!/bin/sh
 #Constants
 dryrun=$1
 path="./temp/dump/master"
