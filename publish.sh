@@ -13,11 +13,11 @@ rm -rf $path
 cd $path
 
 #Remove remote master branch
+echo "Removing master branch:"
 git push $repo :master
 
 #Build Project
 wintersmith build -o $path
-
 
 git add --all
 
@@ -28,7 +28,7 @@ git status
 #Publish
 echo "\nPushing Changes:"
 git commit -m "Publishing to web $timestamp" $dryrun
-git push github master $dryrun --quiet
+git push $repo master $dryrun --quiet
 
 #Remove Temp folder
 #cd ../../../
