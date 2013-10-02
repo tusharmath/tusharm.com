@@ -2,7 +2,7 @@
 dryrun=$1
 path="./temp/dump/master"
 branch="master"
-
+timestamp=date
 ##Remove Folder
 echo "Clearing Files"
 rm -rf $path
@@ -24,11 +24,13 @@ cd $path
 git add --all
 
 #Show Status
-git status $path
+echo "File Status:"
+git status
 
 #Publish
-git commit -m "Publishing to web" $dryrun
-git push origin master $dryrun
+echo "\nPushing Changes:"
+git commit -m "Publishing to web $timestamp" $dryrun
+git push origin master $dryrun --quiet
 
 #Remove Temp folder
 cd ../../../
