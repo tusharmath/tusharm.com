@@ -2,15 +2,11 @@
 dryrun=$1
 path="./temp/dump/master"
 branch="master"
-timestamp=date
+timestamp=`eval date`
 repo="https://github.com/tusharmath/tusharmath.github.io.git"
 ##Remove Folder
 echo "Clearing Files"
 rm -rf $path
-
-
-#Change Working Dir
-cd $path
 
 #Remove remote master branch
 echo "Removing master branch:"
@@ -19,6 +15,8 @@ git push $repo :master
 #Build Project
 wintersmith build -o $path
 
+#Change directory
+cd $path
 git add --all
 
 #Show Status
