@@ -10,4 +10,5 @@ deploy:
     - lukevivier/gh-pages:
         repo: tusharmath/tusharmath.github.io
         token: $GH_TOKEN
+        domain: tusharm.com
         basedir: build
