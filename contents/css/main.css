@@ -471,6 +471,7 @@ code.lang-markdown .bullet {
 
 .top-nav ul li{
     display: inline-block;
+    box-shadow: 0px 1px 8px 0px #000;
 }
 
 .top-nav ul li a{
@@ -495,6 +496,6 @@ code.lang-markdown .bullet {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 2px;
+	height: 4px;
 	background-color: #F00;
 }
