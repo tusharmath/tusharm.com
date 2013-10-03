@@ -162,7 +162,7 @@ footer .about {
   column-gap: 2em;
 }
 
-footer .copy {
+footer .copy p {
   text-align: center;
   font-size: 0.7em;
   font-style: italic;
