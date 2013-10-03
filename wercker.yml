@@ -1,0 +1,13 @@
+box: wercker/nodejs
+build:
+  steps:
+    - npm-install
+    - script:
+        name: wintersmith build
+        code: ./node_modules/.bin/wintersmith build -o ./build
+deploy:
+  steps:
+    - lukevivier/gh-pages:
+        repo: tusharmath/tusharmath.github.io
+        token: $GH_TOKEN
+        basedir: build
