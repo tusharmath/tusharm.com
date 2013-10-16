@@ -40,6 +40,4 @@ Feel free to share some more features that would be interesting [here](https://g
 
 I developed a desktop application for Mac. Now I am working on a [chrome app](https://github.com/tusharmath/chrome-pnr-status) since that would be smaller in size,  more updates on it later. Check out the snapshot in the mean time.
 
-![Pnr-Live][2]
-
-[2]: pnr-live.jpeg "Title"
+<img src="pnr-live.jpeg" style="height:50%; width: 50%;" />

@@ -1,37 +1,24 @@
 ```metadata
 title: Geocode your life
 author: tushar-mathur
-date: 2013-sep-3
+date: 2013-oct-17
 template: project.jade
 category: project
 ```
-I wanted to write this blog about one of my undergrad projects - **Paunkie**.
+I wanted to write this blog about one of my undergrad projects - **Paunkie**. A social networking website which was based on maps. We were a team of two undergrad students who were being mentored by Mrs. Vaishali Dharkar as our project guide. It was inspired by [Serenedipity](https://indigoarchitects.com/CaseStudy/Mobile_Serendipity.aspx), one of [Indigo Architects](http://indigoarchitects.com/) niche products. I was able to convince my partner and our project guide that it was a cool idea and would definitely qualify for a research based project.
 
-I was working as an intern in [Indigo Architects](http://indigoarchitects.com/) and was learning web development. I worked on multiple projects while I was there and **Paunkie** was one application I built to showcase some of the things that I had learnt.
+The concept of **Paunkie** was to *Geocode you life*. Basically, everything and anything you did or your friends did, could be pinned on to a map and shared within your social network. The best part of the application were the algorithms for generating recommendations in real time.
 
-The concept of **Paunkie** was to *Geocode you life*. Basically everything you did could be pinned to the map and shared within your social network. You could visualise the things you have done in the past geographically. 
+We just had enough time to prototype the concept and were not able to build a production ready application. Later we realised that no one really is **Production Ready** until they push the code to production :) 
 
-##Summary
-* You could share your location with people and see their current locations.
-* You could also know where all your friends are and the places that were popular amongst them.
-* Based on your profile and your friends profile, the app would suggest people you might know and places you might want to visit. All the results were dynamic in nature so when ever your location would get updated you would get recommendations based on your new location.
-* I used asp.net MVC3, and loads of JavaScript and [jQuery](http://jquery.com).
-* I worked extensively on making the user interface responsive and also tried to utilise maximum screen real estate on the screen as the app was all about visualising your social connections in an aesthetically appealing way.
-* It was quite essentially a social networking website which was based on Google Maps. 
-* It was designed as *Single Page App* with loads of JavaScript communicating with web services. This is the time when HTML5 standards had not come up and none of the browsers had native support for such powerful features like *push state, web workers*.
+Some time back when I started going through my archives I found a couple of snapshots of our application —
 
-I worked on it for around a month and this is what I came up with...
+![image](2.jpg) Everything that you might be interested in on the map, based on what you and your friends have been up to.
 
-##Home Screen
-![image](2.jpg)
+![image](3.jpg) No social networking application is complete without a messaging feature.
 
-##Send and receive messages
-![image](3.jpg)
 
-##Adding some place you have visited
-![image](4.jpg)
+![image](4.jpg) Adding a new location of interest to share with your friends.
 
-##See your location
-![image](5.jpg)
 
-Unfortunately there were other things that started interesting me more and I had to stop developing this application.
+![image](5.jpg) You current location (in the middle of the Pacific Ocean).
