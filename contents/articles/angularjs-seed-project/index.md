@@ -9,7 +9,7 @@ Personally I have always preferred building an offline web app when compared to 
 
 <span class="more"/>
 
-When ever I want to create a new web application that worked offline, I just fork this repository and got started. All the workflows are pre built in the project, with a single command I can test my app on multiple browsers, package the app, create a HTML5 Application Cache Manifest file and ultimately publish it to GH-Pages. I could have used Yeoman for the same, but I just found this more comfortable and more suited to my needs.
+Whenever I want to create a new web application that worked offline, I just fork this repository and get started. All the workflows are pre built in the project, with a single command I can test my app on multiple browsers, package the app, create an HTML5 Application Cache Manifest file and ultimately publish it to GH-Pages. I could have used Yeoman for the same, but I just found this more comfortable and more suited to my needs.
 
 Here are the links if you want to know more about the project —
 
