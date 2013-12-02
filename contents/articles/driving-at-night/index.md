@@ -11,6 +11,8 @@ The most common misconception that people have about driving at night is -
 
 So do you really think so? May be, may be not. The thing is that everybody knows the disadvantages of driving at night but no one really pays attention to the advantages of night driving.
 
+---
+
 I would first like to talk about the different light intensities during twilight.
 
 1. First case is the one in which the darkness is subjective to your sensitivity and to your orientation with respect to the sun. So some people would have their head lights switched on and some would have them off. This is a little risky _(understating really)_  because not all people have their lights on, your eyes can only see those people who have their lights on, so you are blinded by those lights now and people with their lights switched off will not be visible. That's the same reason for not being able to see the stars in the day time.

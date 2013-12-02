@@ -7,6 +7,8 @@ template: article.jade
 
 If you are one of those people who keep sweating or have an abnormally high sensitivity towards heat then you are going to benefit from this blog. The idea is to keep your body cool and here are some tips and some science related to it.
 
+<span class="more"/>
+
 Firstly you need to understand that hotness and high temperature are two different things. You may be feeling hot but its not always because the temperature is high. Our sensory system reacts to temperature by calculating the rate at which heat is gained or lost from the body. The following minute physics video elaborates on this concept.
 
 

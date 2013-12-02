@@ -7,7 +7,7 @@ category: project
 ```
 I wanted to write this blog about one of my undergrad projects — **Paunkie**. A social networking website which was based on maps. We were a team of two undergrad students who were being mentored by Prof. Vaishali Dharkar as our guide for this project. It was inspired by [Serenedipity](https://indigoarchitects.com/CaseStudy/Mobile_Serendipity.aspx), one of [Indigo Architects](http://indigoarchitects.com/) niche products. I was able to convince my partner and our project guide that it was a cool idea to build something on similar lines and that it would definitely qualify for a research project.
 
----
+<span class="more"/>
 
 The concept of **Paunkie** was to *Geocode your life*. Basically, everything and anything you did or your friends did, could be pinned on to a map and shared within your social circle. The two key components of the application were the user interface that was designed to be aesthetically acceptable and responsive to various screen sizes, and the [k-means clustering algorithms](en.wikipedia.org/wiki/K-means_algorithm) that generated recommendations in real time.
 

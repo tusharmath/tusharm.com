@@ -8,6 +8,8 @@ You don't have any money left to buy Parallels or Fusion so you are stuck up wit
 
 You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic	!
 
+<span class="more"/>
+
 So here are some steps that you could try out to improve your user experience with Virtual Box till the time they don't provide you with actual retina support.
 
 **Step 1.**

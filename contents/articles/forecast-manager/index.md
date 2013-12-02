@@ -8,6 +8,8 @@ template: project.jade
 
 Forecast Manager was my second project in [Z.S. Associates](http://zsassociates.com). It was a MVC .Net based web application that would help in maintenance of forecasting models. These models were designed in MS Excel and could be merged with each other and to create different versions. The application could also render reports on the web and could help in managing access rights in an extremely customised way, based on each user and each client basis.
 
+<span class="more"/>
+
 The team size was very dynamic but I was the oldest member of the team and knew the inside out of the web application. As a developer I had two roles —
 
 1. **Design and develop features:** I had to convert business needs into technical specifications and research on each feature throughout the full software development cycle. _I worked on multiple features which I will list later_. Development was done in C# mainly. On the UI side we used knockout.js and jQuery to maintain a MVVM design pattern. On the database side we used Entity Framework as an ORM on top of SQL Server 2006.
