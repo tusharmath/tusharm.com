@@ -10,10 +10,11 @@ body {
   line-height: 1.52;
   background-color: #f8f8f8;
   text-rendering: optimizeLegibility;
+  background-size: 149px 139px;
 }
 
 .content-wrap {
-  width: 52em;
+  width: 40em;
   margin: 0 auto;
 }
 
