@@ -5,13 +5,17 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a condensed list of everything that I have done professionally. A single page version of my resume is also available [here](/files/cv.pdf).
+This is a condensed list of everything that I have done professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. My choice of programming languages - `C` `C#` and `CoffeeScript`. 
+
+A *single page version* of my resume is also available [here](/files/cv.pdf).
 
 #Experience
 ###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
 
 ####Forecast Manager
 Developed Core application functionality and features such as Bulk Forecast Generation and User Activity logs. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customisations and Help & Support.
+
+Assisted in setting up a branching strategy for parallel development of multiple client logic into a single code base with a sustainable release & hot-fix plan.
 
 Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation, appear seamless across the transcontinental team & infrastructure.
 
