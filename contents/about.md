@@ -11,23 +11,25 @@ This is a condensed list of everything that I have done professionally. A single
 ###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
 
 ####Forecast Manager
-Developed Core application functionality and features. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customisations and Help & Support. 
+Developed Core application functionality and features such as Bulk Forecast Generation and User Activity logs. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customisations and Help & Support.
 
-Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation appear seamless across the transcontinental team & infrastructure.
+Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation, appear seamless across the transcontinental team & infrastructure.
 
-Automated the complete deployment process for **Forecast Manager** causing a significant reduction in upgrade times. The tool featured - 
+Was responsible for all the **Dev Ops** related tasks for **Forecast Manager**. Automated the complete deployment process, causing a significant reduction in upgrade times. The tool featured - 
 
-* Generation of upgrade & downgrade logs for diagnostics.
-* Auto backup and restore of systems.
+* Generation of upgrade & downgrade logs for diagnostics. 
+* Database Migration.
+* Scheduled tasks migration on remote servers.
+* Auto backup and restore of systems in case of failure.
 * Upgrade multiple systems to different versions in one go.
-* Setup new instances from scratch — bootstrapping databases, generating default application users.
+* Setup new instances from scratch — bootstrapping databases, generating default application users and configuring settings for the app.
 * Auto configure client specific, environment specific and application specific settings for every deployed system.
 * Generate upgrade reports and email notifications in case of upgrade failures.
-* Integrated it with SVN and Jira to auto generate release notes.
+* Integrated it with Subversion and Jira to auto publish release notes.
 * Live site monitoring.
 
 #### User Experience
-Worked on harmonising the user interface across the Javelin suite by creating customisable dynamic web layouts which could be directly integrated into the application via CDN. Assisted in designing and implementing a publishing strategy to ultimately have a centrally maintained version of the UI components.
+Worked on harmonising the user interface across the Javelin suite by creating customisable dynamic web layouts which could be directly integrated into the application via CDN. Assisted in designing and implementing a publishing strategy to ultimately have single version of the UI components that could be maintained centrally, thus reducing a significant amount of time in UI development.
 
 #### Data Integration
 Evaluated cloud based data integration tools primarily **Boomi** and **Pervasive** to integrate our in-house ETL tool — **Javelin Data Manager** with **Salesforce**. Designed and developed data integration solutions to make Javelin Data Manager communicate with Boomi using web services. Prototyped Boomi Processes for simulating how data could be transfered within the Javelin Suite. Took trainings for the consulting team at ZS on Boomi Integration with in-house tools.
