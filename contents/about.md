@@ -5,10 +5,13 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a formal list of everything that I have done professionally in as much detail as possible. 
+This is a condensed list of everything that I have done professionally. A single page version of my resume is also available [here](/files/cv.pdf).
 
 #Experience
-##Software Developer, ZS Associates (Jan 2011 - Jan 2013)
+###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
+
+####Forecast Manager
+Developed Core application functionality and features. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customisations and Help & Support. 
 
 Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation appear seamless across the transcontinental team & infrastructure.
 
@@ -23,17 +26,19 @@ Automated the complete deployment process for **Forecast Manager** causing a sig
 * Integrated it with SVN and Jira to auto generate release notes.
 * Live site monitoring.
 
+#### User Experience
 Worked on harmonising the user interface across the Javelin suite by creating customisable dynamic web layouts which could be directly integrated into the application via CDN. Assisted in designing and implementing a publishing strategy to ultimately have a centrally maintained version of the UI components.
 
+#### Data Integration
 Evaluated cloud based data integration tools primarily **Boomi** and **Pervasive** to integrate our in-house ETL tool — **Javelin Data Manager** with **Salesforce**. Designed and developed data integration solutions to make Javelin Data Manager communicate with Boomi using web services. Prototyped Boomi Processes for simulating how data could be transfered within the Javelin Suite. Took trainings for the consulting team at ZS on Boomi Integration with in-house tools.
 
-##Trainee Technology, Sapient (Jul 2010 - Dec 2010)
+###Trainee Technology, Sapient (Jul 2010 - Dec 2010)
 Underwent training for basic Java and Delivery Approach to get hands on experience of real life delivery project with respect to the phases, roles, project processes and technical know how.
 Developed an E-Commerce application using WCS, Hybris, ATG and Interwowen as a part of the training.
 
 #Education
 
-##Undergrad, Pune University (2006 - 2010)
+###Undergrad, Pune University (2006 - 2010)
 Completed Bachelors in Information Technology from **Army Institute of Technology**. Graduated with a *First Class* grade.
 
 * Won the **first prize** in a programming competition at Bharat Vidhya Peeth University (2010).
