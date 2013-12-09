@@ -5,7 +5,7 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a condensed list of everything that I have done professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. My choice of programming languages - `C` `C#` and `CoffeeScript`. 
+This is a condensed list of everything that I have done professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. My choice of programming languages - `C` `C#` `Powershell` and `CoffeeScript`. 
 
 A *single page version* of my resume is also available [here](/files/cv.pdf).
 
@@ -48,7 +48,7 @@ Developed an E-Commerce application using WCS, Hybris, ATG and Interwowen as a p
 Completed Bachelors in Information Technology from **Army Institute of Technology**. Graduated with a *First Class* grade.
 
 * Won the **first prize** in a programming competition at Bharat Vidhya Peeth University (2010).
-* Final Year project [Geo Code your life](/articles/geocode-your-life/)].
+* Final Year project [Geo Code your life](/articles/geocode-your-life/).
 * Project was selected by **Calsoft Inc.** for sponsorship.
 * Worked on building multi-tier .net based applications as an Intern at **Indigo Architects**.
 * Developed a new version of games such as — Tetris, Tic Tac Toe, Sudoku and softwares such as — a Text Editor with Syntax Highlighting and Autocompletion, an LZW File Compressor, a Database Management System, and Web based Blogging Platform.
