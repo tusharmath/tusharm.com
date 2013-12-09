@@ -2,24 +2,38 @@
 extends layout
 
 block append vars
-  - bodyclass = 'article-detail'
+	- bodyclass = 'article-detail'
 
 block prepend title
-  | #{ page.title + " - "}
+	| #{ page.title + " - "}
 
 block header
-  include author
-  h1= page.title
-  p.author
-    | #{ "Developed by " }
-    mixin author(page.metadata.author)
+	include author
+	h1= page.title
+	p.author
+		| #{ "Developed by " }
+		mixin author(page.metadata.author)
 
 block content
-  article.article
-    section.content!= typogr(page.html).typogrify()
+	article.article
+		section.content!= typogr(page.html).typogrify()
 
 block prepend footer
-  div.nav
-    a(href='/projects.html') « Projects
-  div(id='disqus_thread')
-  script(src='/js/disqus.js')
+	div.nav
+		a(href='/projects.html') « Projects
+	#disqus_thread
+	script.
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		var disqus_shortname = 'tusharmcom'; // required: replace example with your forum shortname
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	noscript.
+		| Please enable JavaScript to view the
+		a(href='http://disqus.com/?ref_noscript') comments powered by Disqus.
+	a.dsq-brlink(href='http://disqus.com')
+		| comments powered by
+		span.logo-disqus Disqus

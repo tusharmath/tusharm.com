@@ -1,4 +1,4 @@
-
+request = require 'request'
 module.exports = (env, callback) ->
 	### Paginator plugin. Defaults can be overridden in config.json
 			e.g. "paginator": {"perPage": 10} ###
@@ -14,6 +14,16 @@ module.exports = (env, callback) ->
 	options = env.config.paginator or {}
 	for key, value of defaults
 		options[key] ?= defaults[key]
+
+	getGitHubData = (username, callback) ->
+		#Fetches data from github
+		opt =
+			url: "https://api.github.com/users/#{username}/repos"
+
+			# Github Api requires a User-Agent header
+			headers: 'User-Agent': username 
+		request opt, (e,r,b) -> callback JSON.parse b if r.statusCode is 200
+
 
 	getArticles = (contents ,type) ->
 		# helper that returns a list of articles found in *contents*
@@ -84,5 +94,8 @@ module.exports = (env, callback) ->
 	# add the article helper to the environment so we can use it later
 	env.helpers.getArticles = getArticles
 
-	# tell the plugin manager we are done
-	callback()
+	#Setup Github Data
+	getGitHubData env.config.github, (data)->
+		env.helpers.github = data
+		# tell the plugin manager we are done	
+		callback()

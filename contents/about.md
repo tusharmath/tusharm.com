@@ -1,5 +1,43 @@
-I constantly try to make my everyday tasks simpler and more productive, that's why I love developing apps. I have developed a lot of free apps for my myself, family and friends. I have mainly worked on `C#`, `PowerShell`, `HTML`, `CSS`, `JavaScript` and `CoffeeScript`.  You can see a summary of my projects [here](/projects.html).
+```metadata
+title: About Me
+author: tushar-mathur
+date: 2013-dec-8
+template: about.jade
+```
 
-In my leisure time I like to learn about physics and cars. I practice swimming and like to be a gourmet from time to time.
+This is a formal list of everything that I have done professionally in as much detail as possible. 
 
-*Right now:* Working on server side CoffeeScript. Not having a philosophical conversation.
+#Experience
+##Software Developer, ZS Associates (Jan 2011 - Jan 2013)
+
+Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation appear seamless across the transcontinental team & infrastructure.
+
+Automated the complete deployment process for **Forecast Manager** causing a significant reduction in upgrade times. The tool featured - 
+
+* Generation of upgrade & downgrade logs for diagnostics.
+* Auto backup and restore of systems.
+* Upgrade multiple systems to different versions in one go.
+* Setup new instances from scratch — bootstrapping databases, generating default application users.
+* Auto configure client specific, environment specific and application specific settings for every deployed system.
+* Generate upgrade reports and email notifications in case of upgrade failures.
+* Integrated it with SVN and Jira to auto generate release notes.
+* Live site monitoring.
+
+Worked on harmonising the user interface across the Javelin suite by creating customisable dynamic web layouts which could be directly integrated into the application via CDN. Assisted in designing and implementing a publishing strategy to ultimately have a centrally maintained version of the UI components.
+
+Evaluated cloud based data integration tools primarily **Boomi** and **Pervasive** to integrate our in-house ETL tool — **Javelin Data Manager** with **Salesforce**. Designed and developed data integration solutions to make Javelin Data Manager communicate with Boomi using web services. Prototyped Boomi Processes for simulating how data could be transfered within the Javelin Suite. Took trainings for the consulting team at ZS on Boomi Integration with in-house tools.
+
+##Trainee Technology, Sapient (Jul 2010 - Dec 2010)
+Underwent training for basic Java and Delivery Approach to get hands on experience of real life delivery project with respect to the phases, roles, project processes and technical know how.
+Developed an E-Commerce application using WCS, Hybris, ATG and Interwowen as a part of the training.
+
+#Education
+
+##Undergrad, Pune University (2006 - 2010)
+Completed Bachelors in Information Technology from **Army Institute of Technology**. Graduated with a *First Class* grade.
+
+* Won the **first prize** in a programming competition at Bharat Vidhya Peeth University (2010).
+* Final Year project [Geo Code your life](/articles/geocode-your-life/)].
+* Project was selected by **Calsoft Inc.** for sponsorship.
+* Worked on building multi-tier .net based applications as an Intern at **Indigo Architects**.
+* Developed a new version of games such as — Tetris, Tic Tac Toe, Sudoku and softwares such as — a Text Editor with Syntax Highlighting and Autocompletion, an LZW File Compressor, a Database Management System, and Web based Blogging Platform.

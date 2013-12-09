@@ -1,0 +1,30 @@
+
+extends layout
+
+block append vars
+	- bodyclass = 'article-detail'
+
+block prepend title
+	| #{ page.title + " - "}
+
+block header
+	h1= page.title
+
+block content
+	article.article
+		section.content!= typogr(page.html).typogrify()
+		
+		h1 Open Source Contribution
+		ul
+			each item in env.helpers.github
+				li
+					strong
+						a(href=item.html_url)= item.name
+					span : 
+					span= item.description
+
+		
+
+block prepend footer
+	div.nav
+		a(href=contents.index.url) « Full blog
