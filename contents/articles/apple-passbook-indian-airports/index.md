@@ -7,6 +7,7 @@ template: article.jade
 Apple's passbook is something that I was not expecting to work in India anytime soon. I was travelling to Bangalore, and decided to test this time if the app has any credibility, in the eyes of the security at the Jaipur International Airport, my boarding point.
 
 <span class="more" />
+![image](snapshot.png)
 
 I had booked the ticket using Cleartrip, which automatically sends a passbook supported ePass to your email-id, once its confirmed. I loaded it into my iPhone which was easy and headed for the airport. The interesting thing is that BCAS had already issued a notice last year (2012) allowing people to travel without a printed ticket. Of course e-ticket is not the same as an ePass but I wanted to see if the Airports had actually implemented this facility for their passengers, since there was no strict deadline specified in the notice for the airports. They claim that the delay in implementing this facility for the passengers is that the security people need to undergo special training for this kind of a setup. I wondered why? Is it so different than paper based version of authorisation? 
 

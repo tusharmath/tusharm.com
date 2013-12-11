@@ -14,13 +14,16 @@ The concept of **Paunkie** was to *Geocode your life*. Basically, everything and
 We barely had the time to prototype the concept and were far away from building a production ready application. Later we realised that no one really builds a **Production Ready** product until its actually pushed to production :D
 
 Some time back when I was going through my archives, I found a couple of snapshots of this application —
+<img src="2.jpg" style="width:100%; height: 100%" />
+Everything that you might be interested in on the map, based on what you and your friends have been up to.
 
-![image](2.jpg) Everything that you might be interested in on the map, based on what you and your friends have been up to.
-
-![image](3.jpg) No social networking application is complete without a messaging feature.
-
-
-![image](4.jpg) Adding a new location of interest to share with your friends.
+<img src="3.jpg" style="width:100%; height: 100%" /> 
+No social networking application is complete without a messaging feature.
 
 
-![image](5.jpg) You current location (in the middle of the Pacific Ocean).
+<img src="4.jpg" style="width:100%; height: 100%" />
+Adding a new location of interest to share with your friends.
+
+
+<img src="5.jpg" style="width:100%; height: 100%" />
+You current location (in the middle of the Pacific Ocean).
