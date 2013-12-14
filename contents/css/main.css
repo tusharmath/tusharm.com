@@ -4,13 +4,11 @@ h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre {
 }
 
 body {
-  background-image: url('greyzz_@2X.png');
   font-family: 'Lora', serif;
   font-size: 16px;
   line-height: 1.52;
   background-color: #f8f8f8;
-  text-rendering: optimizeLegibility;
-  background-size: 149px 139px;
+  text-rendering: optimizeLegibility
 }
 
 .content-wrap {
