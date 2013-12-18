@@ -20,3 +20,13 @@ I showed the passbook ticket to the sentry at the main gate, she looked at it fo
 I went to the Indigo Airline's counter and showed him the epass. He asked for an id, I gave it to him, he cracked a joke i think on my photo-id, which I din't care to hear, but smiled nevertheless. Whoo hoo! I got my boarding pass without needing to use the printed version. This was an awesome experience, I love it when people adopt technology to make life simpler. What do I say about the customer support? Should I call again and tell them?
 
 **Update:** The ePass worked at the Bangalore Airport also.
+
+---
+
+# Creating your own ePass
+
+I have built a [template](https://pass.is/ToLUhtxK07otOTO) on [passkit.com](http://passkit.com) which can be used for generating ePasses conveniently. You can use the template to create a new pass or scan the QR code below with your passbook app directly.
+
+<img src="https://d1ye292yvr7tf6.cloudfront.net/images/barcode.php?m=https://pass.is/ToLUhtxK07otOTO&f=qr&s=120" style="width:auto;height:auto;"/>
+
+Unfortunately I don't have an enterprise account with passkit, so I can only have a maximum of 10 passes at any given period of time. Please make sure to delete the passes once you are done using them.
