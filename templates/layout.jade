@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 block vars
 	- var bodyclass = null;
 html(lang='en')
@@ -35,7 +35,7 @@ html(lang='en')
 		header.header
 			div.top-nav
 				div.red-line
-				ul 
+				ul
 					li
 						a(href="/") Home
 					li
@@ -66,6 +66,6 @@ html(lang='en')
 					section.copy
 						p &copy; #{ new Date().getFullYear() } #{ locals.owner }
 							//- please leave the "powered by" if you use the design
-							— powered by 
+							span powered by
 							a(href="http://wintersmith.io") Wintersmith
 		script(src='/js/analytics.js')
