@@ -22,7 +22,13 @@ module.exports = (env, callback) ->
 
 			# Github Api requires a User-Agent header
 			headers: 'User-Agent': username 
-		request opt, (e,r,b) -> callback JSON.parse b if r.statusCode is 200
+		
+		#Need to add a timeout
+		request opt, (e,r,b) -> 
+			if e
+				callback() 
+			else if r.statusCode is 200
+				callback JSON.parse b 
 
 
 	getArticles = (contents ,type) ->

@@ -5,9 +5,11 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a condensed list of everything that I have done professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. My choice of programming languages - `C` `C#` `Powershell` and `CoffeeScript`. 
+This is a condensed list of everything that I have done so far, professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. Currently I am working with a Bangalore based startup [Aplopio](http://aplopio.com) as a **Front-End Engineer**. My choice of programming languages - `C` `C#` and `CoffeeScript`. 
 
 A *single page version* of my resume is also available [here](/files/cv.pdf).
+
+
 
 #Experience
 ###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
