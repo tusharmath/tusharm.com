@@ -5,11 +5,11 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a condensed list of everything that I have done so far, professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. Currently I am working with a Bangalore based startup [Aplopio](http://aplopio.com) as a **Front-End Engineer**. My choice of programming languages - `C` `C#` and `CoffeeScript`. 
+This is a condensed list of everything that I have done so far, professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. Currently I am working with a Bangalore based startup [Aplopio](http://aplopio.com) as a **Front-End Engineer** for [Recruiterbox](http://recruiterbox.com). My choice of programming languages are `C`, `C#` and `CoffeeScript`.
 
 A *single page version* of my resume is also available [here](/files/cv.pdf).
 
-
+---
 
 #Experience
 ###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
@@ -21,7 +21,7 @@ Assisted in setting up a branching strategy for parallel development of multiple
 
 Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation, appear seamless across the transcontinental team & infrastructure.
 
-Was responsible for all the **Dev Ops** related tasks for **Forecast Manager**. Automated the complete deployment process, causing a significant reduction in upgrade times. The tool featured - 
+Was solely responsible for all the **Dev Ops** related tasks for **Forecast Manager**. Automated the complete deployment process, causing a significant reduction in upgrade times (4 hours to a matter of seconds). The tool featured - 
 
 * Generation of upgrade & downgrade logs for diagnostics. 
 * Database Migration.
