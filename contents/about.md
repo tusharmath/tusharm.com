@@ -5,7 +5,7 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a condensed list of everything that I have done so far, professionally. I have worked with transcontinental teams and also independently through the full software development life cycle of multiple projects. Currently I am working with a Bangalore based startup [Aplopio](http://aplopio.com) as a **Front-End Engineer** for [Recruiterbox](http://recruiterbox.com). My choice of programming languages are `C`, `C#` and `CoffeeScript`.
+This is a condensed list of everything that I have done so far. Adhering to Agile Software Development and Scrum with transcontinental teams, I have also worked independently through the full Software Development Life Cycle of multiple projects. Currently I am working with a Bangalore based startup as a **Senior Sofware Engineer**. My choice of programming languages are `C`, `C#` and `CoffeeScript`.
 
 A *single page version* of my resume is also available [here](/files/cv.pdf).
 
