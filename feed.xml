@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tushar Mathur's blog</title>
+    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>/</link>
+    <description>A software developer, physics enthusiast, swimmer and a car geek</description>
+    <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
+    <generator>Tushar Mathur - http://tusharm.com</generator>
+    <language>en</language>
+    <item>
+      <title>Using Passbook at Indian Airports</title>
+      <link>//articles/apple-passbook-indian-airports/</link>
+      <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/apple-passbook-indian-airports/</guid>
+      <author></author>
+      <description>&lt;p&gt;Apple’s passbook is something that I was not expecting to work in India anytime soon. I was travelling to Bangalore, and decided to test this time if the app has any credibility, in the eyes of the security at the Jaipur International Airport, my boarding point.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot; /&gt;
+&lt;img src=&quot;/articles/apple-passbook-indian-airports/snapshot.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I had booked the ticket using Cleartrip, which automatically sends a passbook supported ePass to your email-id, once its confirmed. I loaded it into my iPhone which was easy and headed for the airport. The interesting thing is that BCAS had already issued a notice last year (2012) allowing people to travel without a printed ticket. Of course e-ticket is not the same as an ePass but I wanted to see if the Airports had actually implemented this facility for their passengers, since there was no strict deadline specified in the notice for the airports. They claim that the delay in implementing this facility for the passengers is that the security people need to undergo special training for this kind of a setup. I wondered why? Is it so different than paper based version of authorisation? &lt;/p&gt;
+&lt;p&gt;I thought it would be better to call the Airlines first and confirm if they accept ePasses or eTickets. I called SpiceJet and then I called Indigo Airlines to confirm, both of them din’t even understand what I was saying in the first place. I gave them the link to the BCAS’s &lt;a href=&quot;http://www.bcasindia.nic.in/cir_nonrestrict/notice/eticket.pdf&quot;&gt;notice&lt;/a&gt;, and both of them were adamant about one thing - ‘We are not aware about this update from BCAS and it would be better if you take a printout ticket with you, else you will not be given a boarding pass, in fact no one would even let you in the airport’. There was nothing in ‘my’ hands, I had to go and get a printout late at night that day. I appreciated the fact that they at least din’t deny the existence of BCAS.&lt;/p&gt;
+&lt;p&gt;One of my characteristics is ‘perseverance’, so I decided that I would go and show the ePass first and incase someone doesn’t want my life to be little too easy (trust me, I’ve met a lot of such people), I would show him the printed version. With this plan in mind, I arrived at the Jaipur airport around an hour prior to the departure time and to my astonishment - my GPS location had already triggered my passbook app, sending a notification, and making the ticket available on my lock screen! I now had access to the ticket on the lock screen itself and thats not it, the brightness of the phone would automatically go up to its max when ever I opened the ticket, making it easier to read in broad day light!&lt;/p&gt;
+&lt;p&gt;I showed the passbook ticket to the sentry at the main gate, she looked at it for sometime. Confused a little, she asked for my id-card. I gave it to her, then another 10 seconds passed, she din’t even look at me and said ‘Go’. I thought that I might have confused her or may be it was a fluke, may be the next sentry won’t. The next one also saw the ePass and gave a go ahead. I was a little too excited, first of all because people were finally accepting technology in India and I din’t have to run to get a printout before boarding a flight ever again! I wondered if Indigo Airlines would give me my boarding pass on the basis of my ePass because the customer support was pretty assertive about not having this facility.&lt;/p&gt;
+&lt;p&gt;I went to the Indigo Airline’s counter and showed him the epass. He asked for an id, I gave it to him, he cracked a joke i think on my photo-id, which I din’t care to hear, but smiled nevertheless. Whoo hoo! I got my boarding pass without needing to use the printed version. This was an awesome experience, I love it when people adopt technology to make life simpler. What do I say about the customer support? Should I call again and tell them?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; The ePass worked at the Bangalore Airport also.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;creating-your-own-epass&quot;&gt;Creating your own ePass&lt;/h1&gt;
+&lt;p&gt;I have built a &lt;a href=&quot;https://pass.is/ToLUhtxK07otOTO&quot;&gt;template&lt;/a&gt; on &lt;a href=&quot;http://passkit.com/&quot;&gt;passkit.com&lt;/a&gt; which can be used for generating ePasses conveniently. You can use the template to create a new pass or scan the QR code below with your passbook app directly.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://d1ye292yvr7tf6.cloudfront.net/images/barcode.php?m=https://pass.is/ToLUhtxK07otOTO&amp;f=qr&amp;s=120&quot; style=&quot;width:auto;height:auto;&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;Unfortunately I don’t have an enterprise account with passkit, so I can only have a maximum of 10 passes at any given period of time. Please make sure to delete the passes once you are done using them.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>AngularJS Seed project</title>
+      <link>//articles/angularjs-seed-project/</link>
+      <pubDate>Tue, 03 Dec 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/angularjs-seed-project/</guid>
+      <author></author>
+      <description>&lt;p&gt;Personally I have always preferred building an offline web app when compared to a native desktop app. Firstly because its lighter, secondly its easy to build and most importantly easy to send an update. I wanted to practice the basics of AngularJS on a project and wanted to learn more about the best practices that are currently set in the industry today. Thats is why I created this project.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;Whenever I want to create a new web application that worked offline, I just fork this repository and get started. All the workflows are pre built in the project, with a single command I can test my app on multiple browsers, package the app, create an HTML5 Application Cache Manifest file and ultimately publish it to GH-Pages. I could have used Yeoman for the same, but I just found this more comfortable and more suited to my needs.&lt;/p&gt;
+&lt;p&gt;Here are the links if you want to know more about the project —&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tusharmath/web-offline-seed&quot;&gt;Source&lt;/a&gt; &amp;amp; &lt;a href=&quot;http://tusharm.com/web-offline-seed&quot;&gt;Demo Application&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Universal Theory Righteousness</title>
+      <link>//articles/universal-theory-righteousness/</link>
+      <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/universal-theory-righteousness/</guid>
+      <author></author>
+      <description>&lt;p&gt;This a really old piece of text from when I was in my third year of college, back when I was 19. I  had written it with the help of a really close friend, whom I used to love talking  to. We talked about philosophy, science and hypothetical situations. She turned out to be the person who turned my life up side down, more on her later, for the time being check out what we came up with first :-)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;We often come across trying times of ethical confusion and conflict in our life, times that call for difficult decisions. This is when we look for answers in the established theories, different schools of philosophies, theologies and ideologies. But generally there are conflicting ideas put forth by the different theories. This is where the significance of a ‘Universal Theory’ comes into focus.&lt;/p&gt;
+&lt;p&gt;A theory, based on a set of universal, eternally precise rules that always tells us what the right thing to do is. That is exactly where the existing theories seem to flaw. They are based on laws and assumptions created by man, the rules that can never satisfy the condition of eternal precision. Natural laws on the other hand are precise and unconditional. Like a Mango Tree always bears a mango. Just as the existing man made laws are designed to drive us towards our social and cultural goals, to use and define the natural laws effectively, we need to know the ethical goal of mankind, the essence of existence and motive of our inception. This is impossible to figure out with our existing knowledge. Hence we need to look for another alternative to derive the Universal Theory of Righteousness. Human priorities differ and it is this difference that accounts for the ethical inconsistencies. So, we need to have the right priorities which means we have to fall back again on the UTR to give us ethically correct priorities. This builds into a cycle where the foundation of the theory depends upon itself.&lt;/p&gt;
+&lt;p&gt;The existence of UTR will make available a universally right solution to every ethical problem thus bringing about far reaching social changes, but will we ever get there?&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Geocode your life</title>
+      <link>//articles/geocode-your-life/</link>
+      <pubDate>Thu, 17 Oct 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/geocode-your-life/</guid>
+      <author></author>
+      <description>&lt;p&gt;I wanted to write this blog about one of my undergrad projects — &lt;strong&gt;Paunkie&lt;/strong&gt;. A social networking website which was based on maps. We were a team of two undergrad students who were being mentored by Prof. Vaishali Dharkar as our guide for this project. It was inspired by &lt;a href=&quot;http://indigoarchitects.com/CaseStudy/Mobile_Serendipity.aspx&quot;&gt;Serenedipity&lt;/a&gt;, one of &lt;a href=&quot;http://indigoarchitects.com/&quot;&gt;Indigo Architects&lt;/a&gt; niche products. I was able to convince my partner and our project guide that it was a cool idea to build something on similar lines and that it would definitely qualify for a research project.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;The concept of &lt;strong&gt;Paunkie&lt;/strong&gt; was to &lt;em&gt;Geocode your life&lt;/em&gt;. Basically, everything and anything you did or your friends did, could be pinned on to a map and shared within your social circle. The two key components of the application were the user interface that was designed to be aesthetically acceptable and responsive to various screen sizes, and the &lt;a href=&quot;http://en.wikipedia.org/wiki/K-means_algorithm&quot;&gt;k-means clustering algorithms&lt;/a&gt; that generated recommendations in real time.&lt;/p&gt;
+&lt;p&gt;We barely had the time to prototype the concept and were far away from building a production ready application. Later we realised that no one really builds a &lt;strong&gt;Production Ready&lt;/strong&gt; product until its actually pushed to production :D&lt;/p&gt;
+&lt;p&gt;Some time back when I was going through my archives, I found a couple of snapshots of this application —
+&lt;img src=&quot;2.jpg&quot; style=&quot;width:100%; height: 100%&quot; /&gt;
+Everything that you might be interested in on the map, based on what you and your friends have been up to.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;3.jpg&quot; style=&quot;width:100%; height: 100%&quot; /&gt; 
+No social networking application is complete without a messaging feature.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;4.jpg&quot; style=&quot;width:100%; height: 100%&quot; /&gt;
+Adding a new location of interest to share with your friends.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;5.jpg&quot; style=&quot;width:100%; height: 100%&quot; /&gt;
+You current location (in the middle of the Pacific Ocean).&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Get PNR Status</title>
+      <link>//articles/pnr-status/</link>
+      <pubDate>Sat, 07 Sep 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/pnr-status/</guid>
+      <author></author>
+      <description>&lt;p&gt;I had booked my train ticket to Ajmer from Vadodara where I was staying with my aunt. The booking status was &lt;em&gt;waiting&lt;/em&gt; and my berth was not confirmed. I had booked it a day before I was travelling and my aunt was getting paranoid about checking the status of my ticket again and again. She would come every 15 minutes and ask me to check the status of the ticket online and it wasn’t her fault actually, because even though Indian Railways is one of the biggest mode of commuting in the world most of the times you won’t get berth in the train. So with no fault of her own she was a little worried about it :) and I would have to go to &lt;a href=&quot;http://www.indianrail.gov.in/pnr_Enq.html&quot;&gt;this&lt;/a&gt; sucky website, enter my PNR Number, submit and wait for a response. Every time I would submit my PNR Number there would be popups all over the place. The overall experience of getting the booking status was just too pathetic for me. So I decided to make an app that would do this crappy work by polling the server every 15 minutes and show me the latest status of my ticket.&lt;/p&gt;
+&lt;h2 id=&quot;the-app&quot;&gt;The app&lt;/h2&gt;
+&lt;p&gt;I created this console app - &lt;a href=&quot;https://npmjs.org/package/pnr-status&quot;&gt;pnr-status&lt;/a&gt; with Node.js. Its a simple app which just tells you the PNR status(Indian Railways only). There were quite a few browser extensions that were present. Unfortunately I din’t like them either since they were too slow.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I had a hidden motive to make this app - I wanted to build something with CoffeeScript ;)&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;how-is-this-different-&quot;&gt;How is this different?&lt;/h2&gt;
+&lt;p&gt;Well, this keeps polling the server for the latest status and displays it on the console screen.&lt;/p&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;npm install -g pnr-status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Simple pass the PNR number as a parameter to the &lt;code&gt;pnr-status&lt;/code&gt; command.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;pnr-status &lt;span class=&quot;number&quot;&gt;8216477093&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;interesting-features&quot;&gt;Interesting Features&lt;/h2&gt;
+&lt;p&gt;Here is list of interesting features that I would want to add later.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Notify via email, msg or call once the ticket is booked.&lt;/li&gt;
+&lt;li&gt;Add a web version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Feel free to share some more features that would be interesting &lt;a href=&quot;https://github.com/tusharmath/pnr-status/issues&quot;&gt;here&lt;/a&gt; or in the comments below.&lt;/p&gt;
+&lt;h1 id=&quot;update-&quot;&gt;Update:&lt;/h1&gt;
+&lt;p&gt;I developed a desktop application for Mac. Now I am working on a &lt;a href=&quot;https://github.com/tusharmath/chrome-pnr-status&quot;&gt;chrome app&lt;/a&gt; since that would be smaller in size,  more updates on it later. Check out the snapshot in the mean time.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/pnr-status/snapshot.jpeg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Mnemonics Dictionary</title>
+      <link>//articles/mnemonics-dictionary/</link>
+      <pubDate>Fri, 30  Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/mnemonics-dictionary/</guid>
+      <author></author>
+      <description>&lt;p&gt;I was learning words for GRE when I found this site - &lt;a href=&quot;http://mnemonicdictionary.com/&quot;&gt;mnemonicdictionary.com&lt;/a&gt;. It uses mnemonics to aid you in memorizing words. I went through the &lt;strong&gt;Barrons GRE List&lt;/strong&gt; of words but as I was going through it realized how poor the website was constructed. I wanted to put all these words on one page so that I can search the words quickly using the native browser search plus I wanted it to be available offline.&lt;/p&gt;
+&lt;p&gt;So I used my &lt;a href=&quot;https://github.com/tusharmath/html-scraper&quot;&gt;html-scraper&lt;/a&gt; to extract all the data and put it into a json file and then created &lt;a href=&quot;/articles/mnemonics-dictionary/words.html&quot;&gt;this web page&lt;/a&gt; out of it. I will later add some more features to improve the performance of the page so that the size of the page reduces.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Javascript Interview Questions</title>
+      <link>//articles/Javascript-Interview-Question/</link>
+      <pubDate>Sat, 24  Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/Javascript-Interview-Question/</guid>
+      <author></author>
+      <description>&lt;p&gt;These are my personal notes from &lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;David Flanagan’s Javascript the Definitive Guide&lt;/a&gt;. I though I will share them with everyone in terms of a &lt;strong&gt;Q&amp;amp;A&lt;/strong&gt; format. I will cover each chapter one by one but since Chapter 1 and 2 are very basic I have started with chapter three. If I get time I will put questions from Chapter 2 as well. Please note that these are my own notes and it is possible that I might have not explained certain concepts in great detail. In case you have more doubts about a question post it in the comments section or refer to the amazing book for more details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Trust me on this, if you go through these questions diligently one chapter per day then in twenty two days there will be no interview that you can not crack :)&lt;/em&gt; &lt;/p&gt;
+&lt;h2 id=&quot;index&quot;&gt;Index&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/articles/Javascript-Interview-Question/Chapter-3.html&quot;&gt;Chapter 3 - Types, Values and Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chapter 4 - Expressions and Operators &lt;em&gt;(coming soon…)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Node.js Mt Downloader</title>
+      <link>//articles/mt-downloader/</link>
+      <pubDate>Sat, 03  Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/mt-downloader/</guid>
+      <author></author>
+      <description>&lt;p&gt;Why would someone want to use &lt;strong&gt;segmented file transfer&lt;/strong&gt;? Well, the answer is quite simple - To increase download speed.
+You could checkout this &lt;a href=&quot;http://en.wikipedia.org/wiki/Segmented_file_transfer&quot;&gt;wiki&lt;/a&gt; to learn more about it or just read on to get a gist if what it does.&lt;/p&gt;
+&lt;p&gt;What it really does is, it makes multiple connections with the server from where the file has to be downloaded. Now since data is sent in packets on those connections. There is always little bit of a lag between these packets. This especially happens if you have a low speed internet connection or there are multiple applications using the internet at the same time.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;When you make multiple connections you minimize that lag period because at any given instance there is at least one thread which is delivering a packet of data. This helps in efficient use of the bandwidth. You won’t get a speed more than that allotted by your ISP using this process.&lt;/p&gt;
+&lt;p&gt;There are quite a few multi threaded downloaders such as &lt;a href=&quot;http://dfast.sourceforge.net/&quot;&gt;wxDownload&lt;/a&gt; and &lt;a href=&quot;https://www.macupdate.com/app/mac/33754/progressive-downloader&quot;&gt;Progressive Downloader&lt;/a&gt; but they din’t really have the flexibility that I wanted in my downloader. I needed something more than just a simple multi threaded downloader. I needed something which could let me stop and resume downloads from the last downloaded byte even if I restarted my computer. There were some downloaders which had these features but I also wanted something which had an api and could be used with my other projects.&lt;/p&gt;
+&lt;p&gt;So I created this node.js based http-downloader - &lt;a href=&quot;https://github.com/tusharmath/Multi-threaded-downloader&quot;&gt;mt-downloader&lt;/a&gt;. One very important reason for making this was that I also wanted to learn &lt;strong&gt;node.js&lt;/strong&gt; and &lt;strong&gt;improve my javascript skills&lt;/strong&gt; which I did eventually. &lt;/p&gt;
+&lt;p&gt;Once the library was completed I also created a thin console based wrapper around it and called it &lt;a href=&quot;https://github.com/tusharmath/mtd-console&quot;&gt;mt-console&lt;/a&gt;. This is what I use for my downloads now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/mt-downloader/mt-console.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>How to configure windows on Mac (retina) using virtual box</title>
+      <link>//articles/win7-on-retina-display-with-virtual-box/</link>
+      <pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/win7-on-retina-display-with-virtual-box/</guid>
+      <author></author>
+      <description>&lt;p&gt;You don’t have any money left to buy Parallels or Fusion so you are stuck up with Virtual box for the time being. Virtual box unfortunately does not provide a support for retina displays (At the time of writing this document).&lt;/p&gt;
+&lt;p&gt;You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic    !&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;So here are some steps that you could try out to improve your user experience with Virtual Box till the time they don’t provide you with actual retina support.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt;
+Determine the number of pixels on your screen. For e.g.- Mac pro 13” and 15” Retina have 2560 by 1600 pixels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt;
+The VM will respect the resolutions properly only in Scale mode. In scale mode the VM is viewed in a window. A window will not take-up the complete screen. So you need to get the maximum size that a window can take up on your screen (Without going into fullscreen mode). &lt;/p&gt;
+&lt;p&gt;What I really mean by that statement is - out of the 2560x1400 px of real estate available on the screen only 2560x700 px can be used by a window to show content. Why ? Because I have a dock at the bottom and a menu bar at the top which takes up some space vertically. So in this step you need to calculate that space. Here is how I did it.&lt;/p&gt;
+&lt;p&gt;I personally used the &lt;strong&gt;⌘ + ⇧ + 4&lt;/strong&gt; button to take a snapshot of the window and then see the resolution of the image file. So in my particular case I have the dock in the bottom so I need to compromise the height of the screen. Rounding off to the nearest integer the available real estate of a window comes out to be 2560x1400.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3.&lt;/strong&gt;
+Now you need to setup this custom resolution on your VM. So keep the VM on and run the following command on your terminal&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;$ VBoxManage controlvm [VM name] setvideomodehint [Width] [Height] &lt;span class=&quot;number&quot;&gt;32&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For e.g. if you want to try this on a mac pro 13” retina&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;$ VBoxManage controlvm W&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;7 setvideomodehint &lt;span class=&quot;number&quot;&gt;2560&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1400&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;32&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 4.&lt;/strong&gt;
+This would be a really high resolution and you will not be able to read anything on the VM because the text would be really small. So now go to your VM with win7 installed and follow these steps - &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open display settings.&lt;/li&gt;
+&lt;li&gt;Click on [Set custom size DPI] from the right hand side Navigation Bar.&lt;/li&gt;
+&lt;li&gt;Scale the font size to 200%.&lt;/li&gt;
+&lt;li&gt;Click ok, Log off and Login again.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Voila! you will definitely have a better Win7 experience on Mac now.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>DOs and DON'Ts while making biryani</title>
+      <link>//articles/DOs-and-DONTs-while-making-biryani/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/DOs-and-DONTs-while-making-biryani/</guid>
+      <author></author>
+      <description>&lt;p&gt;I tried to copy a lot of biryani recipes that are on the internet and in that process I wasted a lot of meat and rice.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s all about the proportions ultimately so don’t take that casually.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It took a lot of perseverance in getting the recipe just right. So here are some DOs and DON’Ts for making  mutton dum biryani (&lt;em&gt;same applies for chicken biryani&lt;/em&gt;). These points are an extension of the Hyderabadi style biryani which is cooked in layers of meat and rice.&lt;/p&gt;
+&lt;h2 id=&quot;dos&quot;&gt;DOs&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure you use a thick base vessel for cooking, so that the heat gets evenly distributed.&lt;/li&gt;
+&lt;li&gt;Best practice is to marinate the meat for 2-3 hours so that all the juices get inside the meat.&lt;/li&gt;
+&lt;li&gt;Use lots of fried onions in the marinade.&lt;/li&gt;
+&lt;li&gt;Add good amount of salt. Generally the salt concentration reduces after you add the meat so make sure you have incorporated that in your calculation.&lt;/li&gt;
+&lt;li&gt;Add good amount of spices, it is possible that the marinade seems spicy at first but trust me on this, after you add the meat the spiciness will decrease considerably.&lt;/li&gt;
+&lt;li&gt;Cook the meat at the lowest flame that is possible in your kitchen. Low heat helps in uniform cooking.&lt;/li&gt;
+&lt;li&gt;Add good amounts of GHEE (&lt;em&gt;clarified butter&lt;/em&gt;) in the marinade.&lt;/li&gt;
+&lt;li&gt;The rice used should be of high quality basmati.&lt;/li&gt;
+&lt;li&gt;Seal the vessel so that the heat doesn’t escape.&lt;/li&gt;
+&lt;li&gt;Add good amounts of fried onions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;don-ts&quot;&gt;DON’Ts&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Don’t use too much of curd, it makes the meat bland and tasteless. Curd only helps in cooking, it does’t add any taste to the biryani.&lt;/li&gt;
+&lt;li&gt;Don’t give direct heat to the meat, put the vessel over a pan or some other metal layer. It takes time to cook, mutton might take up to 1:45 hrs to cook and chicken can take up to 1:15 hrs. So have patience.&lt;/li&gt;
+&lt;li&gt;Don’t add raw onions in the marinade, it will not taste good.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>Why I don't like cricket?</title>
+      <link>//articles/why-i-dont-like-cricket/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/why-i-dont-like-cricket/</guid>
+      <author></author>
+      <description>&lt;p&gt;Cricket is a very popular sport here in India. Even though Hockey is our national game, cricket is more followed and idolized. People are so sentimental about cricket that they don’t go to offices, in fact some private companies have half days or sometimes full day off when India is playing. People literally go crazy when India has a match with Pakisthan - a country with whom we have had three wars in the past. I don’t have the exact figures but I am pretty sure that the matches have always militated against India’s GDP for that particular day :P&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;My grandfather was a &lt;a href=&quot;http://en.wikipedia.org/wiki/Ranji_Trophy&quot;&gt;Ranji&lt;/a&gt; player and my mother was in the state cricket team representing Rajasthan. Yet I was not that great in cricket, in fact I was bad, really really bad. I was bad in Basketball and Football too and now when I see this pattern it seems like I was bad in every team sport, probably I am not a team player &lt;em&gt;(more about that later)&lt;/em&gt;. I wasn’t bad in badminton, squash and swimming, I loved games where I could perform by my self which is a typical characteristic of an introvert when I had my last introspection &lt;em&gt;(by the way introverts are not shy people, see &lt;a href=&quot;http://www.youtube.com/watch?v=c0KYU2j0TM4&quot;&gt;this&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;What I am about to say now might offend a lot of people and the only follower of this blog &lt;em&gt;(My Mother)&lt;/em&gt;. So mom I think that out of the twenty two players in a game of cricket, at a particular instance of time effectively less than 60% players are playing - rest are not even on the ground. Taking a one day match for example - there are 50 overs, which means around 300 balls. If the shots are played in such a way that every fielder gets a fair chance to field then each fielder gets 30 shots to save (300/10, excluding the bowler). A single session would last for around 3 hours &lt;em&gt;(10800 seconds)&lt;/em&gt;. An average shot takes round about 8 seconds, this is the time that it takes for the ball to hit the bat, saved by the fielder and back to either the bowler or the keeper. So effectively a fielder plays for around 2.2% (30*8/10800) of the game time. In the whole game the players are not playing for more than 97% of the time. Interestingly in other sports the players can run behind the balls as it travels at much lower speeds, on the other hand in cricket the ball is much smaller, travels faster and you have to catch it with your bare hands. Ultimately the fielder has to wait for the ball to slow down and come into his hands.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Ok, so fielding isn’t that exciting I get it but what about batting?&lt;/em&gt; As far as batting is concerned I agree that the players do spend a decent amount of energy trying to hit the ball and take runs. Even so - what would happen if all the runs are scored by just two top batsmen? Others don’t get to play which is one of the reasons I never got a chance to bat much :(
+But again batting is more based on technique and less based on strength. Practically it is not possible to predict the path of the ball in such a short duration of time. The batsman can only anticipate the path of the ball and take a chance by positioning their bats in a way they feel will be appropriate. Which is good for them because now if they get out they have no reason to blame themselves for not hitting the ball properly because its technically impossible for the human nervous system to work at such a speed.&lt;/p&gt;
+&lt;p&gt;People still love cricket and I am getting bored because I can’t watch my favorite programs on the discovery channel. IPL was streamed on TV for two months and now its the challenger cup. I can’t seem to understand why people don’t get bored with cricket. Veritasium2 has a theory about it, check it out -&lt;/p&gt;
+&lt;iframe class='youtube' src=&quot;http://www.youtube.com/embed/vCKUewZEBFM&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    <item>
+      <title>Fighting the heat</title>
+      <link>//articles/fighting-the-heat/</link>
+      <pubDate>Thu, 06 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/fighting-the-heat/</guid>
+      <author></author>
+      <description>&lt;p&gt;If you are one of those people who keep sweating or have an abnormally high sensitivity towards heat then you are going to benefit from this blog. The idea is to keep your body cool and here are some tips and some science related to it.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;Firstly you need to understand that hotness and high temperature are two different things. You may be feeling hot but its not always because the temperature is high. Our sensory system reacts to temperature by calculating the rate at which heat is gained or lost from the body. The following minute physics video elaborates on this concept.&lt;/p&gt;
+&lt;iframe class='youtube' src=&quot;http://www.youtube.com/embed/yXT012us9ng&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;  
+
+
+&lt;p&gt;Your sweat contains urea, minerals, lactate and water. When you get into a cool environment after sweating, the water effectively evaporates, not because its cooler but because now there is less perspiration compared to evaporation. So your body dries up leaving behind only the urea, minerals and lactate on the epidermis. Since they are pretty bad conductors of heat even though you are in a cool environment you still feel warm, because your sensory system is kind of insulated with these sweat residuals. Thus its a cycle- you sweat once and then you keep on sweating because you can’t feel the coolness. The solution is to try to not sweat at all in the first place or take frequent baths so that you clear up your sweat residual from the epidermis.&lt;/p&gt;
+&lt;p&gt;I know this methodology of &lt;em&gt;try not to sweat&lt;/em&gt; and &lt;em&gt;take frequent baths&lt;/em&gt; is banal but its effective and I have only explained the science behind it. Hope this keeps you cool this summer!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Misconceptions about driving at night</title>
+      <link>//articles/driving-at-night/</link>
+      <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/driving-at-night/</guid>
+      <author></author>
+      <description>&lt;p&gt;The most common misconception that people have about driving at night is - &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The chances of having an accident increase with decrease in intensity of light&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So do you really think so? May be, may be not. The thing is that everybody knows the disadvantages of driving at night but no one really pays attention to the advantages of night driving.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I would first like to talk about the different light intensities during twilight.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;First case is the one in which the darkness is subjective to your sensitivity and to your orientation with respect to the sun. So some people would have their head lights switched on and some would have them off. This is a little risky &lt;em&gt;(understating really)&lt;/em&gt;  because not all people have their lights on, your eyes can only see those people who have their lights on, so you are blinded by those lights now and people with their lights switched off will not be visible. That’s the same reason for not being able to see the stars in the day time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The second stage is much better - now its dark for everyone on the road and everyone have their lights on. So you are seeing more people effectively in comparison to the case one. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These are the two cases which depict different visibility conditions in a matter of just 15-20 mins.&lt;/p&gt;
+&lt;p&gt;Now coming back to the main point which is - Is driving at night really that bad?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The thing is that when you are driving in the day time you are not able to communicate with the person driving in front of you. You can honk but its possible that he doesn’t hear you. So basically  the driver in front you is not aware of the fact that you are driving behind him. At night its different you can give a high-low beam pass to the driver which will notify him that you are close to him and he should not change lanes randomly. In pure statistical sense the information for the driver about his surroundings have doubled.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At night the visibility of a car on the road increases because now a car’s position is determined by its tail lights in contrast to the daytime when its the car itself. &lt;em&gt;How is it better?&lt;/em&gt; It’s better because at night the contrast is much more, you are seeing a bright light in a black background. &lt;em&gt;But what about everything that is not glowing?&lt;/em&gt; Good question! Actually this is where having some traffic on the road actually helps. If the car a moving in front of you, you can quite essentially assume that the distance between you and that car is clean and safe to drive because the car in front of you just travelled that distance. So you can without worrying travel that distance at a higher speed than the car in front of you. But wait now you have over taken that car and there is another car in front of you right? Apply the same logic on that car also and you will be able to drive at a speed which is greater than the average speed of the traffic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You might have guessed it by now that all the conclusions are based on a single and a very important assumption which is &amp;gt; there is traffic on the road. &lt;em&gt;So what happens when you have traffic in the day time, shouldn’t I be able to drive at the same speed?&lt;/em&gt; Yes, that’s why I said its not worse if not better. The thinking that &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You are limited to a max of up to hundred meters depending on the range of your head lights.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Which is obviously not true! As we learnt in the second point that you can use the information which has been used by the car moving in front of you.&lt;/p&gt;
+&lt;p&gt;So is it really better or almost the same? Well, if I get some time later I would love to do some mathematics to prove that its safer to drive at night. For now at least I am not biased about day being safer to drive.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I can still write a lot about it, I need to end this post now&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Super Cache</title>
+      <link>//articles/super-cache/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/super-cache/</guid>
+      <author></author>
+      <description>&lt;p&gt;Super Cache is a chrome extension that I created to control caching behavior from the client side.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Override caching policy that has been set on the server.&lt;/li&gt;
+&lt;li&gt;Select a host on which the caching is required and all requests from a page with that host will be cached.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Caching of static content which are on a different host will also be cached &lt;em&gt;(read Note for further explanation)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Grab it from &lt;a href=&quot;https://chrome.google.com/webstore/detail/super-cache/fglobbnbihckpkodmeefhagijjcjnbeh&quot;&gt;Chrome Webstore&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; say you have a site &lt;em&gt;example.com&lt;/em&gt; on which you have set a caching policy thru the extension.
+Now if the any page on &lt;em&gt;example.com&lt;/em&gt; links to external scripts and sites which are on a different domain such as static.example.com or ajax.googleapis.com, the extension will automatically apply the same caching behavior as that of &lt;em&gt;example.com&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Caution:&lt;/strong&gt; Caching takes up disk space, so use the extension carefully.&lt;/p&gt;
+&lt;iframe src=&quot;http://ghbtns.com/github-btn.html?user=tusharmath&amp;repo=super-cache&amp;type=fork&amp;count=true&quot;
+  allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;auto&quot; height=&quot;auto&quot;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    <item>
+      <title>ShareBill</title>
+      <link>//articles/sharebill/</link>
+      <pubDate>Sat, 10 Nov 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/sharebill/</guid>
+      <author></author>
+      <description>&lt;p&gt;I had a couple roommates back when I was working in ZS Associates. I had faced a lot issues while calculating shared expenses. Since I always wanted to make sure that we din’t make any mistakes in our calculations I spent some time in creating a Google Doc Spreadsheet for it. It worked fine as it served my purpose and the purpose of some of my friends. The problem was that it was just not the right thing to use if you had more than four people in the group which shared expenses. It looked ugly, would be really slow and any one could tamper the formulas.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;I felt that there should be some software out there that should be more sophisticated than the Google Doc that I had made. I started searching for some app or a website which could do these calculations for me. Unfortunately I din’t find any site through googling. I was amazed by the fact that I couldn’t find any! So I decided to build one of my own. I just wanted it to start have basic features. Once I created my first version I showed it to a friend of mine and that’s when he told me about &lt;a href=&quot;http://www.billmonk.com/&quot;&gt;Bill Monk&lt;/a&gt;. I was devastated, I felt that I had wasted a lot of energy in building something which was already there.&lt;/p&gt;
+&lt;p&gt;I soon decided that I will not give up and make my site much better, I will add all the features that BillMonk din’t have. I will use HTML5 to make it perform better! In a period of around 2-3 months I came up with this app - &lt;a href=&quot;http://sharebillv2.apphb.com/&quot;&gt;Sharebill&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/sharebill/1.png&quot; alt=&quot;Resize icon&quot;&gt;&lt;/p&gt;
+&lt;p&gt;In the process of making this application I learnt about the importance of using a Javascript framework for UI manipulations. I had chosen &lt;a href=&quot;http://knockoutjs.com/&quot;&gt;Knockout.js&lt;/a&gt; and this is the first time I had used a MVVM framework in any of my apps. To make it work better than Bill Monk I used the &lt;em&gt;localStorage&lt;/em&gt; and &lt;em&gt;application cache&lt;/em&gt; apis to cache all the data locally which improved the performance significantly. I would also show realtime updates of what changes others were making to the transaction.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Funny part:&lt;/em&gt; I was so slow at making this app that I worked on it for almost a year! I re-wrote the complete app multiple times and by that time BillMonk was bought by some company and they had come up with a new product - &lt;strong&gt;BillPin&lt;/strong&gt; which even had an iPhone app! Fortunately or unfortunately I din’t want to develop this app any more because I had found things that were more interesting.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Javelin Forecast Manager</title>
+      <link>//articles/forecast-manager/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/forecast-manager/</guid>
+      <author></author>
+      <description>&lt;p&gt;Forecast Manager was my second project in &lt;a href=&quot;http://zsassociates.com/&quot;&gt;Z.S. Associates&lt;/a&gt;. It was a MVC .Net based web application that would help in maintenance of forecasting models. These models were designed in MS Excel and could be merged with each other and to create different versions. The application could also render reports on the web and could help in managing access rights in an extremely customised way, based on each user and each client basis.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;The team size was very dynamic but I was the oldest member of the team and knew the inside out of the web application. As a developer I had two roles —&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Design and develop features:&lt;/strong&gt; I had to convert business needs into technical specifications and research on each feature throughout the full software development cycle. &lt;em&gt;I worked on multiple features which I will list later&lt;/em&gt;. Development was done in C# mainly. On the UI side we used knockout.js and jQuery to maintain a MVVM design pattern. On the database side we used Entity Framework as an ORM on top of SQL Server 2006.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automate the deployment process:&lt;/strong&gt; I developed Powershell scripts, that executed on Teamcity so as to automate the process of deployment which effectively reduced the deployment time by 98.7%. Since we had around fifty instances of the application and upgrading all of them in one go would take a lot of time more over we had the overhead of maintaing multiple webconfigs which had to be manually modified every time we upgraded, as all the client specific customizations were in it. Even our tag creation was not automated initially and since our teams were so dispersed geographically it was very difficult to share signed releases. With all the automation scripts in place we saved around eight man hours weekly.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>Z.S. Data Integration</title>
+      <link>//articles/data-integration/</link>
+      <pubDate>Tue, 01 Feb 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">//articles/data-integration/</guid>
+      <author></author>
+      <description>&lt;p&gt;ZS Data Integration was my first project in &lt;a href=&quot;http://zsassociates.com/&quot;&gt;Z.S. Associates&lt;/a&gt;. Our aim was to study and create POCs on various data integration tools. My role was to evaluate &lt;a href=&quot;http://www.boomi.com/&quot;&gt;Boomi&lt;/a&gt; and &lt;a href=&quot;http://integration.pervasive.com/&quot;&gt;Pervasive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Created various types of POCs with each of the DI tools which would perform data integration between multiple applications such as Salesforce, Javelin Routing Manager, Javelin Call Plan Manager and Javelin Data Manager.&lt;/li&gt;
+&lt;li&gt;Reported a major bug in Boomi while evaluating it.&lt;/li&gt;
+&lt;li&gt;Concluded that Boomi was the best data integration tool which suited ZS’s needs.&lt;/li&gt;
+&lt;li&gt;Trained the consulting team in ZS on how to use Boomi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+  </channel>
+</rss>
