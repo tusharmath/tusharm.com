@@ -9,7 +9,7 @@ I wanted to write this blog about one of my undergrad projects — **Paunkie**. 
 
 <span class="more"/>
 
-The concept of **Paunkie** was to *Geocode your life*. Basically, everything and anything you did or your friends did, could be pinned on to a map and shared within your social circle. The two key components of the application were the user interface that was designed to be aesthetically acceptable and responsive to various screen sizes, and the [k-means clustering algorithms](en.wikipedia.org/wiki/K-means_algorithm) that generated recommendations in real time.
+The concept of **Paunkie** was to *Geocode your life*. Basically, everything and anything you did or your friends did, could be pinned on to a map and shared within your social circle. The two key components of the application were the user interface that was designed to be aesthetically acceptable and responsive to various screen sizes, and the [k-means clustering algorithms](http://en.wikipedia.org/wiki/K-means_algorithm) that generated recommendations in real time.
 
 We barely had the time to prototype the concept and were far away from building a production ready application. Later we realised that no one really builds a **Production Ready** product until its actually pushed to production :D
 
