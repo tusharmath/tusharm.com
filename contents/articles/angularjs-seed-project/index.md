@@ -5,7 +5,7 @@ date: 2013-dec-3
 category: project
 template: project.jade
 ```
-Personally I have always preferred building an offline web app when compared to a native desktop app. Firstly because its lighter, secondly its easy to build and most importantly easy to send an update. I wanted to practice the basics of AngularJS on a project and wanted to learn more about the best practices that are currently set in the industry today. Thats is why I created this project.
+Personally I have always preferred building an offline web app when compared to a native desktop app. Firstly because its lighter, secondly its easy to build and most importantly easy to send an updates. I wanted to practice the basics of AngularJS on a project and wanted to learn more about the best practices involving AngularJS. Thats is why I created this project.
 
 <span class="more"/>
 
