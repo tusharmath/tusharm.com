@@ -5,6 +5,13 @@ build:
     - script:
         name: wintersmith build
         code: ./node_modules/.bin/wintersmith build -o ./build
+
+    after-steps:
+        - wouter/irc-notify:
+            server: chat.freenode.net
+            port: 6667
+            nickname: freenode
+            channel: tusharmathur-private
 deploy:
   steps:
     - lukevivier/gh-pages:
