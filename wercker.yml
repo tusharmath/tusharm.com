@@ -5,7 +5,6 @@ build:
     - script:
         name: wintersmith build
         code: ./node_modules/.bin/wintersmith build -o ./build
-
   after-steps:
     - wouter/irc-notify:
       server: chat.freenode.net
