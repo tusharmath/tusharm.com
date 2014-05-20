@@ -1,21 +1,21 @@
 box: wercker/nodejs
 build:
-	steps:
-		- npm-install
-		- script:
-			name: wintersmith build
-			code: ./node_modules/.bin/wintersmith build -o ./build
+  steps:
+    - npm-install
+    - script:
+        name: wintersmith build
+        code: ./node_modules/.bin/wintersmith build -o ./build
 
-	after-steps:
-		- wouter/irc-notify:
-			server: chat.freenode.net
-			port: 6667
-			nickname: freenode
-			channel: tusharmathur-private
+  after-steps:
+    - wouter/irc-notify:
+      server: chat.freenode.net
+      port: 6667
+      nickname: freenode
+      channel: tusharmathur-private
 deploy:
-	steps:
-		- lukevivier/gh-pages:
-			repo: tusharmath/tusharmath.github.io
-			token: $GH_TOKEN
-			domain: tusharm.com
-			basedir: build
+  steps:
+    - lukevivier/gh-pages:
+        repo: tusharmath/tusharmath.github.io
+        token: $GH_TOKEN
+        domain: tusharm.com
+        basedir: build
