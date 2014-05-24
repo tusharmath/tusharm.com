@@ -4,7 +4,7 @@ author: aiswarya-prakasan
 date: 2014-may-21
 template: article.jade
 ```
-The author of the following content had no blog of her own, I love it so much that I thought I'd post it here, on her behalf.
+The author of the following content din't have a blog of her own, I loved it so much that I thought I'll post it here.
 
 ---
 
@@ -12,9 +12,9 @@ Date a boy who codes. The kind who sees a problem and writes a program to solve 
 
 Date a boy who codes, for his sense of humor. He cracks jokes that are clever and witty at best, and lame geeky at worst. But once you get a hang of his style, you know he can crack you up and keep you laughing at the worst of times. He'll "reboot himself in safe mode" when you are upset or disappointed. Give him some time to open up. Date him.
 
-Date him for his child-like curiosity and imagination. It is so easy to love him, when he talks about life like it is an animated movie or talks about his gadgets like they have a life of their own. The sparkle in his eyes and the truth in his voice will make you fall in love with him - over and over again. 
+Date him for his child-like curiosity and imagination. It is so easy to love him, when he talks about life like it is an animated movie or talks about his gadgets like they have a life of their own. The sparkle in his eyes and the truth in his voice will make you fall in love with him - over and over again.
 
-In spite of all the complicated jargon he uses, he is simple to decode and understand. Logical and straightforward in everything, you know you have him figured out when you can pick out that perfect gift for him in a matter of minutes and it is nothing conventional. 
+In spite of all the complicated jargon he uses, he is simple to decode and understand. Logical and straightforward in everything, you know you have him figured out when you can pick out that perfect gift for him in a matter of minutes and it is nothing conventional.
 
 His love is simple too, just like other aspects of him. He may not ever plan an elaborate dinner date with you. But your heart sure skips a beat when he says how you have saved him from becoming a wierdo. How can you resist giving a peck when he talks so earnestly about that perfect long drive he has been dreaming of taking with you ?  It’s the little things that take up most space in your heart. Date this guy.
 
