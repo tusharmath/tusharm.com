@@ -1,15 +1,17 @@
 ```metadata
-title: Scheduling repeated events
+title: Schemaless scheduling for repeated events
 author: tushar-mathur
 date: 2014-may-28
 category: articles
 template: article.jade
 ```
 
-Consider a case where one wants to schedule repeated events in a calender. For example - a yearly birthday or a fortnightly appointment with the dentist. These case are quite simple and most of the current solutions such as google calender, handles them quite well. The problem arises when you want to build a system like this with your own application.
+Consider a case where one wants to schedule repeated events in a calendar. For example - a yearly birthday or a fortnightly appointment with the dentist. Though, these cases are quite simple and most of the current solutions such as — Google Calendar, handles them quite well, the problem arises when you want to integrate a system like this with your own application.
 
-To give you a perspective of the complexity of the problem, consider a case where I have repeated appointments on every saturday for 3 years. Which means I would have to create a db schema where in I would have 156 entries (approx 156 saturdays in 3 years). They also have to be linked to some base type of an entry so that incase if I update the time or notes for one event and want to let it cascade to all the events in the future, I should be able to do so. Which means, again a change in 156 rows of the table. It only gets worse if you have more complex forms of repeatition logic such as involving last day of the month except if its a friday etc.
+This stackoverflow question — [Calendar Recurring/Repeating Events - Best Storage Method](http://stackoverflow.com/questions/5183630/calendar-recurring-repeating-events-best-storage-method) — gives a good picture of the complexity of the problem.
 
-After spending some time on this problem, I realized that selecting a day from a calender range, is pretty much like selecting an element from the dom tree in the browser. Infact if I made web page with a collection of `year` elements, each having twelve `month` as its child element and then `week` and eventually `days`, then I could just use a css selector to find the day relevent to me. This gives me an added benifit of creating an even more customized version of the repeatition logic. I can literally now program my schedules using this language.
+One thing that I observed, is that you could draw parallels between this problem and the problem of selecting elements in a DOM tree. The latter been solved already using css selectors. So I started developing a language inspired by CSS Selectors but tailored for selecting dates.
 
-I have created an open source version of the rule book and have put it on [github](https://github.com/tusharmath/sheql).
+This language ultimately gave me a lot of flexibility in terms of writing repetition logic and applying filters. Moreover this setup din't require any complex schema and thus no schema migrations, with every new feature. Its just one rule, defining any convoluted logic as you may like and still taking up only a single row in the table.
+
+The rules and the prototype parser	 has been [open sourced](https://github.com/tusharmath/sheql) and is available via npm. Though the prototype has been written in javascript one could easily write a version in python or some other language.
