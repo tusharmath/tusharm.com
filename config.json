@@ -1,12 +1,13 @@
 {
 	"locals": {
-		"url": "/",
+		"url": "http://tusharm.com",
 		"name": "Tushar Mathur's blog",
 		"owner": "Tushar Mathur",
 		"description": "A software developer, physics enthusiast, swimmer and a car geek"
 	},
 	"plugins": [
-		"./plugins/paginator.coffee"],
+		"./plugins/paginator.coffee"
+	],
 	"require": {
 		"moment": "moment",
 		"_": "underscore",
