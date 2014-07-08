@@ -2,8 +2,8 @@
 title: Schemaless scheduling for repeated events
 author: tushar-mathur
 date: 2014-may-28
-category: articles
-template: article.jade
+category: project
+template: project.jade
 ```
 
 Consider a case where one wants to schedule repeated events in a calendar. For example - a yearly birthday or a fortnightly appointment with the dentist. Though, these cases are quite simple and most of the current solutions such as — Google Calendar, handles them quite well, the problem arises when you want to integrate a system like this with your own application.
