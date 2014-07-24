@@ -18,7 +18,7 @@ Developed *Appointment Request Manager*, an internal NodeJS based CRM that helps
 
 Took the initiative to prototype — How to write Javascript code using TDD (Test Driven Development). Gave a talk about how to setup their own projects to exploit the benefits of TDD.
 
-Have been working on transitioning the Doctor facing application from BackboneJS to AngularJS + RequireJS based architecture. This migration was aimed to improve performance and code maintainability issues.
+Have been working on transitioning the Doctor facing part of the application, from BackboneJS to AngularJS + RequireJS based architecture. This migration was aimed to improve performance and resolve code maintainability/scalibility issues.
 
 Have been working closely with the Talent Acquisition team (HR), to help them recruit new front end developers by taking interviews and fabricating innovative puzzles for them to solve.
 
