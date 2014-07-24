@@ -5,25 +5,35 @@ date: 2013-dec-8
 template: about.jade
 ```
 
-This is a condensed list of everything that I have done so far. Adhering to Agile Software Development and Scrum with transcontinental teams, I have also worked independently through the Full Software Development Life Cycle of multiple projects. Currently I am working with a Bangalore based startup as a **Senior Software Engineer**. My choice of programming languages are `C`, `C#` and `CoffeeScript`.
+This is a condensed list of everything that I have done so far. Apart from adhering to Agile Software Development Methodology and Scrum with transcontinental teams, I have also worked independently through the Full SDLC of multiple projects. Currently I am working with a Bangalore based startup - [Practo](https://www.practo.com) as a **Javascript Engineer**. My choice of programming languages are `C`, `C#`, `Javascript` and `CoffeeScript`.
 
 A *single page version* of my resume is also available [here](/files/cv.pdf).
 
 ---
 
 #Experience
+###Javascript Engineer, Practo (Since - Jan 2014)
+####Practo.com
+Developed *Appointment Request Manager*, an internal NodeJS based CRM that helps connect patients and doctors via. Phone.
+
+Took the initiative to prototype — How to write Javascript code using TDD (Test Driven Development). Gave a talk about how to setup their own projects to exploit the benefits of TDD.
+
+Have been working on transitioning the Doctor facing application from BackboneJS to AngularJS + RequireJS based architecture. This migration was aimed to improve performance and code maintainability issues.
+
+Have been working closely with the Talent Acquisition team (HR), to help them recruit new front end developers by taking interviews and fabricating innovative puzzles for them to solve.
+
 ###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
 
 ####Forecast Manager
-Developed Core application functionality and features such as Bulk Forecast Generation and User Activity logs. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customisations and Help & Support.
+Developed Core application functionality and features such as Bulk Forecast Generation and User Activity logs. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customizations and Help & Support.
 
 Assisted in setting up a branching strategy for parallel development of multiple client logic into a single code base with a sustainable release & hot-fix plan.
 
 Added Solution Tasks to the **Forecast Manager** Application for automating builds and tag creation, appear seamless across the transcontinental team & infrastructure.
 
-Was solely responsible for all the **Dev Ops** related tasks for **Forecast Manager**. Automated the complete deployment process, causing a significant reduction in upgrade times (4 hours to a matter of seconds). The tool featured - 
+Was solely responsible for all the **Dev Ops** related tasks for **Forecast Manager**. Automated the complete deployment process, causing a significant reduction in upgrade times (4 hours to a matter of seconds). The tool featured -
 
-* Generation of upgrade & downgrade logs for diagnostics. 
+* Generation of upgrade & downgrade logs for diagnostics.
 * Database Migration.
 * Scheduled tasks migration on remote servers.
 * Auto backup and restore of systems in case of failure.
