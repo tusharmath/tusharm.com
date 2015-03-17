@@ -1,7 +1,7 @@
 ```metadata
 title: About Me
 author: tushar-mathur
-date: 2013-dec-8
+date: 2015-mar-17
 template: about.jade
 ```
 
@@ -12,15 +12,23 @@ A *single page version* of my resume is also available [here](/files/cv.pdf).
 ---
 
 #Experience
-###Javascript Engineer, Practo (Since - Jan 2014)
+
+###Lead Software Engineer, Practo (Since - Jan 2015)
+####Search Ads
+
+Lead a team of four devs and one QA, to design a develop an ad network for clinics and hospitals to advertise on Practo.com.
+
+Have been working closely with the Talent Acquisition team (HR), to help them recruit new front end developers by taking interviews and fabricating innovative puzzles for them to solve.
+
+###Senior Software Engineer, Practo (Jan 2014 - Dec 2014)
 ####Practo.com
 Developed *Appointment Request Manager*, an internal NodeJS based CRM that helps connect patients and doctors via. Phone.
 
-Took the initiative to prototype — How to write Javascript code using TDD (Test Driven Development). Gave a talk about how to setup their own projects to exploit the benefits of TDD.
+Took the initiative to prototype — How to write Javascript code using TDD (Test Driven Development/Design). Gave a talk about how to setup their own projects to exploit the benefits of TDD.
 
 Have been working on transitioning the Doctor facing part of the application, from BackboneJS to AngularJS + RequireJS based architecture. This migration was aimed to improve performance and resolve code maintainability/scalibility issues.
 
-Have been working closely with the Talent Acquisition team (HR), to help them recruit new front end developers by taking interviews and fabricating innovative puzzles for them to solve.
+Improved the perceived page load performance from 9.6 seconds to 3.8 seconds on average. Lead a team of developers to build an application monitoring system to make sure the performance metrics are within a set threshold.
 
 ###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
 
