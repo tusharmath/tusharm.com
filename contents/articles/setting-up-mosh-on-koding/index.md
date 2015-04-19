@@ -24,11 +24,11 @@ Here is how you can get mosh to work on koding.com
     sudo ufw enable
     ```
 
-3. Open up critical ports first viz. HTTP and SSH.
+3. Open up critical ports first viz. HTTP, SSH and 56789 for koding.
     ```bash
     sudo ufw allow ssh
     sudo ufw allow http
-    sudo ufw allow 5678/tcp
+    sudo ufw allow 56789/tcp
     ```
 
 4. Open up the port (60001 is used by mosh in most cases) on the remote machine for the client machine to access it via udp.
