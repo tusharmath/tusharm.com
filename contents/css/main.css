@@ -8,7 +8,8 @@ body {
   font-size: 16px;
   line-height: 1.52;
   background-color: #f8f8f8;
-  text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility;
+  background-image: url('/bg.svg');
 }
 
 .content-wrap {
