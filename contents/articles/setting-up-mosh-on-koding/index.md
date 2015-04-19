@@ -17,11 +17,17 @@ Here is how you can get mosh to work on koding.com
     ssh <username>@<username>.koding.io
     ```
 
-2. Setup [uncomplicated firewall](https://help.ubuntu.com/community/UFW) in the remote machine.
+2. Setup [uncomplicated firewall](http://learn.koding.com/guides/enable-ufw/) in the remote machine.
     ```bash
     sudo apt-get install ufw
     sudo ufw status verbose
     sudo ufw enable
+    ```
+
+3. Open up critical ports first viz. HTTP and SSH.
+    ```bash
+    sudo ufw allow ssh
+    sudo ufw allow http    
     ```
 
 4. Open up the port (60001 is used by mosh in most cases) on the remote machine for the client machine to access it via udp.
