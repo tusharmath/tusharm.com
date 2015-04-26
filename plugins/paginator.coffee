@@ -1,4 +1,5 @@
 request = require 'request'
+_ = require 'underscore'
 module.exports = (env, callback) ->
 	### Paginator plugin. Defaults can be overridden in config.json
 			e.g. "paginator": {"perPage": 10} ###
@@ -21,14 +22,16 @@ module.exports = (env, callback) ->
 			url: "https://api.github.com/users/#{username}/repos"
 
 			# Github Api requires a User-Agent header
-			headers: 'User-Agent': username 
-		
+			headers: 'User-Agent': username
+
 		#Need to add a timeout
-		request opt, (e,r,b) -> 
+		request opt, (e,r,b) ->
 			if e
-				callback() 
+				callback()
 			else if r.statusCode is 200
-				callback JSON.parse b 
+                repos = JSON.parse b
+                popular = _.filter repos, (i) -> i.watchers_count + i.stargazers_count > 0
+				callback {popular, repos}
 
 
 	getArticles = (contents ,type) ->
@@ -103,5 +106,5 @@ module.exports = (env, callback) ->
 	#Setup Github Data
 	getGitHubData env.config.github, (data)->
 		env.helpers.github = data
-		# tell the plugin manager we are done	
+		# tell the plugin manager we are done
 		callback()

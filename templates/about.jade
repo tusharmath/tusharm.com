@@ -13,19 +13,19 @@ block header
 block content
 	article.article
 		section.content!= typogr(page.html).typogrify()
-		
+
 		h1 Open Source Contribution
 		if env.helpers.github
 			ul
-				each item in env.helpers.github
+				each item in env.helpers.github.popular
 					li
 						strong
 							a(href=item.html_url)= item.name
-						span : 
+						span :&nbsp;
 						span= item.description + '.'
 		else
 			p [Github could not be accessed]
-		
+
 
 block prepend footer
 	div.nav

@@ -31,4 +31,14 @@ block content
 										li(style='height:'+ lineHeight + 'em;line-height:'+ lineHeight + 'em;')
 											a(href=item.url)=item.title
 						- }
-						
+
+	h1
+		a(href="github.com/tusharmath") Github
+	if env.helpers.github
+		ul
+			each item in env.helpers.github.repos
+				li
+					strong
+						a(href=item.html_url)= item.name
+						span :&nbsp;
+					span= item.description + '.'
