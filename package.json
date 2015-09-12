@@ -1,12 +1,15 @@
 {
-	"name": "tusharm.com",
-	"version": "0.0.1",
-	"dependencies": {
-		"moment": "2.x",
-		"underscore": "1.4.x",
-		"typogr": "0.5.x",
-		"wintersmith": "*",
-		"request": "*"
-	},
-	"repository": "none"
+  "name": "tusharm.com",
+  "version": "0.0.1",
+  "dependencies": {
+    "moment": "2.x",
+    "underscore": "1.4.x",
+    "typogr": "0.5.x",
+    "wintersmith": "*",
+    "request": "*"
+  },
+  "repository": "none",
+  "devDependencies": {
+    "prompt": "^0.2.14"
+  }
 }
