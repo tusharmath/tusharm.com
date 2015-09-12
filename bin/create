@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+
+var prompt = require('prompt')
+var fs = require('fs')
+var _ = require('underscore')
+
+var templateStr = _.template(fs.readFileSync(`${__dirname}/content.tmpl.md`).toString())
+prompt.start()
+prompt.get(['title', 'type', 'author', 'time'], function (err, result){
+  var dir = `${__dirname}/../contents/articles/${result.title.replace(/ /g, '-')}`
+  fs.mkdirSync(dir)
+  fs.writeFileSync( `${dir}/index.md`, templateStr(result))
+})
