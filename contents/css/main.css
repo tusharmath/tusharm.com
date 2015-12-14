@@ -9,7 +9,6 @@ body {
   line-height: 1.52;
   background-color: #f8f8f8;
   text-rendering: optimizeLegibility;
-  background-image: url('/bg.svg');
 }
 
 .content-wrap {
@@ -227,7 +226,7 @@ margin: 7px 6px 4px 0px;
 
 .article .content img {
   display: block;
-  width: 50%;
+  width: 100%;
   height: 50%;
   margin-left: auto;
   margin-right: auto
