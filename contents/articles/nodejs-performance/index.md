@@ -1,5 +1,5 @@
 ```metadata
-title: Node.js Concurrency Evaluation
+title: node.js concurrency evaluation
 author: tushar-mathur
 date: 2015-12-14
 category: project
@@ -14,7 +14,7 @@ I have been using node.js for a decent amount of time now and I had this hypothe
 
 This is [timeslicing](https://en.wikipedia.org/wiki/Computer_multitasking), which should be equivalent to creating threads (atleast in theory) in `Java`. In fact, that's what [node.js uses](https://strongloop.com/strongblog/node-js-is-faster-than-java/) for IO operations, so technically my server should have a much higher throughput via this approach.
 
-There are different ways you implement timeslicing viz. `setTimeout`, `process.nextTick` and `setImmediate`. There are subtle differences between all the three functions but bottom line is this — passing a callback to any of these functions defers its execution by some cpu cycles. This helps in letting CPU breathe and perform other tasks in the mean time such as rendering (on frontend) or making HTTP requests etc.
+There are different ways to implement timeslicing viz. `setTimeout`, `process.nextTick` and `setImmediate`. There are subtle differences between all the three functions but bottom line is this — passing a callback to any of these functions defers its execution by some cpu cycles. This helps in letting CPU breathe and perform other tasks in the mean time such as — rendering (on frontend) or making HTTP requests etc.
 
 For starters I want to compare the performance of a fibonacci algorithm on a process. So consider the following two fibonacci implementations —
 
@@ -95,27 +95,26 @@ ASYNC:setImmediate x 739 ops/sec ±0.93% (78 runs sampled)
 Fastest is SYNC
 ```
 
-*NOTE: that setTimeout is the worst approach*
+*NOTE: that setTimeout is the worst performer*
 
 Yes that's a no brainer, SYNC has to be the fastest. But wait, its almost 19,000 times faster than the fastest async! That changes quite a lot of things!
 
-On the front end, sometimes when you are computing something expensive, its often suggested to chunk the computation so that the browser can do other tasks such as rendering etc. This gives an impression of snappy fast UI. This is perceived performance and yes developers understand that in totality the task will take a lot more time to complete with this approach.
+On the front end, sometimes when you are computing something expensive, its often suggested to chunk the computation so that the browser can do other tasks such as rendering etc. This gives an impression of snappy fast UI. This is perceived performance and yes I understand that in totality the task will take a lot more time to complete with this approach.
 
-On the server side, you might get seduced into having the same approach, so that the server is able to handle the requests concurrently in the same fashion. Looking at the performance difference it seems like even if it does, the difference is unbelievably high and it would definitely takeup a lot more memory, differing computation everytime and eventually get exhausted of all the resources.
+On the server side, I got seduced into taking the same approach, so that it is able to handle the requests concurrently. Looking at the performance difference it seems like even if it does, the difference is unbelievably high and it would definitely take up a lot more memory, deferring computation everytime and eventually get exhausted of all the resources.
 
->The CPU will take you for a spin if you give him a chance to relax :-)
+>The CPU is taking me for spin if I give him a chance to relax, how dare he!
 
 Alright, things are beginning to get more clearer in my head now, but the real test of my hypothesis will be on a multi core architecture. So I hosted the same code on simple node http server and forked the process 4x.
 
 #### Load Test using [nperf](npmjs.com/package/nperf)
-With concurrency set to 50, here are the results.
+With concurrency set to 50 and averaging response times and rate of response of 1000 requests, here are the results.
 
-|       | avg     | rate    |   |
-|-------|---------|---------|---|
-| async | 751.467 | 64.80   |   |
-| sync  | 23.38   | 2028.40 |   |
-|       |         |         |   |
+|       | avg     | rate    | memory  |
+|-------|---------|---------|---------|
+| async | 751.467 | 64.80   | 1GB     |
+| sync  | 23.38   | 2028.40 | 240MB   |
 
-In this case, sync was close to 30x faster than async. The results are pretty much the same for different concurrency settings and even worse for async, as the computation gets more expensive.
+In this case, sync is still close to 30x faster than async. The results are pretty much the same for different concurrency settings and gets worse for async, as the computation gets more expensive.
 
-The lesson to be learnt here is — First that my hypothesis was absurd and second that application level time slicing using the node's event loop, will NOT give us the same or even near the same performance of any native node module. Neither will it be as fast as any thread based systems like `java`.
+The lesson to be learnt here is — First that my hypothesis was absurd and second that application level time slicing using the node's event loop, will NOT give us the same or even near the same performance of any native node module async behaviour. Neither will it be as fast as any thread based systems like `java`. This doesn't mean that node.js or Javascript is slower than `java` or any other threaded systems.
