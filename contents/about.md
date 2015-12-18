@@ -11,17 +11,17 @@ A *single page version* of my resume is also available [here](/files/cv.pdf).
 
 ---
 
-#Experience
+# Experience
 
-###Lead Software Engineer, Practo (Since - Jan 2015)
-####Search Ads
+### Lead Software Engineer, Practo (Since - Jan 2015)
+#### Search Ads
 
 Lead a team of four devs and one QA, to design a develop an ad network for clinics and hospitals to advertise on Practo.com.
 
 Have been working closely with the Talent Acquisition team (HR), to help them recruit new front end developers by taking interviews and fabricating innovative puzzles for them to solve.
 
-###Senior Software Engineer, Practo (Jan 2014 - Dec 2014)
-####Practo.com
+### Senior Software Engineer, Practo (Jan 2014 - Dec 2014)
+#### Practo.com
 Developed *Appointment Request Manager*, an internal NodeJS based CRM that helps connect patients and doctors via. Phone.
 
 Took the initiative to prototype — How to write Javascript code using TDD (Test Driven Development/Design). Gave a talk about how to setup their own projects to exploit the benefits of TDD.
@@ -30,9 +30,9 @@ Have been working on transitioning the Doctor facing part of the application, fr
 
 Improved the perceived page load performance from 9.6 seconds to 3.8 seconds on average. Lead a team of developers to build an application monitoring system to make sure the performance metrics are within a set threshold.
 
-###Software Developer, ZS Associates (Jan 2011 - Jan 2013)
+### Software Developer, ZS Associates (Jan 2011 - Jan 2013)
 
-####Forecast Manager
+#### Forecast Manager
 Developed Core application functionality and features such as Bulk Forecast Generation and User Activity logs. Designed and implemented *Application Settings* module that managed — privileges for users, features enabled, customizations and Help & Support.
 
 Assisted in setting up a branching strategy for parallel development of multiple client logic into a single code base with a sustainable release & hot-fix plan.
@@ -58,13 +58,13 @@ Worked on harmonising the user interface across the Javelin suite by creating cu
 #### Data Integration
 Evaluated cloud based data integration tools primarily **Boomi** and **Pervasive** to integrate our in-house ETL tool — **Javelin Data Manager** with **Salesforce**. Designed and developed data integration solutions to make Javelin Data Manager communicate with Boomi using web services. Prototyped Boomi Processes for simulating how data could be transfered within the Javelin Suite. Took trainings for the consulting team at ZS on Boomi Integration with in-house tools.
 
-###Trainee Technology, Sapient (Jul 2010 - Dec 2010)
+### Trainee Technology, Sapient (Jul 2010 - Dec 2010)
 Underwent training for basic Java and Delivery Approach to get hands on experience of real life delivery project with respect to the phases, roles, project processes and technical know how.
 Developed an E-Commerce application using WCS, Hybris, ATG and Interwowen as a part of the training.
 
-#Education
+# Education
 
-###Undergrad, Pune University (2006 - 2010)
+### Undergrad, Pune University (2006 - 2010)
 Completed Bachelors in Information Technology from **Army Institute of Technology**. Graduated with a *First Class* grade.
 
 * Won the **first prize** in a programming competition at Bharat Vidhya Peeth University (2010).
