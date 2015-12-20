@@ -7,12 +7,12 @@ template: article.jade
 
 Using a remote server for development is so much cooler for obvious reasons. Using MOSH on top of it naturally makes the experience much better.
 
-###[Koding.com](https://koding.com) + [MOSH](https://mosh.mit.edu/#getting) = *Ecstasy*
+### [Koding.com](https://koding.com) + [MOSH](https://mosh.mit.edu/#getting) = *Ecstasy*
 
 
 Here is how you can get mosh to work on koding.com
 
-1. SSH into the koding server from your client machine. If you haven't added ssh keys yet checkout their [tutorial](http://learn.koding.com/guides/ssh-into-your-vm/). 
+1. SSH into the koding server from your client machine. If you haven't added ssh keys yet checkout their [tutorial](http://learn.koding.com/guides/ssh-into-your-vm/).
     ```bash
     ssh <username>@<username>.koding.io
     ```
