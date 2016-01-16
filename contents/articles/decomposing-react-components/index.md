@@ -16,13 +16,13 @@ class Repository extends Component {
   componentWillMount () {
     fetch('https://api.github.com/users/sindresorhus/repos')
     .then(x => x.json())
-    .then(x => this.setState({repositories: x}))
+    .then(x => this.setState({repos: x}))
   }
   
   render () {
     return (
       <ul>
-        {this.state.respositories.map(x => <li>{x}</li>)}
+        {this.state.repos.map(x => <li>{x}</li>)}
       </ul>
     )
   }
@@ -48,4 +48,38 @@ render () {
   )
 }
 ```
+So far so good. I want to add another functionality now, being able to do a real time search on the repository names. 
+
+```javascript 
+
+class Repository extends Component {
+  componentWillMount () {
+    fetch('https://api.github.com/users/sindresorhus/repos')
+    .then(x => x.json())
+    .then(x => this.setState({repos: x, fRepos: x}))
+  }
+  
+  render () {
+    if(this.state === null){
+      return null
+    }
+    
+    const onKeyPress = e => {
+      const fRepos = this.state.repos.filter(x => x.name.match(e.target.value))
+      this.setState({fRepors})
+    }
+    
+    return (
+      <div>
+        <input type="text" onKeyPress={onKeyPress} />
+        <ul>
+          {this.state.fRepos.map(x => <li>{x}</li>)}
+        </ul>
+      </div>
+    )
+  }
+}
+```
+
+So I added an input box and attached an event handler for the keypress event. I also keep two lists, `repos` and `fRepos` where fRepos represents the filtered list of the repositories.
 
