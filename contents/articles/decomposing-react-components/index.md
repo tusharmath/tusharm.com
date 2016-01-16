@@ -181,3 +181,32 @@ Okay, I can't take in any more feature request until I refactor this code!
 
 # Part 2 (Refactoring)
 ...
+
+
+There are three concepts involved with rendering — **What**, **How** & **When**.
+
+What should I render — I should render the component. It should be in control of the parent component only and if required information must be passed via props.
+
+How should I render — I should use the return value of the render() function. This should be in control of the component in context, more specificly its `render` method.
+
+When should I render — I should render when certain condition are satisfied. This should again be in control of the component but not via the `render` method. Since render is already involved in the *how* part, we should have some better mechanism of delegating this responsibility to someone else.
+
+In our case we have mixed all these concepts together and only one component is doing eveything. So first lets break this huge component into smaller ones.
+
+
+```javascript
+class FilteredRepos extends Class {
+  render () {
+    if(this.props.repos.length === 0){
+      return null
+    }
+    return (
+      <ul>
+        {this.props.repos.map(x => <li>{x}</li>)}
+      </ul>
+    )
+  }
+}
+```
+
+Created a new component FilteredRepos, this only renders the list when the length of the repos is non zero.
