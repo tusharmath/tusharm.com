@@ -5,7 +5,11 @@ date: 2016-01-16
 template: article.jade
 ```
 
-I want to talk about how you can break a huge, complicated component into smaller specialized ones. So say I want to list out all the repositories of a github user ([sindresorhus](https://github.com/sindresorhus?tab=repositories)).
+I want to talk about how you can break a huge, complicated component into smaller specialized ones. 
+
+# Part 1
+
+So say I want to list out all the repositories of a github user ([sindresorhus](https://github.com/sindresorhus?tab=repositories)).
 
 
 ```javascript
