@@ -214,7 +214,7 @@ ReactDOM.render(<Repository/>, document.body.children[0])
 Okay, I can't take in any more feature request until I refactor this code!
 
 
-# Part 2 (Breaking Component)
+# Part 2 (Breaking Components)
 
 There are three concepts involved with rendering — **How** & **When**.
 
