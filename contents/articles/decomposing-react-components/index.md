@@ -175,12 +175,46 @@ Okay, this is good, does the job though already kinda messy. Now, I need to add 
 
 ```
 
+**Complete Code**
+
+```javascript
+import {Component} form 'react'
+
+class Repository extends Component {
+  componentWillMount () {
+    fetch('https://api.github.com/users/sindresorhus/repos')
+    .then(x => x.json())
+    .then(x => this.setState({repos: x}))
+  }
+
+  render () {
+    const onKeyPress = e => {
+      const filter = e.target.value
+      const fRepos = this.state.repos.filter(x => x.name.match(filter))
+      this.setState({fRepors, filter})
+    }
+    
+    return (
+      <div>
+        {this.state === null ? <span>Loading...</span> : <input type="text" onKeyPress={onKeyPress}     value={this.state.filter} />
+        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
+          {this.state.fRepos.map(x => <li>{x}</li>)}
+        </ul>}
+        }
+      </div>
+    )
+  }
+}
+
+// Append to the first child of the body
+ReactDOM.render(<Repository/>, document.body.children[0])
+
+```
+
 Okay, I can't take in any more feature request until I refactor this code!
 
 
-# Part 2 (Refactoring)
-
-
+# Part 2 (Breaking Components)
 
 There are three concepts involved with rendering — **How** & **When**.
 
@@ -280,6 +314,99 @@ class Repository extends Component {
 }
 ```
 
-So we have concluded part one of the refactoring where each component decides by it self, when should it be shown.
+So we have concluded part one of the refactoring where each component decides by it self, when should it be shown and how it should be shown.
 
+# Part 3 (Control rendering declaratively)
+
+Reading those `if conditions` in between of the render method to decide if the component needs to be rendered or not, should not be the render function's responsibility. We can fix it by using the [react-render-if](https://github.com/tusharmath/react-render-if) package. The package exposes a decorator `renderIf` which takes in functions as predicates and calls them one by one with the current instance of the component as the first param. If the return value of each of the predicates is `Truthy` then the component is rendered.
+
+For example —
+```javascript
+import {renderIf} from 'react-render-if'
+
+@renderIf(i => i.props.repos)
+class FilteredRepos extends Component {
+  render () {
+    const props = this.props
+    return (
+      <div>
+        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
+        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
+        <NoRepositories repos={props.repos} />
+      </div>
+    )
+  }
+}
+
+@renderIf(x => !i.props.repos)
+class Loading extends Component {
+  render () {
+    return<div>Loading ...</div>
+  }
+}
+
+@renderIf(x => x.props.repos, x => x.props.repos.length === 0)
+class NoRepositories extends Component {
+  render () {
+    return <div>No Respositories Found</div>
+  }
+}
+```
+The declarative approach makes it much easier for me to understand the render function's main responsibility.
+
+I have removed all the `if conditions` from the code, which makes the code it a lot more readable.
+
+
+**Final Code**
+
+```javascript
+
+import {renderIf} from 'react-render-if'
+
+@renderIf(i => i.props.repos)
+class FilteredRepos extends Component {
+  render () {
+    const props = this.props
+    return (
+      <div>
+        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
+        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
+        <NoRepositories repos={props.repos} />
+      </div>
+    )
+  }
+}
+
+@renderIf(x => !i.props.repos)
+class Loading extends Component {
+  render () {
+    return<div>Loading ...</div>
+  }
+}
+
+@renderIf(x => x.props.repos, x => x.props.repos.length === 0)
+class NoRepositories extends Component {
+  render () {
+    return <div>No Respositories Found</div>
+  }
+}
+
+class Repository extends Component {
+  componentWillMount () {
+    fetch('https://api.github.com/users/sindresorhus/repos')
+    .then(x => x.json())
+    .then(x => this.setState({repos: x}))
+  }  
+
+  render () {
+    const state = this.state
+    return (
+      <div>
+        <Loading {...state} />
+        <FilterView {...state} onFilterChanged={filter => this.setState({filter})} />
+      </div>
+    )
+  }
+}
+```
 
