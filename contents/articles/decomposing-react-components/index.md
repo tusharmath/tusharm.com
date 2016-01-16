@@ -175,6 +175,42 @@ Okay, this is good, does the job though already kinda messy. Now, I need to add 
 
 ```
 
+**Complete Code**
+
+```javascript
+import {Component} form 'react'
+
+class Repository extends Component {
+  componentWillMount () {
+    fetch('https://api.github.com/users/sindresorhus/repos')
+    .then(x => x.json())
+    .then(x => this.setState({repos: x}))
+  }
+
+  render () {
+    const onKeyPress = e => {
+      const filter = e.target.value
+      const fRepos = this.state.repos.filter(x => x.name.match(filter))
+      this.setState({fRepors, filter})
+    }
+    
+    return (
+      <div>
+        {this.state === null ? <span>Loading...</span> : <input type="text" onKeyPress={onKeyPress}     value={this.state.filter} />
+        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
+          {this.state.fRepos.map(x => <li>{x}</li>)}
+        </ul>}
+        }
+      </div>
+    )
+  }
+}
+
+// Append to the first child of the body
+ReactDOM.render(<Repository/>, document.body.children[0])
+
+```
+
 Okay, I can't take in any more feature request until I refactor this code!
 
 
