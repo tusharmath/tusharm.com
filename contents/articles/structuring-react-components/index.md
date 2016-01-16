@@ -1,5 +1,5 @@
 ```metadata
-title: Decomposing react components
+title: structuring react components
 author: tushar-mathur
 date: 2016-01-16
 template: article.jade
