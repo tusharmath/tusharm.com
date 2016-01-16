@@ -28,3 +28,6 @@
 
 ga('create', 'UA-40580825-1', 'tusharm.com');
 ga('send', 'pageview');
+
+// HighlightJS
+hljs.initHighlightingOnLoad()
