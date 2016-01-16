@@ -316,9 +316,9 @@ class Repository extends Component {
 
 So we have concluded part one of the refactoring where each component decides by it self, when should it be shown and how it should be shown.
 
-# Part 3 (Making Components Declarative)
+# Part 3 (Control rendering declaratively)
 
-Reading those `if conditions` in between of the render method to decide if the component needs to be rendered or not, should not be the render function's responsibility. We can fix it by using the [react-render-if](https://github.com/tusharmath/react-render-if) package.
+Reading those `if conditions` in between of the render method to decide if the component needs to be rendered or not, should not be the render function's responsibility. We can fix it by using the [react-render-if](https://github.com/tusharmath/react-render-if) package. The package exposes a decorator `renderIf` which takes in functions as predicates and calls them one by one with the current instance of the component as the first param. If the return value of each of the predicates is `Truthy` then the component is rendered.
 
 For example —
 ```javascript
