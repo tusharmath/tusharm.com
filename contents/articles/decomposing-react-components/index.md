@@ -214,9 +214,7 @@ ReactDOM.render(<Repository/>, document.body.children[0])
 Okay, I can't take in any more feature request until I refactor this code!
 
 
-# Part 2 (Refactoring)
-
-
+# Part 2 (Breaking Component)
 
 There are three concepts involved with rendering — **How** & **When**.
 
@@ -316,6 +314,45 @@ class Repository extends Component {
 }
 ```
 
-So we have concluded part one of the refactoring where each component decides by it self, when should it be shown.
+So we have concluded part one of the refactoring where each component decides by it self, when should it be shown and how it should be shown.
+
+# Part 3 (Making Components Declarative)
+
+Reading those `if conditions` in between of the render method to decide if the component needs to be rendered or not, should not be the render function's responsibility. We can fix it by using the [react-render-if](https://github.com/tusharmath/react-render-if) package.
+
+For example —
+```javascript
+import {renderIf} from 'react-render-if'
+
+@renderIf(i => i.props.repos)
+class FilteredRepos extends Component {
+  render () {
+    const props = this.props
+    return (
+      <div>
+        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
+        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
+        <NoRepositories repos={props.repos} />
+      </div>
+    )
+  }
+}
+
+@renderIf(x => !i.props.repos)
+class Loading extends Component {
+  render () {
+    return<div>Loading ...</div>
+  }
+}
+
+@renderIf(x => x.props.repos, x => x.props.repos.length === 0)
+class NoRepositories extends Component {
+  render () {
+    return <div>No Respositories Found</div>
+  }
+}
+```
+The declarative approach makes it much easier for me to understand the render function's main responsibility.
+
 
 
