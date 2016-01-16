@@ -182,15 +182,13 @@ Okay, I can't take in any more feature request until I refactor this code!
 
 
 
-There are three concepts involved with rendering — **What**, **How** & **When**.
-
-What should I render — I should render the component. It should be in control of the parent component only and if required information must be passed via props.
+There are three concepts involved with rendering — **How** & **When**.
 
 How should I render — I should use the return value of the render() function. This should be in control of the component in context, more specificly its `render` method.
 
 When should I render — I should render when certain condition are satisfied. This should again be in control of the component but not via the `render` method. Since render is already involved in the *how* part, we should have some better mechanism of delegating this responsibility to someone else.
 
-In our case we have mixed all these concepts together and only one component is doing eveything. So first lets break this huge component into smaller ones.
+In our case we have mixed the two concepts together and one component's render() method is doing eveything. So first lets break this huge component into smaller ones.
 
 
 ```javascript
@@ -208,7 +206,7 @@ class UnorderedList extends Class {
 }
 ```
 
-Created a new component `UnorderedList`, this only renders the list when the length of the repos is non zero. Now this is a reusable component that I can use for listing the filtered repositories. I can apply the same concept for showing the `No Repositories Found` message, such that the logic for **When** to show and **How** to show stays inside the component itself.
+Created a new component `UnorderedList`, this only renders when the length of the item is non zero. Now this is a reusable component that I can use for listing the filtered repositories. I can apply the same concept for showing the `No Repositories Found` message, such that the logic for **When** to show and **How** to show stays inside the component itself.
 
 ```javascript
 class NoRepositories extends Component {
@@ -228,7 +226,7 @@ Similarly for the loading message —
 ```javascript
 class Loading extends Component {
   render () {
-    if(this.props.repos && this.props.repos.length > 0){
+    if(this.props.repos){
       return null
     }
     return (
@@ -250,14 +248,14 @@ class FilteredRepos extends Component {
     return (
       <div>
         <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
-        <UnorderedList items={props.repos}/>
+        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
         <NoRepositories repos={props.repos} />
       </div>
     )
   }
 }
 ```
-FilteredRepos, doesn't render if `props.repos` is `null`. It's child `UnorderedList` will auto hide if the items list provided to it is empty and the reverse is applicable to NoRepositories component.
+FilteredRepos, doesn't render if `props.repos` is `null`. It's child `UnorderedList` will not render if the items list provided to it is empty and the similar concept is applicable to `NoRepositories` component.
 
 
 Merging the new components with the `Repository` —
@@ -283,3 +281,5 @@ class Repository extends Component {
 ```
 
 So we have concluded part one of the refactoring where each component decides by it self, when should it be shown.
+
+
