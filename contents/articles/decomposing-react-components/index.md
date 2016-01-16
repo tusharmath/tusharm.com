@@ -9,7 +9,7 @@ I want to talk about how you can break a huge, complicated component into smalle
 
 # Part 1 (The Problem Statement)
 
-So say I want to list out all the repositories of a github user ([sindresorhus](https://github.com/sindresorhus?tab=repositories)).
+So say I want to list out all the repositories of a github user (eg. [sindresorhus](https://github.com/sindresorhus?tab=repositories)).
 
 
 ```javascript
@@ -38,7 +38,7 @@ ReactDOM.render(<Repository/>, document.body.children[0])
 ```
 So here I am using the [fetch](https://github.com/whatwg/fetch) method to make a request to the github's API getting the response, parsing it to `json` and setting it on to the state. The fetching is done as soon as the component is about to mount. The `render()` method is called automatically as soon as the state is updated.
 
-There is a problem though— more likely than not I will have to handle the scenario where I don't have anything in my state which is intitally set to `null`. So I need to add another condition to the render function —
+There is a problem though — state which is intitally set to `null` will throw an exception when I will try to access `state.repos`. So I need to add another condition to the render function —
 
 ```javascript 
 render () {
@@ -47,7 +47,7 @@ render () {
   }
   return (
     <ul>
-      {this.state.respositories.map(x => <li>{x}</li>)}
+      {this.state.repos.map(x => <li>{x}</li>)}
     </ul>
   )
 }
@@ -89,7 +89,7 @@ class Repository extends Component {
 
 So I added an input box and attached an event handler for the keypress event. I also keep two lists, `repos` and `fRepos` where fRepos represents the filtered list of the repositories.
 
-There is a problem here — the input box falls under the [controlled](https://facebook.github.io/react/docs/forms.html#controlled-components) component category. So we need to set the value every time we update it.
+There is a problem here — the input box falls under the [controlled](https://facebook.github.io/react/docs/forms.html#controlled-components) component category. So we need to set its value every time keyPress event is fired.
 
 ```javascript
   render () {
