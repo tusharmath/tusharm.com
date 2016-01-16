@@ -56,6 +56,7 @@ class Repository extends Component {
   componentWillMount () {
     fetch('https://api.github.com/users/sindresorhus/repos')
     .then(x => x.json())
+    // create fRepos, that represents the filtered set of repos
     .then(x => this.setState({repos: x, fRepos: x}))
   }
   
@@ -71,6 +72,7 @@ class Repository extends Component {
     
     return (
       <div>
+        // Add a search box
         <input type="text" onKeyPress={onKeyPress} />
         <ul>
           {this.state.fRepos.map(x => <li>{x}</li>)}
@@ -112,4 +114,63 @@ There is a problem here — the input box falls under the [controlled](https://f
   }
 
 ```
+I want to add one more feature. I want to show text — `no results found` when the repositories don't match the search input.
 
+```javascript
+  render () {
+    if(this.state === null){
+      return null
+    }
+    
+    const onKeyPress = e => {
+      const filter = e.target.value
+      const fRepos = this.state.repos.filter(x => x.name.match(filter))
+      this.setState({fRepors})
+      
+      this.setState({filter})
+    }
+    
+    return (
+      <div>
+        <input type="text" onKeyPress={onKeyPress} value={this.state.filter} />
+        // Add a condition to check the length
+        {this.state.fRepos.length === 0 ? <span>No Results Found<span> : <ul>
+          {this.state.fRepos.map(x => <li>{x}</li>)}
+        </ul>}
+      </div>
+    )
+  }
+
+```
+
+So I have added a simple if condition that renders the list if the `fRepos.length > 0` otherwise, just show `no results found`.
+
+Okay, this is good, does the job though already kinda messy. Now, I need to add another feature now, I want to show a loader till the time the fetch request doesn't get completed inplace of the list.
+
+```javascript
+  render () {
+    // Removed null check condition from here and moved it to the jsx part
+  
+    const onKeyPress = e => {
+      const filter = e.target.value
+      const fRepos = this.state.repos.filter(x => x.name.match(filter))
+      this.setState({fRepors})
+      
+      this.setState({filter})
+    }
+    
+    return (
+      <div>
+        // Added another condition!
+        {this.state === null ? <span>Loading...</span> : <input type="text" onKeyPress={onKeyPress}     value={this.state.filter} />
+        {this.state.fRepos.length === 0 ? <span>No Results Found<span> : <ul>
+          {this.state.fRepos.map(x => <li>{x}</li>)}
+        </ul>}
+        }
+      </div>
+    )
+  }
+
+```
+
+Okay, I can't take in any more feature request until I refactor this code!
