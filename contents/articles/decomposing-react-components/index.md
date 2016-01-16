@@ -354,5 +354,59 @@ class NoRepositories extends Component {
 ```
 The declarative approach makes it much easier for me to understand the render function's main responsibility.
 
+I have removed all the `if conditions` from the code, which makes the code it a lot more readable.
 
+
+**Final Code**
+
+```javascript
+
+import {renderIf} from 'react-render-if'
+
+@renderIf(i => i.props.repos)
+class FilteredRepos extends Component {
+  render () {
+    const props = this.props
+    return (
+      <div>
+        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
+        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
+        <NoRepositories repos={props.repos} />
+      </div>
+    )
+  }
+}
+
+@renderIf(x => !i.props.repos)
+class Loading extends Component {
+  render () {
+    return<div>Loading ...</div>
+  }
+}
+
+@renderIf(x => x.props.repos, x => x.props.repos.length === 0)
+class NoRepositories extends Component {
+  render () {
+    return <div>No Respositories Found</div>
+  }
+}
+
+class Repository extends Component {
+  componentWillMount () {
+    fetch('https://api.github.com/users/sindresorhus/repos')
+    .then(x => x.json())
+    .then(x => this.setState({repos: x}))
+  }  
+
+  render () {
+    const state = this.state
+    return (
+      <div>
+        <Loading {...state} />
+        <FilterView {...state} onFilterChanged={filter => this.setState({filter})} />
+      </div>
+    )
+  }
+}
+```
 
