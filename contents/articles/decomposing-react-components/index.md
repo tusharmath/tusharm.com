@@ -7,7 +7,7 @@ template: article.jade
 
 I want to talk about how you can break a huge, complicated component into smaller specialized ones. 
 
-# Part 1
+# Part 1 (The Problem Statement)
 
 So say I want to list out all the repositories of a github user ([sindresorhus](https://github.com/sindresorhus?tab=repositories)).
 
@@ -178,3 +178,5 @@ Okay, this is good, does the job though already kinda messy. Now, I need to add 
 ```
 
 Okay, I can't take in any more feature request until I refactor this code!
+
+# Part 2 (Refactoring)
