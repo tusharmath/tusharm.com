@@ -83,3 +83,33 @@ class Repository extends Component {
 
 So I added an input box and attached an event handler for the keypress event. I also keep two lists, `repos` and `fRepos` where fRepos represents the filtered list of the repositories.
 
+There is a problem here — the input box falls under the [controlled](https://facebook.github.io/react/docs/forms.html#controlled-components) component category. So we need to set the value every time we update it.
+
+```javascript
+  render () {
+    if(this.state === null){
+      return null
+    }
+    
+    const onKeyPress = e => {
+      // Create a variable
+      const filter = e.target.value
+      const fRepos = this.state.repos.filter(x => x.name.match(filter))
+      this.setState({fRepors})
+      
+      // Set the filter value to state
+      this.setState({filter})
+    }
+    
+    return (
+      <div>
+        <input type="text" onKeyPress={onKeyPress} value={this.state.filter} />
+        <ul>
+          {this.state.fRepos.map(x => <li>{x}</li>)}
+        </ul>
+      </div>
+    )
+  }
+
+```
+
