@@ -118,7 +118,7 @@ There is a problem here — the input box falls under the [controlled](https://f
   }
 
 ```
-I want to add one more feature. I want to show text — `no results found` when the repositories don't match the search input.
+I want to add one more feature. I want to show text — `no respositories found` when the repositories don't match the search input.
 
 ```javascript
   render () {
@@ -138,7 +138,7 @@ I want to add one more feature. I want to show text — `no results found` when 
       <div>
         <input type="text" onKeyPress={onKeyPress} value={this.state.filter} />
         // Add a condition to check the length
-        {this.state.fRepos.length === 0 ? <span>No Results Found<span> : <ul>
+        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
           {this.state.fRepos.map(x => <li>{x}</li>)}
         </ul>}
       </div>
@@ -158,16 +158,14 @@ Okay, this is good, does the job though already kinda messy. Now, I need to add 
     const onKeyPress = e => {
       const filter = e.target.value
       const fRepos = this.state.repos.filter(x => x.name.match(filter))
-      this.setState({fRepors})
-      
-      this.setState({filter})
+      this.setState({fRepors, filter})
     }
     
     return (
       <div>
         // Added another condition!
         {this.state === null ? <span>Loading...</span> : <input type="text" onKeyPress={onKeyPress}     value={this.state.filter} />
-        {this.state.fRepos.length === 0 ? <span>No Results Found<span> : <ul>
+        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
           {this.state.fRepos.map(x => <li>{x}</li>)}
         </ul>}
         }
@@ -179,8 +177,9 @@ Okay, this is good, does the job though already kinda messy. Now, I need to add 
 
 Okay, I can't take in any more feature request until I refactor this code!
 
+
 # Part 2 (Refactoring)
-...
+
 
 
 There are three concepts involved with rendering — **What**, **How** & **When**.
@@ -195,18 +194,92 @@ In our case we have mixed all these concepts together and only one component is 
 
 
 ```javascript
-class FilteredRepos extends Class {
+class UnorderedList extends Class {
   render () {
-    if(this.props.repos.length === 0){
+    if(this.props.items || this.props.items.length === 0){
       return null
     }
     return (
       <ul>
-        {this.props.repos.map(x => <li>{x}</li>)}
+        {this.props.items.map(x => <li>{x}</li>)}
       </ul>
     )
   }
 }
 ```
 
-Created a new component FilteredRepos, this only renders the list when the length of the repos is non zero.
+Created a new component `UnorderedList`, this only renders the list when the length of the repos is non zero. Now this is a reusable component that I can use for listing the filtered repositories. I can apply the same concept for showing the `No Repositories Found` message, such that the logic for **When** to show and **How** to show stays inside the component itself.
+
+```javascript
+class NoRepositories extends Component {
+  render () {
+    if(this.props.repos && this.props.repos.length > 0){
+      return null
+    }
+    return (
+      <div>No Respositories Found</div>
+    )
+  }
+}
+```
+
+Similarly for the loading message —
+
+```javascript
+class Loading extends Component {
+  render () {
+    if(this.props.repos && this.props.repos.length > 0){
+      return null
+    }
+    return (
+      <div>Loading ...</div>
+    )
+  }
+}
+```
+
+Next, I will create a new view called `FilteredRepos` —
+
+```javascript
+class FilteredRepos extends Component {
+  render () {
+    const props = this.props
+    if(!props.repos){
+      return null
+    }
+    return (
+      <div>
+        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
+        <UnorderedList items={props.repos}/>
+        <NoRepositories repos={props.repos} />
+      </div>
+    )
+  }
+}
+```
+FilteredRepos, doesn't render if `props.repos` is `null`. It's child `UnorderedList` will auto hide if the items list provided to it is empty and the reverse is applicable to NoRepositories component.
+
+
+Merging the new components with the `Repository` —
+
+```javascript
+class Repository extends Component {
+  componentWillMount () {
+    fetch('https://api.github.com/users/sindresorhus/repos')
+    .then(x => x.json())
+    .then(x => this.setState({repos: x}))
+  }  
+  
+  render () {
+    const state = this.state
+    return (
+      <div>
+        <Loading {...state} />
+        <FilterView {...state} onFilterChanged={filter => this.setState({filter})} />
+      </div>
+    )
+  }
+}
+```
+
+So we have concluded part one of the refactoring where each component decides by it self, when should it be shown.
