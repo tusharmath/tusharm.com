@@ -180,3 +180,4 @@ Okay, this is good, does the job though already kinda messy. Now, I need to add 
 Okay, I can't take in any more feature request until I refactor this code!
 
 # Part 2 (Refactoring)
+...
