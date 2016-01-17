@@ -511,3 +511,7 @@ code.lang-markdown .bullet {
 pre {
   padding: 0;
 }
+
+iframe {
+  border: 1px dashed #d2d2d2
+}
