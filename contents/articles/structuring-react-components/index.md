@@ -87,10 +87,8 @@ I have removed all the `if conditions` from the code except for the one in the `
 <iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/5/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 # Part 4 (Make declaratives reusable)
-We can write helper functions such as — `isEmpty` to check if the list is empty and `have` to check if the property exists on the component. Using [lodash](lodash.com/docs) it will be much easier to write these helpers.
+We can write helper functions such as — `isEmpty` to check if the list is empty and `have` to check if the property exists on the component. Using [lodash](lodash.com/docs) it will be much easier to write these helpers. Apart from the original 2 helpers, I have also added their negations — `isntEmpty` & `notHave`.
 
-<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/8/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+**FINAL CODE**
 
-Apart from the original 2 helpers, I have also added their negations — `isntEmpty` & `notHave`.
-
-With this we conclude our four part react component design and structuring methodology.
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/9/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
