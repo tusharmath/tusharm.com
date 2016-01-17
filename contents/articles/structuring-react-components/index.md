@@ -53,100 +53,35 @@ To start with the component decomposition, we can create a component called `NoR
 
 Effectively we got rid of one condition from the render method. We can apply the same concept for the loading message also, by creating a `Loading` component. The subtle difference here is that, I want to hide input box and the user name, at the time of loading. This can be done by making the content a child of `Loading` component —
 
-<iframe width="100%" height="800" src="//jsfiddle.net/m5e40ywL/2/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="800" src="//jsfiddle.net/m5e40ywL/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 So we have concluded part one of the refactoring where each component decides by it self, when should it be shown and how it should be shown.
 
 # Part 3 (Control rendering declaratively)
 
-Reading those `if conditions` in between of the render method to decide if the component needs to be rendered or not, should not be the render function's responsibility. We can fix it by using the [react-render-if](https://github.com/tusharmath/react-render-if) package. The package exposes a decorator `renderIf` which takes in functions as predicates and calls them one by one with the current instance of the component as the first param. If the return value of each of the predicates is `Truthy` then the component is rendered.
+We removed the `if conditions` from the render function, to control which child component needs to be rendered and moved it to the render function of the individual child components. Here we will remove all forms of conditional rendering from all the render functions. To do this I will create a [decorator](https://github.com/wycats/javascript-decorators) — [renderIf](https://www.npmjs.com/package/react-render-if).
 
-For example —
 ```javascript
-import {renderIf} from 'react-render-if'
-
-@renderIf(i => i.props.repos)
-class FilteredRepos extends Component {
-  render () {
-    const props = this.props
-    return (
-      <div>
-        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
-        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
-        <NoRepositories repos={props.repos} />
-      </div>
-    )
-  }
-}
-
-@renderIf(x => !i.props.repos)
-class Loading extends Component {
-  render () {
-    return<div>Loading ...</div>
-  }
-}
-
-@renderIf(x => x.props.repos, x => x.props.repos.length === 0)
-class NoRepositories extends Component {
-  render () {
-    return <div>No Respositories Found</div>
+const toArray = x => Array.prototype.slice.call(x)
+const renderIf = function () {
+  const predicates = toArray(arguments)
+  return component => {
+    var prototype = component.prototype
+    const render = prototype.render
+    prototype.render = function () {
+      return predicates.every(i => i(this)) ? render.call(this) : null
+    }
+    return component
   }
 }
 ```
+
+The decorator takes in a list of predicate functions and evaluates them with the first param as the current instance of the component. If all the predicates return true, then the component is rendered.
+
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 The declarative approach makes it much easier for me to understand the render function's main responsibility.
 
-I have removed all the `if conditions` from the code, which makes the code it a lot more readable.
+I have removed all the `if conditions` from the code except for the one in the `Loading` component. To remove it I will again have to split the component into two components viz. — `LoadingMessage` and `LoadingContent`, then apply the `renderIf` decorator.
 
-
-**Final Code**
-
-```javascript
-
-import {renderIf} from 'react-render-if'
-
-@renderIf(i => i.props.repos)
-class FilteredRepos extends Component {
-  render () {
-    const props = this.props
-    return (
-      <div>
-        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
-        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
-        <NoRepositories repos={props.repos} />
-      </div>
-    )
-  }
-}
-
-@renderIf(x => !i.props.repos)
-class Loading extends Component {
-  render () {
-    return<div>Loading ...</div>
-  }
-}
-
-@renderIf(x => x.props.repos, x => x.props.repos.length === 0)
-class NoRepositories extends Component {
-  render () {
-    return <div>No Respositories Found</div>
-  }
-}
-
-class Repository extends Component {
-  componentWillMount () {
-    fetch('https://api.github.com/users/sindresorhus/repos')
-    .then(x => x.json())
-    .then(x => this.setState({repos: x}))
-  }  
-
-  render () {
-    const state = this.state
-    return (
-      <div>
-        <Loading {...state} />
-        <FilterView {...state} onFilterChanged={filter => this.setState({filter})} />
-      </div>
-    )
-  }
-}
-```
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/5/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
