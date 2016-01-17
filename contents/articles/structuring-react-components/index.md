@@ -5,314 +5,55 @@ date: 2016-01-16
 template: article.jade
 ```
 
-I want to talk about how you can break a huge, complicated component into smaller specialized ones. 
+I want to talk about how you can break a huge, complicated component into smaller specialized ones.
 
 # Part 1 (The Problem Statement)
 
 So say I want to list out all the repositories of a github user (eg. [sindresorhus](https://github.com/sindresorhus?tab=repositories)).
 
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/5/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-```javascript
-// Usual Imports
-import {Component} form 'react'
-
-class Repository extends Component {
-  componentWillMount () {
-    fetch('https://api.github.com/users/sindresorhus/repos')
-    .then(x => x.json())
-    .then(x => this.setState({repos: x}))
-  }
-  
-  render () {
-    return (
-      <ul>
-        {this.state.repos.map(x => <li>{x}</li>)}
-      </ul>
-    )
-  }
-}
-
-// Append to the first child of the body
-ReactDOM.render(<Repository/>, document.body.children[0])
-
-```
 So here I am using the [fetch](https://github.com/whatwg/fetch) method to make a request to the github's API getting the response, parsing it to `json` and setting it on to the state. The fetching is done as soon as the component is about to mount. The `render()` method is called automatically as soon as the state is updated.
 
-There is a problem though — state which is intitally set to `null` will throw an exception when I will try to access `state.repos`. So I need to add another condition to the render function —
+There is a problem though — state which is initially set to `null` will throw an exception when I will try to access `state.repos`. So I need to add another condition to the render function —
 
-```javascript 
-render () {
-  if(this.state === null){
-    return null
-  }
-  return (
-    <ul>
-      {this.state.repos.map(x => <li>{x}</li>)}
-    </ul>
-  )
-}
-```
-So far so good. I want to add another functionality now, being able to do a real time search on the repository names. 
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/6/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-```javascript 
 
-class Repository extends Component {
-  componentWillMount () {
-    fetch('https://api.github.com/users/sindresorhus/repos')
-    .then(x => x.json())
-    // create fRepos, that represents the filtered set of repos
-    .then(x => this.setState({repos: x, fRepos: x}))
-  }
-  
-  render () {
-    if(this.state === null){
-      return null
-    }
-    
-    const onKeyPress = e => {
-      const fRepos = this.state.repos.filter(x => x.name.match(e.target.value))
-      this.setState({fRepors})
-    }
-    
-    return (
-      <div>
-        // Add a search box
-        <input type="text" onKeyPress={onKeyPress} />
-        <ul>
-          {this.state.fRepos.map(x => <li>{x}</li>)}
-        </ul>
-      </div>
-    )
-  }
-}
-```
+So far so good. I want to add another functionality now, being able to do a real time search on the repository names.
 
-So I added an input box and attached an event handler for the keypress event. I also keep two lists, `repos` and `fRepos` where fRepos represents the filtered list of the repositories.
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/9/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-There is a problem here — the input box falls under the [controlled](https://facebook.github.io/react/docs/forms.html#controlled-components) component category. So we need to set its value every time keyPress event is fired.
+So I added an input box and attached an event handler for the `onKeyUp` event. I also keep two lists, `repos` and `fRepos` where `fRepos` represents the filtered list of the repositories.
 
-```javascript
-  render () {
-    if(this.state === null){
-      return null
-    }
-    
-    const onKeyPress = e => {
-      // Create a variable
-      const filter = e.target.value
-      const fRepos = this.state.repos.filter(x => x.name.match(filter))
-      this.setState({fRepors})
-      
-      // Set the filter value to state
-      this.setState({filter})
-    }
-    
-    return (
-      <div>
-        <input type="text" onKeyPress={onKeyPress} value={this.state.filter} />
-        <ul>
-          {this.state.fRepos.map(x => <li>{x}</li>)}
-        </ul>
-      </div>
-    )
-  }
 
-```
-I want to add one more feature. I want to show text — `no respositories found` when the repositories don't match the search input.
+I want to add one more feature. I want to show text — `no repositories found` when the repositories don't match the search input.
 
-```javascript
-  render () {
-    if(this.state === null){
-      return null
-    }
-    
-    const onKeyPress = e => {
-      const filter = e.target.value
-      const fRepos = this.state.repos.filter(x => x.name.match(filter))
-      this.setState({fRepors})
-      
-      this.setState({filter})
-    }
-    
-    return (
-      <div>
-        <input type="text" onKeyPress={onKeyPress} value={this.state.filter} />
-        // Add a condition to check the length
-        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
-          {this.state.fRepos.map(x => <li>{x}</li>)}
-        </ul>}
-      </div>
-    )
-  }
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/10/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-```
 
-So I have added a simple if condition that renders the list if the `fRepos.length > 0` otherwise, just show `no results found`.
+So I have added a simple if condition that renders the list if the `fRepos.length > 0` otherwise, just show `no repositories found`.
 
-Okay, this is good, does the job though already kinda messy. Now, I need to add another feature now, I want to show a loader till the time the fetch request doesn't get completed inplace of the list.
 
-```javascript
-  render () {
-    // Removed null check condition from here and moved it to the jsx part
-  
-    const onKeyPress = e => {
-      const filter = e.target.value
-      const fRepos = this.state.repos.filter(x => x.name.match(filter))
-      this.setState({fRepors, filter})
-    }
-    
-    return (
-      <div>
-        // Added another condition!
-        {this.state === null ? <span>Loading...</span> : <input type="text" onKeyPress={onKeyPress}     value={this.state.filter} />
-        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
-          {this.state.fRepos.map(x => <li>{x}</li>)}
-        </ul>}
-        }
-      </div>
-    )
-  }
+Okay, this is good, does the job but if you go to the results page, you will see that it also shows the message initially when the repositories are yet to be loaded from the API. I should ideally show a `loading...` message, till the time the fetch request doesn't get completed.
 
-```
-
-**Complete Code**
-
-```javascript
-import {Component} form 'react'
-
-class Repository extends Component {
-  componentWillMount () {
-    fetch('https://api.github.com/users/sindresorhus/repos')
-    .then(x => x.json())
-    .then(x => this.setState({repos: x}))
-  }
-
-  render () {
-    const onKeyPress = e => {
-      const filter = e.target.value
-      const fRepos = this.state.repos.filter(x => x.name.match(filter))
-      this.setState({fRepors, filter})
-    }
-    
-    return (
-      <div>
-        {this.state === null ? <span>Loading...</span> : <input type="text" onKeyPress={onKeyPress}     value={this.state.filter} />
-        {this.state.fRepos.length === 0 ? <span>No Repositories Found<span> : <ul>
-          {this.state.fRepos.map(x => <li>{x}</li>)}
-        </ul>}
-        }
-      </div>
-    )
-  }
-}
-
-// Append to the first child of the body
-ReactDOM.render(<Repository/>, document.body.children[0])
-
-```
-
-Okay, I can't take in any more feature request until I refactor this code!
-
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/11/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 # Part 2 (Breaking Components)
 
-There are three concepts involved with rendering — **How** & **When**.
+If you observe the `render()` function, it pretty messy right now. It tries to render different things on different occasion. This logic will only get complicated unless I decompose the render function.
 
-How should I render — I should use the return value of the render() function. This should be in control of the component in context, more specificly its `render` method.
+For example — if I have a component `A` that renders child components `P, Q, R` in different combinations, then the logic of rendering them individually can actually lie inside the individual components `P, Q, R`, instead of their parent `A`. This helps us achieve [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) where the render function of `A` only determines which all components it will `mount`. Whether they actually render or not is their (`P, Q, R`) own responsibility.
 
-When should I render — I should render when certain condition are satisfied. This should again be in control of the component but not via the `render` method. Since render is already involved in the *how* part, we should have some better mechanism of delegating this responsibility to someone else.
+In our case we can remove all the `if` conditions from the main `Repositories` component and create smaller specialized ones that encapsulate when they should render.
 
-In our case we have mixed the two concepts together and one component's render() method is doing eveything. So first lets break this huge component into smaller ones.
+To start with the component decomposition, we can create a component called `NoRepositories` which shows the 'No Repositories found' message when the filtered results are empty. Similarly we can create a component `UnorderedList` which renders only when a list of items is provided to it.
 
+<iframe width="100%" height="800" src="//jsfiddle.net/m5e40ywL/1/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-```javascript
-class UnorderedList extends Class {
-  render () {
-    if(this.props.items || this.props.items.length === 0){
-      return null
-    }
-    return (
-      <ul>
-        {this.props.items.map(x => <li>{x}</li>)}
-      </ul>
-    )
-  }
-}
-```
+Effectively we got rid of one condition from the render method. We can apply the same concept for the loading message also, by creating a `Loading` component. The subtle difference here is that, I want to hide input box and the user name, at the time of loading. This can be done by making the content a child of `Loading` component —
 
-Created a new component `UnorderedList`, this only renders when the length of the item is non zero. Now this is a reusable component that I can use for listing the filtered repositories. I can apply the same concept for showing the `No Repositories Found` message, such that the logic for **When** to show and **How** to show stays inside the component itself.
-
-```javascript
-class NoRepositories extends Component {
-  render () {
-    if(this.props.repos && this.props.repos.length > 0){
-      return null
-    }
-    return (
-      <div>No Respositories Found</div>
-    )
-  }
-}
-```
-
-Similarly for the loading message —
-
-```javascript
-class Loading extends Component {
-  render () {
-    if(this.props.repos){
-      return null
-    }
-    return (
-      <div>Loading ...</div>
-    )
-  }
-}
-```
-
-Next, I will create a new view called `FilteredRepos` —
-
-```javascript
-class FilteredRepos extends Component {
-  render () {
-    const props = this.props
-    if(!props.repos){
-      return null
-    }
-    return (
-      <div>
-        <input value={props.filter} onFilterChanged={x => props.onKeyPress(x.target.value)}/>
-        <UnorderedList items={props.repos.filter(x => x.name.match(props.filter))}/>
-        <NoRepositories repos={props.repos} />
-      </div>
-    )
-  }
-}
-```
-FilteredRepos, doesn't render if `props.repos` is `null`. It's child `UnorderedList` will not render if the items list provided to it is empty and the similar concept is applicable to `NoRepositories` component.
-
-
-Merging the new components with the `Repository` —
-
-```javascript
-class Repository extends Component {
-  componentWillMount () {
-    fetch('https://api.github.com/users/sindresorhus/repos')
-    .then(x => x.json())
-    .then(x => this.setState({repos: x}))
-  }  
-  
-  render () {
-    const state = this.state
-    return (
-      <div>
-        <Loading {...state} />
-        <FilterView {...state} onFilterChanged={filter => this.setState({filter})} />
-      </div>
-    )
-  }
-}
-```
+<iframe width="100%" height="800" src="//jsfiddle.net/m5e40ywL/2/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 So we have concluded part one of the refactoring where each component decides by it self, when should it be shown and how it should be shown.
 
