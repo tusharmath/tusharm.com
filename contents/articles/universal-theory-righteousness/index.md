@@ -4,7 +4,7 @@ author: tushar-mathur
 date: 2013-12-02
 template: article.jade
 ```
-This a really old piece of text from when I was in my third year of college, back when I was 19. I  had written it with the help of a really close friend, whom I used to love talking  to. We talked about philosophy, science and hypothetical situations. She turned out to be the person who turned my life up side down, more on her later, for the time being check out what we came up with first :-)
+This a really old piece of text from when I was in my third year of college, back when I was 19. I  had written it with the help of a really close friend, whom I used to love talking  to. We talked about philosophy, science and hypothetical situations. She turned out to be the person that I eventually ended up marrying, more on her later, for the time being check out what we came up with first :-)
 
 ---
 We often come across trying times of ethical confusion and conflict in our life, times that call for difficult decisions. This is when we look for answers in the established theories, different schools of philosophies, theologies and ideologies. But generally there are conflicting ideas put forth by the different theories. This is where the significance of a ‘Universal Theory’ comes into focus.
