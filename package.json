@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "dependencies": {
     "moment": "2.x",
-    "underscore": "1.4.x",
-    "typogr": "0.5.x",
+    "underscore": "~1.8.3",
+    "typogr": "~0.6.6",
     "wintersmith": "*",
     "request": "*"
   },
   "repository": "none",
   "devDependencies": {
-    "prompt": "^0.2.14"
+    "prompt": "^1.0.0"
   }
 }
