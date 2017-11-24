@@ -9,7 +9,8 @@ category: article
 
 Is astrology an age old machine learning (ML) algorithm that is predicting the future, just like ad networks, that predict the click thru rate of an ad for the current user? Have I been ignorant all this while, failing to find the logic of causation in astrology, without realizing that:
 
-> Corelation does not imply causation
+> Correlation does not imply causation
 
-the primise on which ML exists.
+the premise on which ML exists.
+
 ---
