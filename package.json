@@ -2,11 +2,11 @@
   "name": "tusharm.com",
   "version": "0.0.1",
   "dependencies": {
-    "moment": "2.x",
-    "underscore": "1.4.x",
+    "moment": "^2.22.2",
+    "request": "^2.87.0",
     "typogr": "0.5.x",
-    "wintersmith": "*",
-    "request": "*"
+    "underscore": "1.4.x",
+    "wintersmith": "^2.4.1"
   },
   "repository": "none",
   "devDependencies": {
