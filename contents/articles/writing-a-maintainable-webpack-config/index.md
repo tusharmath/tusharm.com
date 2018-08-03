@@ -5,9 +5,15 @@ date: 2018-08-02
 template: article.jade
 ```
 
-Over a period of time webpack configs usually become really large and hard to maintain. In one of my cases `webpack.config.js` had become more than **1000** lines! Here is how you can use [ramda] to manage a complicated webpack configuration setup.
+Over a period of time webpack configs usually become really large and hard to maintain. In one of my cases `webpack.config.js` had become more than **1000** lines!
+In this blog I am going to talk about how to write webpack configs that are easy to read and maintainable by making them **composable**.
+
+I will be using a lot of [ramda] and if you are unfamiliar with its syntax I would recommend you to go thru this [post](http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/) by [Randy Coulman].
 
 [ramda]: http://ramdajs.com/docs/
+[randy coulman]: http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/
+
+---
 
 Consider a typical `webpack.config` file where —
 
@@ -345,7 +351,7 @@ const baseConfig = {
     filename: '[name].js'
   },
   module: {rules: []},
-  mode: 'development
+  mode: 'development'
 }
 
 const composeSetters = R.reduce(R.flip(R.call))
