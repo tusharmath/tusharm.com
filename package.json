@@ -15,6 +15,6 @@
   "license": "MIT",
   "scripts": {
     "preview": "wintersmith preview",
-    "build": "wintersmith preview"
+    "build": "wintersmith build"
   }
 }
