@@ -4,12 +4,17 @@
   "dependencies": {
     "moment": "^2.22.2",
     "request": "^2.87.0",
-    "typogr": "0.5.x",
-    "underscore": "1.4.x",
+    "typogr": "0.6.8",
+    "underscore": "1.9.1",
     "wintersmith": "^2.4.1"
   },
   "repository": "none",
   "devDependencies": {
-    "prompt": "^0.2.14"
+    "prompt": "^1.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "preview": "wintersmith preview",
+    "build": "wintersmith preview"
   }
 }
