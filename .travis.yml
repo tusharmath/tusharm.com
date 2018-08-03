@@ -4,6 +4,7 @@ node_js:
 script:
   - yarn build
 deploy:
+  local-dir: bin
   provider: pages
   skip-cleanup: true
   github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
