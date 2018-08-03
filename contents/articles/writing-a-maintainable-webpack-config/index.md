@@ -6,22 +6,24 @@ template: article.jade
 ```
 
 Over a period of time webpack configs usually become really large and hard to maintain. In one of my cases `webpack.config.js` had become more than **1000** lines!
-In this blog I am going to talk about how to write webpack configs that are easy to read and maintainable by making them **composable**.
+In this blog I am going to talk about how to write **composable** webpack configs that are easy to read and maintainable.
 
-I will be using a lot of [ramda] and if you are unfamiliar with its syntax I would recommend you to go thru this [post](http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/) by [Randy Coulman].
+I will be using a lot of [ramda] and if you are unfamiliar with its syntax I would recommend you to go thru this [post](http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/) by [Randy Coulman] on getting started with ramda.
 
 [ramda]: http://ramdajs.com/docs/
 [randy coulman]: http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/
 
 ---
 
-Consider a typical `webpack.config` file where —
+# Typical configs
 
-1.  We use a custom loader for `.ts` files.
-2.  Create optimized builds in **production** mode, based on the **env**.
+1.  Uses a custom loader for non `.js` files.
+2.  Creates optimized builds in **production** mode, based on the **NODE_ENV**.
 3.  Adds version control to the assets generated, by attaching a `chunkhash` to its name.
 
-```ts
+It would look something like this—
+
+```
 const baseConfig = {
   entry: './src/main.ts',
   output: {
@@ -45,9 +47,15 @@ const baseConfig = {
 export = baseConfig
 ```
 
-<!-- Issues in the current config -->
+The above config has a few issues —
 
-# Extract NODE_ENV check
+1.  It is one big monolithic object.
+2.  Exposes unnecessary inner details about about how one can configure "webpack".
+3.  The conditional logic is tightly coupled with the structure of the config.
+
+Lets look at the optimizations that we can make to make this config more maintainable.
+
+# Extracting NODE_ENV check
 
 In the above config the check for `NODE_ENV` is being done twice and can be moved out to a function using [ramda].
 
@@ -79,7 +87,7 @@ In the above config the check for `NODE_ENV` is being done twice and can be move
   export = baseConfig
 ```
 
-# Config setters
+# Configuration Setters
 
 A setter function is a function that takes in a `WebpackConfig` object and returns a new `WebpackConfig` object with some new properties attached to it. For eg. we can have a function `setEntry` that sets `entry` property in the webpack config.
 
@@ -150,11 +158,11 @@ A setter function is a function that takes in a `WebpackConfig` object and retur
 + )
 ```
 
-The above composition looks complicated around the `export =` statement. Lets see if we can make that better.
+The above composition looks complicated around the `export =` statement. Next step will be to make these setters work in harmony with each other.
 
 # Composing setters
 
-Since the setter functions take in a `WebpackConfig` and return a new `WebpackConfig` without causing any side effects we can compose them by calling them one after the other in any order!
+Since the setter functions take in a `WebpackConfig` and return a new `WebpackConfig` without causing any side effects, we can compose them by calling them one after the other in any order! We are going to write a generic function `composeSetters` through which we will be able easily use multiple setters together.
 
 ```patch
  import * as R from 'ramda'
@@ -192,11 +200,16 @@ const baseConfig = {
 + ])
 ```
 
-`composeSetters` basically takes in an initial config and an array of setter functions and applies them one after the other on the initial state.
+`composeSetters` basically takes in an initial config and an array of setter functions and applies them one after the other on the initial state. Ultimately returns a new webpack config.
 
 # Array based setters
 
-With [ramda] we can make setters for `module.rules` as well.
+[R.assocPath] works well when you want to set properties inside a deeply nested object. To append a value into an array we are going to use a mix of [R.over] and [R.append].
+
+[r.over]: https://ramdajs.com/docs/#over
+[r.append]: https://ramdajs.com/docs/#append
+
+Thus with [ramda] we can make a setter for `module.rules` as well.
 
 ```patch
   import * as R from 'ramda'
@@ -235,11 +248,12 @@ export = composeSetters(baseConfig, [
 ])
 ```
 
-`composeSetters` makes it easy to add new setters like `setRule`.
+Turns out we don't need to change `composeSetters` to make it work with the new `setRule` setter.
 
 # Conditional Setters
 
-The `output.filename` and the `mode` properties are conditionally set based on if `isProduction()` returns `true` or `false`. This can be done by conditionally applying the setter.
+The `output.filename` and the `mode` properties are conditionally set based on if `isProduction()` returns `true` or `false`.
+This can be done by having a default property set in the base config and then conditionally applying a setter on that base config.
 
 ```patch
   import * as R from 'ramda'
@@ -277,11 +291,12 @@ The `output.filename` and the `mode` properties are conditionally set based on i
   ])
 ```
 
-`R.identity` works as a setter that returns the provided `webpack.config` as is, without changing it. That way its much easier to compose multiple setter conditionally.
+`R.identity` works as a setter that returns the provided `webpack.config` as is, ie. without changing it.
+That way we don't need to change the implementation of `composeSetters` as it always gets a valid setter function.
 
----
+# Higher Order Setters
 
-The redundant `isProduction` check can be further optimized by creating a generic function that conditionally applies a setter.
+Higher order setters are setters that take in a setter as an input and returns a new setter as an output. In our case we will create a new higher order setter called `whenever` which will helps us in applying a particular setter only if the given condition it `true`.
 
 ```patch
   import * as R from 'ramda'
@@ -323,11 +338,13 @@ The redundant `isProduction` check can be further optimized by creating a generi
   ])
 ```
 
-The `whenever` function takes in two arguments — `condition` and a `setter` and returns a function that when called with a `webpack.config` calls the `setter` if `condition` is true otherwise returns the same config without changing.
+The `whenever` function takes in two arguments — `condition` and a `setter` and returns another setter function that when called with a `webpack.config` calls the passed `setter` if `condition` is true, otherwise returns the same config without changing.
 
 # Final Config
 
-```js
+Finally out overall code looks somewhat like this —
+
+```
 import * as R from 'ramda'
 
 const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
