@@ -3026,7 +3026,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typogr@0.6.8:
+typogr@^0.6.8:
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/typogr/-/typogr-0.6.8.tgz#73490c0ddda2cbd20f88c10f7a6974deab455bb4"
   dependencies:
@@ -3056,7 +3056,7 @@ umask@^1.1.0, umask@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/umask/-/umask-1.1.0.tgz#f29cebf01df517912bb58ff9c4e50fde8e33320d"
 
-underscore@1.9.1:
+underscore@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
 
