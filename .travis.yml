@@ -1,8 +1,9 @@
 language: node_js
 node_js:
 - 'stable'
-script:
+before_deploy:
   - yarn build
+  - echo "tusharm.com" > CNAME
 deploy:
   local-dir: bin
   provider: pages
