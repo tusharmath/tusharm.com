@@ -3,7 +3,7 @@ node_js:
 - 'stable'
 before_deploy:
   - yarn build
-  - echo "tusharm.com" > CNAME
+  - echo "tusharm.com" > bin/CNAME
 deploy:
   local-dir: bin
   provider: pages
