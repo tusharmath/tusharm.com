@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - 'stable'
-before_deploy:
+script:
   - yarn build
   - echo "tusharm.com" > bin/CNAME
 deploy:
