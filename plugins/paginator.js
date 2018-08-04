@@ -40,7 +40,15 @@ module.exports = function(env, callback) {
         params
       )
     const pages = await Promise.all(R.times(requestPage, pageCount))
-    const repos = R.chain(R.prop('data'), pages)
+    const repos = R.compose(
+      R.reverse,
+      R.sortBy(R.prop('created_at')),
+      R.filter(R.allPass([
+        R.propEq('fork', false),
+        R.complement(R.propEq('description', null))
+      ])),
+      R.chain(R.prop('data'))
+    )(pages)
     const popular = R.filter(
       i => i.watchers_count + i.stargazers_count > 0,
       repos

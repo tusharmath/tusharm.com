@@ -10,7 +10,7 @@
 	],
 	"require": {
 		"moment": "moment",
-		"R": "ramda",
+		"_": "underscore",
 		"typogr": "typogr"
 	},
 	"jade": {
