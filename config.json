@@ -6,11 +6,11 @@
 		"description": "A software developer, physics enthusiast, swimmer and a car geek"
 	},
 	"plugins": [
-		"./plugins/paginator.coffee"
+		"./plugins/paginator.js"
 	],
 	"require": {
 		"moment": "moment",
-		"_": "underscore",
+		"R": "ramda",
 		"typogr": "typogr"
 	},
 	"jade": {
