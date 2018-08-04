@@ -23,11 +23,13 @@ module.exports = function(env, callback) {
   const getGitHubData = async function(username, callback) {
     const MAX_PER_PAGE = 100
     const baseURL = `http://api.github.com/users/${username}`
-    const params = {
-      headers: {
-        authorization: `bearer ${process.env.GH_TOKEN}`
-      }
-    }
+    const params = process.env.GH_TOKEN
+      ? {
+          headers: {
+            authorization: `bearer ${process.env.GH_TOKEN}`
+          }
+        }
+      : {}
     const {
       data: { public_repos }
     } = await axios.get(`${baseURL}`, params)
@@ -43,10 +45,12 @@ module.exports = function(env, callback) {
     const repos = R.compose(
       R.reverse,
       R.sortBy(R.prop('created_at')),
-      R.filter(R.allPass([
-        R.propEq('fork', false),
-        R.complement(R.propEq('description', null))
-      ])),
+      R.filter(
+        R.allPass([
+          R.propEq('fork', false),
+          R.complement(R.propEq('description', null))
+        ])
+      ),
       R.chain(R.prop('data'))
     )(pages)
     const popular = R.filter(
