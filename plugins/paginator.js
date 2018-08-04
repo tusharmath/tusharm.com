@@ -178,5 +178,5 @@ module.exports = function(env, callback) {
     env.helpers.github = data
     // tell the plugin manager we are done
     callback()
-  })
+  }).catch(callback)
 }
