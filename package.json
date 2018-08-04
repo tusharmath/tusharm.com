@@ -16,6 +16,7 @@
   "scripts": {
     "preview": "wintersmith preview",
     "build": "wintersmith build",
-    "deploy": "./script/deploy.sh"
+    "deploy": "./script/deploy.sh",
+    "test": "echo \"no tests boss!\""
   }
 }
