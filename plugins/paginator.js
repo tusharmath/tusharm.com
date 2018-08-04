@@ -25,7 +25,7 @@ module.exports = function(env, callback) {
     const baseURL = `http://api.github.com/users/${username}`
     const params = {
       headers: {
-        authorization: 'bearer f1e8fea32f283dfe65e856954811b841f3f88168'
+        authorization: `bearer ${process.env.GH_TOKEN}`
       }
     }
     const {
