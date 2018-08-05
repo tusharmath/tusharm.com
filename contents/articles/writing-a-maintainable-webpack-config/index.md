@@ -212,7 +212,7 @@ const baseConfig = {
 
 # Array based setters
 
-[R.assocPath] works well when you want to set properties inside a deeply nested object. Similarly to append a value into an array we are going to use it with a mix of other powerful ramda to make an elegant setter for `module.rules` as follows —
+[R.assocPath] works well when you want to set properties inside a deeply nested object. Similarly, to create a setter for `module.rules`, we can use a mix of other powerful ramda functions that work on arrays as follows —
 
 ```patch
   import * as R from 'ramda'
