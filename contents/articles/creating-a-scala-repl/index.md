@@ -49,13 +49,13 @@ watch scalac main.scala
 
 # Using SBT
 
-[SBT] provides a an alternative way to watch and run scala code (recommended).
+[SBT] provides a an alternative way to watch and run scala code.
 
 ```bash
-sbt ~run main.scala
+sbt ~run
 ```
 
-This way the `main.scala` is only executed when the file actually changes.
+This way the `main.scala` is only executed when the file actually changes. The disadvantage of this approach is that you can not pass a random file path.
 
 Also checkout **[repl.it]** if you don't want to setup all this stuff locally. Unfortunately at the time of writing this blog, scala wasn't supported.
 
