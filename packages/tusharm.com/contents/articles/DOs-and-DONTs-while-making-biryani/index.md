@@ -2,7 +2,7 @@
 title: DOs and DON'Ts while making biryani
 
 date: 2013-06-11
-template: article.jade
+template: article.pug
 ```
 
 I tried to copy a lot of biryani recipes that are on the internet and in that process I wasted a lot of meat and rice.

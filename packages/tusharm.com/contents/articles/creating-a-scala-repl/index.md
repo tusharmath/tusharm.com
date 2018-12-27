@@ -2,7 +2,7 @@
 title: Creating a Scala REPL
 
 date: 2018-08-21
-template: article.jade
+template: article.pug
 ```
 
 The best way to learn a new language is to create a simple file for that programming language and keep running it in watch mode. I personally use `watch` and [VSCode] when I want to quickly prototype something. `watch` helps me run that code continuously as I type and provides me with instant feedback on the terminal. I have found this technique really helpful in the past specially while learning something new.

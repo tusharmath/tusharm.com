@@ -2,7 +2,7 @@
 title: Date a boy who codes
 author: aiswarya-prakasan
 date: 2014-may-21
-template: article.jade
+template: article.pug
 ```
 
 The author of the following content din't have a blog of her own, I loved it so much that I thought I'll post it here.

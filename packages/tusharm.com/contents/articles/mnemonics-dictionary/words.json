@@ -1,5 +1,5 @@
 {
-	"template": "words.jade",
+	"template": "words.pug",
 	"title":"Mnemonics Dictionary",
 	"mnemonicsdata": [{
 		"word": "abase",

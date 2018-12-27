@@ -3,7 +3,7 @@ title: Node.js Mt Downloader
 
 date: 2013-08-3
 category: project
-template: project.jade
+template: project.pug
 ```
 
 Why would someone want to use **segmented file transfer**? Well, the answer is quite simple - To increase download speed.

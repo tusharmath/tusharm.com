@@ -2,7 +2,7 @@
 title: Fighting the heat
 
 date: 2013-06-06
-template: article.jade
+template: article.pug
 ```
 
 If you are one of those people who keep sweating or have an abnormally high sensitivity towards heat then you are going to benefit from this blog. The idea is to keep your body cool and here are some tips and some science related to it.

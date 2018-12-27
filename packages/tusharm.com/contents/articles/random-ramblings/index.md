@@ -2,7 +2,7 @@
 title: Random Ramblings
 
 date: 2015-apr-2
-template: article.jade
+template: article.pug
 category: article
 ```
 

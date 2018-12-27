@@ -2,7 +2,7 @@
 title: Geocode your life
 
 date: 2013-oct-17
-template: project.jade
+template: project.pug
 category: project
 ```
 

@@ -3,7 +3,7 @@ title: node.js concurrency evaluation
 
 date: 2015-12-14
 category: project
-template: article.jade
+template: article.pug
 ```
 
 I have been using node.js for a decent amount of time now and I had this hypothesis which I needed to validate —

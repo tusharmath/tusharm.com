@@ -2,7 +2,7 @@
 title: Javascript Interview Questions
 
 date: 2013-08-24
-template: article.jade
+template: article.pug
 ```
 
 # Chapter 3 - Types, Values and Variables

@@ -2,7 +2,7 @@
 title: Why I don't like cricket?
 
 date: 2013-06-11
-template: article.jade
+template: article.pug
 ```
 
 Cricket is a very popular sport here in India. Even though Hockey is our national game, cricket is more followed and idolized. People are so sentimental about cricket that they don't go to offices, in fact some private companies have half days or sometimes full day off when India is playing. People literally go crazy when India has a match with Pakisthan - a country with whom we have had three wars in the past. I don't have the exact figures but I am pretty sure that the matches have always militated against India's GDP for that particular day :P

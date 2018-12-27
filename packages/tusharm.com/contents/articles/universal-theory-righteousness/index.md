@@ -2,7 +2,7 @@
 title: The Universal Theory Righteousness
 
 date: 2013-12-02
-template: article.jade
+template: article.pug
 ```
 
 This a really old piece of text from when I was in my third year of college, back when I was 19. I had written it with the help of a really close friend, whom I used to love talking to. We talked about philosophy, science and hypothetical situations. She turned out to be the person that I eventually ended up marrying, more on her later, for the time being check out what we came up with first :-)

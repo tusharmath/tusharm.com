@@ -2,7 +2,7 @@
 title: About Me
 
 date: 2015-mar-17
-template: about.jade
+template: about.pug
 ```
 
 This is a condensed list of everything that I have done so far. Apart from adhering to Agile Software Development Methodology and Scrum with transcontinental teams, I have also worked independently through the Full SDLC of multiple projects. Currently I am working with a Bangalore based startup - [Practo](https://www.practo.com) as a **Javascript Engineer**. My choice of programming languages are `C`, `C#`, `Javascript` and `CoffeeScript`.

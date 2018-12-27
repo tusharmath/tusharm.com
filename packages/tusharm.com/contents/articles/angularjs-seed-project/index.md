@@ -3,7 +3,7 @@ title: AngularJS Seed project
 
 date: 2013-dec-3
 category: project
-template: project.jade
+template: project.pug
 ```
 
 Personally I have always preferred building an offline web app when compared to a native desktop app. Firstly because its lighter, secondly its easy to build, platform independent and most importantly easy to update. I wanted to practice the basics of AngularJS on a project and wanted to learn more about the best practices that are currently set in the industry today. Thats is why I created this project.

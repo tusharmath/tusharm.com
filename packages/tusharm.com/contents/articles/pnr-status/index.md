@@ -3,7 +3,7 @@ title: Get PNR Status
 
 date: 2013-09-7
 category: project
-template: project.jade
+template: project.pug
 ```
 
 I had booked my train ticket to Ajmer from Vadodara where I was staying with my aunt. The booking status was _waiting_ and my berth was not confirmed. I had booked it a day before I was travelling and my aunt was getting paranoid about checking the status of my ticket again and again. She would come every 15 minutes and ask me to check the status of the ticket online and it wasn't her fault actually, because even though Indian Railways is one of the biggest mode of commuting in the world most of the times you won't get berth in the train. So with no fault of her own she was a little worried about it :) and I would have to go to [this](http://www.indianrail.gov.in/pnr_Enq.html) sucky website, enter my PNR Number, submit and wait for a response. Every time I would submit my PNR Number there would be popups all over the place. The overall experience of getting the booking status was just too pathetic for me. So I decided to make an app that would do this crappy work by polling the server every 15 minutes and show me the latest status of my ticket.

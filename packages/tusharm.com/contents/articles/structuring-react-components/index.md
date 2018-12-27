@@ -2,7 +2,7 @@
 title: structuring react components
 
 date: 2016-01-16
-template: article.jade
+template: article.pug
 ```
 
 I have tried to share some learning that I had while designing react components. Such that rather than having one huge component doing everything, have smaller more specialized ones doing one thing at a time.

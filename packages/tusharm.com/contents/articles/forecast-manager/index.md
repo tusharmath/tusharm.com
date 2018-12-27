@@ -3,7 +3,7 @@ title: Javelin Forecast Manager
 author: zs-associates
 date: 2011-06-01
 category: project
-template: project.jade
+template: project.pug
 ```
 
 Forecast Manager was my second project in [Z.S. Associates](http://zsassociates.com). It was a MVC .Net based web application that would help in maintenance of forecasting models. These models were designed in MS Excel and could be merged with each other and to create different versions. The application could also render reports on the web and could help in managing access rights in an extremely customised way, based on each user and each client basis.
