@@ -9,6 +9,8 @@ The best way to learn a new language is to create a simple file for that program
 
 [vscode]: https://code.visualstudio.com/
 
+---
+
 Here are the steps to setup a basic scala `REPL` on mac.
 
 # Create a .scala File

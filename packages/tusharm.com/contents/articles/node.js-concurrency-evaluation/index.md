@@ -10,6 +10,8 @@ I have been using node.js for a decent amount of time now and I had this hypothe
 
 > For a node.js server running on multi core system, if I flood the server with `n` concurrent requests, to compute something expensive, it would handle the traffic better if the computation can be chunked in such a way that the server can compute those `n` computations, concurrently.
 
+---
+
 This is [timeslicing](https://en.wikipedia.org/wiki/Computer_multitasking), which should be equivalent to creating threads (atleast in theory) in `Java`. In fact, that's what [node.js uses](https://strongloop.com/strongblog/node-js-is-faster-than-java/) for IO operations, so technically my server should have a much higher throughput via this approach.
 
 There are different ways to implement timeslicing viz. `setTimeout`, `process.nextTick` and `setImmediate`. There are subtle differences between all the three functions but bottom line is this — passing a callback to any of these functions defers its execution by some cpu cycles. This helps in letting CPU breathe and perform other tasks in the mean time such as — rendering (on frontend) or making HTTP requests etc.
