@@ -1,6 +1,6 @@
 ```metadata
 title: Random Ramblings
-author: tushar-mathur
+
 date: 2015-apr-2
 template: article.jade
 category: article

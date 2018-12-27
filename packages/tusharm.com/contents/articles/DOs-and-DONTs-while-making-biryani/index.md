@@ -1,6 +1,6 @@
 ```metadata
 title: DOs and DON'Ts while making biryani
-author: tushar-mathur
+
 date: 2013-06-11
 template: article.jade
 ```

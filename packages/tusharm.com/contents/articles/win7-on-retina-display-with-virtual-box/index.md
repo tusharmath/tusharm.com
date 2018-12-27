@@ -1,6 +1,6 @@
 ```metadata
 title: How to configure windows on Mac (retina) using virtual box
-author: tushar-mathur
+
 date: 2013-07-09
 template: article.jade
 ```
@@ -17,7 +17,7 @@ Determine the number of pixels on your screen. For e.g.- Mac pro 13" and 15" Ret
 
 
 **Step 2.**
-The VM will respect the resolutions properly only in Scale mode. In scale mode the VM is viewed in a window. A window will not take-up the complete screen. So you need to get the maximum size that a window can take up on your screen (Without going into fullscreen mode). 
+The VM will respect the resolutions properly only in Scale mode. In scale mode the VM is viewed in a window. A window will not take-up the complete screen. So you need to get the maximum size that a window can take up on your screen (Without going into fullscreen mode).
 
 What I really mean by that statement is - out of the 2560x1400 px of real estate available on the screen only 2560x700 px can be used by a window to show content. Why ? Because I have a dock at the bottom and a menu bar at the top which takes up some space vertically. So in this step you need to calculate that space. Here is how I did it.
 
@@ -36,7 +36,7 @@ For e.g. if you want to try this on a mac pro 13" retina
 $ VBoxManage controlvm Win7 setvideomodehint 2560 1400 32
 ```
 **Step 4.**
-This would be a really high resolution and you will not be able to read anything on the VM because the text would be really small. So now go to your VM with win7 installed and follow these steps - 
+This would be a really high resolution and you will not be able to read anything on the VM because the text would be really small. So now go to your VM with win7 installed and follow these steps -
 
 1. Open display settings.
 2. Click on [Set custom size DPI] from the right hand side Navigation Bar.

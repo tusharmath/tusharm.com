@@ -1,6 +1,6 @@
 ```metadata
 title: Writing a maintainable webpack config
-author: tushar-mathur
+
 date: 2018-08-02
 template: article.jade
 ```

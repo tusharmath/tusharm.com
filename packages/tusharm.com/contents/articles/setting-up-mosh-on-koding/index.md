@@ -1,6 +1,6 @@
 ```metadata
 title: Setting up MOSH on Koding.io
-author: tushar-mathur
+
 date: 2015-apr-19
 template: article.jade
 ```

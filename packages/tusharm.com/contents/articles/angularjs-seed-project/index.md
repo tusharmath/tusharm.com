@@ -1,6 +1,6 @@
 ```metadata
 title: AngularJS Seed project
-author: tushar-mathur
+
 date: 2013-dec-3
 category: project
 template: project.jade

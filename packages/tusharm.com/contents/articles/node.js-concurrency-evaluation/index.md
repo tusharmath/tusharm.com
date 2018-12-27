@@ -1,6 +1,6 @@
 ```metadata
 title: node.js concurrency evaluation
-author: tushar-mathur
+
 date: 2015-12-14
 category: project
 template: article.jade

@@ -1,6 +1,6 @@
 ```metadata
 title: Schemaless scheduling for repeated events
-author: tushar-mathur
+
 date: 2014-may-28
 category: project
 template: project.jade

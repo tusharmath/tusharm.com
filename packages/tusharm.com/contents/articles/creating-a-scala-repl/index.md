@@ -1,6 +1,6 @@
 ```metadata
 title: Creating a Scala REPL
-author: tushar-mathur
+
 date: 2018-08-21
 template: article.jade
 ```

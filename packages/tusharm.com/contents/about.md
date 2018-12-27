@@ -1,6 +1,6 @@
 ```metadata
 title: About Me
-author: tushar-mathur
+
 date: 2015-mar-17
 template: about.jade
 ```

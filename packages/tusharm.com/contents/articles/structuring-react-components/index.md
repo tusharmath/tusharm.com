@@ -1,6 +1,6 @@
 ```metadata
 title: structuring react components
-author: tushar-mathur
+
 date: 2016-01-16
 template: article.jade
 ```

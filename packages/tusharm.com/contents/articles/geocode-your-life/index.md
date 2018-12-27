@@ -1,6 +1,6 @@
 ```metadata
 title: Geocode your life
-author: tushar-mathur
+
 date: 2013-oct-17
 template: project.jade
 category: project
@@ -17,7 +17,7 @@ Some time back when I was going through my archives, I found a couple of snapsho
 <img src="2.jpg" style="width:100%; height: 100%" />
 Everything that you might be interested in on the map, based on what you and your friends have been up to.
 
-<img src="3.jpg" style="width:100%; height: 100%" /> 
+<img src="3.jpg" style="width:100%; height: 100%" />
 No social networking application is complete without a messaging feature.
 
 

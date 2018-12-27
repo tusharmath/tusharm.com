@@ -1,6 +1,6 @@
 ```metadata
 title: Get PNR Status
-author: tushar-mathur
+
 date: 2013-09-7
 category: project
 template: project.jade

@@ -1,6 +1,6 @@
 ```metadata
 title: ShareBill
-author: tushar-mathur
+
 date: 2012-nov-10
 category: project
 template: project.jade
@@ -20,7 +20,7 @@ In the process of making this application I learnt about the importance of using
 
 *Funny part:* I was so slow at making this app that I worked on it for almost a year! I re-wrote the complete app multiple times and by that time BillMonk was bought by some company and they had come up with a new product - **BillPin** which even had an iPhone app! Fortunately or unfortunately I din't want to develop this app any more because I had found things that were more interesting.
 
-[2]: 1.png 
+[2]: 1.png
 
 
 

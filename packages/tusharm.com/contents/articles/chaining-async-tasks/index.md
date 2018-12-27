@@ -1,6 +1,6 @@
 ```metadata
 title: Chaining async tasks
-author: tushar-mathur
+
 date: 2015-apr-26
 category: project
 template: project.jade

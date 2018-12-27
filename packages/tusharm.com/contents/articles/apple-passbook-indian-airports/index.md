@@ -1,6 +1,6 @@
 ```metadata
 title: Using Passbook at Indian Airports
-author: tushar-mathur
+
 date: 2013-dec-5
 template: article.jade
 ```
@@ -9,7 +9,7 @@ Apple's passbook is something that I was not expecting to work in India anytime 
 <span class="more" />
 ![image](snapshot.png)
 
-I had booked the ticket using Cleartrip, which automatically sends a passbook supported ePass to your email-id, once its confirmed. I loaded it into my iPhone which was easy and headed for the airport. The interesting thing is that BCAS had already issued a notice last year (2012) allowing people to travel without a printed ticket. Of course e-ticket is not the same as an ePass but I wanted to see if the Airports had actually implemented this facility for their passengers, since there was no strict deadline specified in the notice for the airports. They claim that the delay in implementing this facility for the passengers is that the security people need to undergo special training for this kind of a setup. I wondered why? Is it so different than paper based version of authorisation? 
+I had booked the ticket using Cleartrip, which automatically sends a passbook supported ePass to your email-id, once its confirmed. I loaded it into my iPhone which was easy and headed for the airport. The interesting thing is that BCAS had already issued a notice last year (2012) allowing people to travel without a printed ticket. Of course e-ticket is not the same as an ePass but I wanted to see if the Airports had actually implemented this facility for their passengers, since there was no strict deadline specified in the notice for the airports. They claim that the delay in implementing this facility for the passengers is that the security people need to undergo special training for this kind of a setup. I wondered why? Is it so different than paper based version of authorisation?
 
 I thought it would be better to call the Airlines first and confirm if they accept ePasses or eTickets. I called SpiceJet and then I called Indigo Airlines to confirm, both of them din't even understand what I was saying in the first place. I gave them the link to the BCAS's [notice](http://www.bcasindia.nic.in/cir_nonrestrict/notice/eticket.pdf), and both of them were adamant about one thing - 'We are not aware about this update from BCAS and it would be better if you take a printout ticket with you, else you will not be given a boarding pass, in fact no one would even let you in the airport'. There was nothing in 'my' hands, I had to go and get a printout late at night that day. I appreciated the fact that they at least din't deny the existence of BCAS.
 

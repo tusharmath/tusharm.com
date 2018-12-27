@@ -1,6 +1,6 @@
 ```metadata
 title: The Universal Theory Righteousness
-author: tushar-mathur
+
 date: 2013-12-02
 template: article.jade
 ```

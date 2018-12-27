@@ -1,6 +1,6 @@
 ```metadata
 title: Javascript Interview Questions
-author: tushar-mathur
+
 date: 2013-08-24
 template: article.jade
 ```
