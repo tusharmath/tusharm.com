@@ -13,12 +13,12 @@ block extra-head
 block prepend title
 	| #{ page.title + " - "}
 
-block header
-	include author
-	h1= page.title
-	p.author
-		| #{ "Developed by " }
-		mixin author(page.metadata.author)
+//- block header
+//- 	include author
+//- 	h1= page.title
+//- 	p.author
+//- 		| #{ "Developed by " }
+//- 		mixin author(page.metadata.author)
 
 block content
 	#ad-container
