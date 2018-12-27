@@ -632,6 +632,11 @@
   dependencies:
     "@types/babel-types" "*"
 
+"@types/dateformat@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/dateformat/-/dateformat-3.0.0.tgz#d3cbfa8ac3789990592f3d9585331cdb2c5f979f"
+  integrity sha512-4N/J/ISasvUYOPnr5gfYRp+YYmPhHqkAyUgP9T9/HQHFoIfjU53lt3jaX67VuTvhpF5WsyNlCcEFbpI3spdxEA==
+
 "@types/fs-extra@^5.0.4":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-5.0.4.tgz#b971134d162cc0497d221adde3dbb67502225599"

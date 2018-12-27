@@ -2,12 +2,13 @@ import * as Generator from 'yeoman-generator'
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import slugify from 'slugify'
+import * as dateFormat from 'dateformat'
 
 type UserInput = {
   title: string
   type: 'Article' | 'Project'
   slug: string
-  date: Date
+  date: string
 }
 
 const CONTENT_PATH = 'packages/tusharm.com/contents/articles'
@@ -21,7 +22,7 @@ export = class BlogGenerator extends Generator {
     type: 'Article',
     title: 'Nothing',
     slug: 'nothing',
-    date: new Date()
+    date: dateFormat(new Date(), 'yyyy-mmm-dd')
   }
   async prompting() {
     this.answers = (await this.prompt([
@@ -50,10 +51,6 @@ export = class BlogGenerator extends Generator {
         choices: ['Article', 'Project']
       }
     ])) as UserInput
-  }
-
-  private slug(title: string) {
-    return
   }
 
   async writing() {
