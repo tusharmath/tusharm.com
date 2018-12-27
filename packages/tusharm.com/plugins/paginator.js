@@ -5,7 +5,7 @@ const axios = require('axios').default
 module.exports = function(env, callback) {
   var PaginatorPage, defaults, getArticles, key, options, value
   defaults = {
-    template: 'index.jade', // template that renders pages
+    template: 'index.pug', // template that renders pages
     articles: 'articles', // directory containing contents to paginate
     first: 'index.html', // filename/url for first page
     filename: 'page/%d/index.html', // filename for rest of pages
