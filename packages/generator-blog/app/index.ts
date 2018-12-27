@@ -13,6 +13,10 @@ type UserInput = {
 const CONTENT_PATH = 'packages/tusharm.com/contents/articles'
 
 export = class BlogGenerator extends Generator {
+  configuring() {
+    this.destinationRoot(path.resolve(process.cwd(), CONTENT_PATH))
+  }
+
   private answers: UserInput = {
     type: 'Article',
     title: 'Nothing',
@@ -53,17 +57,11 @@ export = class BlogGenerator extends Generator {
   }
 
   async writing() {
-    const blogPath = path.resolve(
-      process.cwd(),
-      CONTENT_PATH,
-      this.answers.slug
-    )
-
-    await fs.mkdirp(blogPath)
+    await fs.mkdirp(this.destinationPath(this.answers.slug))
 
     this.fs.copyTpl(
       this.templatePath('index.md.tmp'),
-      this.destinationPath(path.resolve(CONTENT_PATH, 'index.md')),
+      this.destinationPath(path.resolve(this.answers.slug, 'index.md')),
       this.answers
     )
   }
