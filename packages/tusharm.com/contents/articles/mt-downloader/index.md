@@ -19,7 +19,6 @@ There are quite a few multi threaded downloaders such as [wxDownload](http://dfa
 
 So I created this node.js based http-downloader - [mt-downloader](https://github.com/tusharmath/Multi-threaded-downloader). One very important reason for making this was that I also wanted to learn **node.js** and **improve my javascript skills** which I did eventually.
 
-
 Once the library was completed I also created a thin console based wrapper around it and called it [mt-console](https://github.com/tusharmath/mtd-console). This is what I use for my downloads now.
 
 ![image](mt-console.png)

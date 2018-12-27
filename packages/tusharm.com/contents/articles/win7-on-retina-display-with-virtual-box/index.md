@@ -4,9 +4,10 @@ title: How to configure windows on Mac (retina) using virtual box
 date: 2013-07-09
 template: article.jade
 ```
+
 You don't have any money left to buy Parallels or Fusion so you are stuck up with Virtual box for the time being. Virtual box unfortunately does not provide a support for retina displays (At the time of writing this document).
 
-You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic	!
+You will keep trying out different resolutions and will still not be satisfied because sometimes the content would be too stretched in the horizontal direction and sometimes in the vertical direction. You might then have to use a really low resolution which would look and feel pathetic !
 
 <span class="more"/>
 
@@ -14,7 +15,6 @@ So here are some steps that you could try out to improve your user experience wi
 
 **Step 1.**
 Determine the number of pixels on your screen. For e.g.- Mac pro 13" and 15" Retina have 2560 by 1600 pixels.
-
 
 **Step 2.**
 The VM will respect the resolutions properly only in Scale mode. In scale mode the VM is viewed in a window. A window will not take-up the complete screen. So you need to get the maximum size that a window can take up on your screen (Without going into fullscreen mode).
@@ -35,6 +35,7 @@ For e.g. if you want to try this on a mac pro 13" retina
 ```bash
 $ VBoxManage controlvm Win7 setvideomodehint 2560 1400 32
 ```
+
 **Step 4.**
 This would be a really high resolution and you will not be able to read anything on the VM because the text would be really small. So now go to your VM with win7 installed and follow these steps -
 
@@ -44,7 +45,3 @@ This would be a really high resolution and you will not be able to read anything
 4. Click ok, Log off and Login again.
 
 Voila! you will definitely have a better Win7 experience on Mac now.
-
-
-
-

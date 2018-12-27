@@ -19,21 +19,17 @@ There is a problem though — state which is initially set to `null` will throw 
 
 <iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/6/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-
 So far so good. I want to add another functionality now, being able to do a real time search on the repository names.
 
 <iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/9/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 So I added an input box and attached an event handler for the `onKeyUp` event. I also keep two lists, `repos` and `fRepos` where `fRepos` represents the filtered list of the repositories.
 
-
 I want to add one more feature. I want to show text — `no repositories found` when the repositories don't match the search input.
 
 <iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/10/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-
 So I have added a simple if condition that renders the list if the `fRepos.length > 0` otherwise, just show `no repositories found`.
-
 
 Okay, this is good, does the job but if you go to the results page, you will see that it also shows the message initially when the repositories are yet to be loaded from the API. I should ideally show a `loading...` message, till the time the fetch request doesn't get completed.
 
@@ -63,12 +59,12 @@ We removed the `if conditions` from the render function, to control which child 
 
 ```javascript
 const toArray = x => Array.prototype.slice.call(x)
-const renderIf = function () {
+const renderIf = function() {
   const predicates = toArray(arguments)
   return component => {
     var prototype = component.prototype
     const render = prototype.render
-    prototype.render = function () {
+    prototype.render = function() {
       return predicates.every(i => i(this)) ? render.call(this) : null
     }
     return component
@@ -87,6 +83,7 @@ I have removed all the `if conditions` from the code except for the one in the `
 <iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/5/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 # Part 4 (Make declaratives reusable)
+
 We can write helper functions such as — `isEmpty` to check if the list is empty and `have` to check if the property exists on the component. Using [lodash](lodash.com/docs) it will be much easier to write these helpers. Apart from the original 2 helpers, I have also added their negations — `isntEmpty` & `notHave`.
 
 **FINAL CODE**

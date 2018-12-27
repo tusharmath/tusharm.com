@@ -424,7 +424,7 @@ const inProduction = whenever(isProduction(process))
 const setDefaultConfig = R.compose(
   setOutputPath(path.resolve(__dirname, 'dist')),
   setEntry('./src/main.ts'),
-  setRule({ test: /\.tsx?$/, use: [{ loader: 'ts-loader' }] })
+  setRule({test: /\.tsx?$/, use: [{loader: 'ts-loader'}]})
 )
 
 const setProductionConfig = R.compose(
@@ -436,7 +436,7 @@ const baseConfig = {
   output: {
     filename: '[name].js'
   },
-  module: { rules: [] },
+  module: {rules: []},
   mode: 'development'
 }
 

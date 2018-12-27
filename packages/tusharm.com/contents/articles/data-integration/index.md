@@ -10,7 +10,7 @@ ZS Data Integration was my first project in [Z.S. Associates](http://zsassociate
 
 <span class="more"/>
 
-* Created various types of POCs with each of the DI tools which would perform data integration between multiple applications such as Salesforce, Javelin Routing Manager, Javelin Call Plan Manager and Javelin Data Manager.
-* Reported a major bug in Boomi while evaluating it.
-* Concluded that Boomi was the best data integration tool which suited ZS’s needs.
-* Trained the consulting team in ZS on how to use Boomi.
+- Created various types of POCs with each of the DI tools which would perform data integration between multiple applications such as Salesforce, Javelin Routing Manager, Javelin Call Plan Manager and Javelin Data Manager.
+- Reported a major bug in Boomi while evaluating it.
+- Concluded that Boomi was the best data integration tool which suited ZS’s needs.
+- Trained the consulting team in ZS on how to use Boomi.

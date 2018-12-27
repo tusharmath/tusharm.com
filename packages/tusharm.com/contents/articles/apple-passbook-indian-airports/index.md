@@ -4,6 +4,7 @@ title: Using Passbook at Indian Airports
 date: 2013-dec-5
 template: article.jade
 ```
+
 Apple's passbook is something that I was not expecting to work in India anytime soon. I was travelling to Bangalore, and decided to test this time if the app has any credibility, in the eyes of the security at the Jaipur International Airport, my boarding point.
 
 <span class="more" />

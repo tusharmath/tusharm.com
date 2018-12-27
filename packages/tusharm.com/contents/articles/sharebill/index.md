@@ -16,14 +16,8 @@ I soon decided that I will not give up and make my site much better, I will add 
 
 ![Resize icon][2]
 
-In the process of making this application I learnt about the importance of using a Javascript framework for UI manipulations. I had chosen [Knockout.js](http://knockoutjs.com) and this is the first time I had used a MVVM framework in any of my apps. To make it work better than Bill Monk I used the *localStorage* and *application cache* apis to cache all the data locally which improved the performance significantly. I would also show realtime updates of what changes others were making to the transaction.
+In the process of making this application I learnt about the importance of using a Javascript framework for UI manipulations. I had chosen [Knockout.js](http://knockoutjs.com) and this is the first time I had used a MVVM framework in any of my apps. To make it work better than Bill Monk I used the _localStorage_ and _application cache_ apis to cache all the data locally which improved the performance significantly. I would also show realtime updates of what changes others were making to the transaction.
 
-*Funny part:* I was so slow at making this app that I worked on it for almost a year! I re-wrote the complete app multiple times and by that time BillMonk was bought by some company and they had come up with a new product - **BillPin** which even had an iPhone app! Fortunately or unfortunately I din't want to develop this app any more because I had found things that were more interesting.
+_Funny part:_ I was so slow at making this app that I worked on it for almost a year! I re-wrote the complete app multiple times and by that time BillMonk was bought by some company and they had come up with a new product - **BillPin** which even had an iPhone app! Fortunately or unfortunately I din't want to develop this app any more because I had found things that were more interesting.
 
 [2]: 1.png
-
-
-
-
-
-
