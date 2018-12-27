@@ -1,0 +1,35 @@
+{
+  "name": "generator-blog",
+  "version": "0.0.0",
+  "description": "Yeoman generator for the blog",
+  "author": "Tushar Mathur <tusharmath@gmail.com>",
+  "homepage": "https://github.com/tusharmath/tusharmath.github.io#readme",
+  "license": "ISC",
+  "main": "lib/generator.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tusharmath/tusharmath.github.io.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tusharmath/tusharmath.github.io/issues"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/yeoman-generator": "^3.0.1"
+  }
+}
