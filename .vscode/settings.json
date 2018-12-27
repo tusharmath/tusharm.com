@@ -3,6 +3,7 @@
     "Paginator",
     "println",
     "scalac",
+    "slugify",
     "tusharm",
     "typogr"
   ]
