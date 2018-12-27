@@ -12,7 +12,9 @@
     "no-inferred-empty-object-type": true,
     "completed-docs": false,
     "no-parameter-properties": false,
-    "file-name-casing": [true, "kebab-case"]
+    "file-name-casing": [true, "kebab-case"],
+    "object-literal-sort-keys": [false],
+    "no-null-keyword": [false]
   },
   "rulesDirectory": []
 }
