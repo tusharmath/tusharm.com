@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "tslint --project .",
     "prepublishOnly": "tsc -d",
-    "prettier": "git ls-files | grep -E \".*\\.(md|ts|json)$\" | xargs prettier --write --config=.prettierrc",
+    "prettier": "git ls-files | grep -E \".*\\.(md|ts|json|css)$\" | xargs prettier --write --config=.prettierrc",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once --pro",
     "build": "yarn tsc && npx wintersmith build -C ./packages/tusharm.com",
