@@ -1,6 +1,6 @@
 # tusharmath.github.io
 
-[![Build Status](https://travis-ci.com/tusharmath/tusharmath.github.io.svg?branch=master)](https://travis-ci.com/tusharmath/tusharmath.github.io)
+[![Build Status](https://travis-ci.com/tusharmath/tusharmath.github.io.svg?branch=develop)](https://travis-ci.com/tusharmath/tusharmath.github.io)
 ![npm](https://img.shields.io/npm/v/tusharmath.github.io.svg)
 ![npm (scoped)](https://img.shields.io/npm/v/tusharmath.github.io.svg)
 
