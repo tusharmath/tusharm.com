@@ -26,7 +26,9 @@ type ViewFunction = {
     env: Wintersmith,
     locals: T,
     contents: ContentGroup,
-    templates: Templates,
+    templates: {
+      [K: string]: Template
+    },
     callback: CB
   ): void
 }
@@ -77,5 +79,5 @@ type Template = {
   render<T>(ctx: T, cb: CB): void
 }
 type Templates = {
-  [K: string]: Template
+  [K: string]: Template | undefined
 }

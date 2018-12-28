@@ -4,7 +4,7 @@ import * as path from 'path'
 import slugify from 'slugify'
 import * as Generator from 'yeoman-generator'
 
-interface UserInput {
+interface IUserInput {
   date: string
   slug: string
   title: string
@@ -14,16 +14,18 @@ interface UserInput {
 const CONTENT_PATH = 'packages/tusharm.com/contents/articles'
 
 export = class BlogGenerator extends Generator {
-  private answers: UserInput = {
+  private answers: IUserInput = {
     type: 'Article',
     title: 'Nothing',
     slug: 'nothing',
     date: dateFormat(new Date(), 'yyyy-mmm-dd')
   }
-  public configuring() {
+
+  public configuring(): void {
     this.destinationRoot(path.resolve(process.cwd(), CONTENT_PATH))
   }
-  public async prompting() {
+
+  public async prompting(): Promise<void> {
     this.answers = (await this.prompt([
       {
         type: 'input',
@@ -49,10 +51,10 @@ export = class BlogGenerator extends Generator {
         message: 'Type of content',
         choices: ['Article', 'Project']
       }
-    ])) as UserInput
+    ])) as IUserInput
   }
 
-  public async writing() {
+  public async writing(): Promise<void> {
     await fs.mkdirp(this.destinationPath(this.answers.slug))
 
     this.fs.copyTpl(

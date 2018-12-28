@@ -1,4 +1,4 @@
-import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
+import Axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
 import * as R from 'remeda'
 
 interface IOptions {
@@ -11,7 +11,7 @@ interface IOptions {
 const MAX_PER_PAGE = 100
 const baseURL = (username: string) => `http://api.github.com/users/${username}`
 const requestParams = (): AxiosRequestConfig =>
-  process.env.GH_TOKEN
+  typeof process.env.GH_TOKEN === 'string'
     ? {
         headers: {
           authorization: `bearer ${process.env.GH_TOKEN}`
@@ -19,12 +19,12 @@ const requestParams = (): AxiosRequestConfig =>
       }
     : {}
 const requestPage = (username: string, page: number) =>
-  axios.get<GithubRepos>(
+  Axios.get<GithubRepos>(
     `${baseURL(username)}/repos?per_page=${MAX_PER_PAGE}&page=${page + 1}`,
     requestParams()
   )
 const getGitHubData = async (username: string) => {
-  const response = await axios.get<GithubUsers>(
+  const response = await Axios.get<GithubUsers>(
     `${baseURL(username)}`,
     requestParams()
   )
@@ -65,7 +65,9 @@ const getArticles = (
 ) => {
   const r = contents[options.articles]._.directories
     .map(item => item.index)
-    .filter(i => (category ? category === i.metadata.category : true))
+    .filter(i =>
+      typeof category === 'string' ? category === i.metadata.category : true
+    )
     .sort((a, b) => b.date - a.date)
 
   return r
@@ -111,25 +113,25 @@ const createPage = (env: Wintersmith, options: IOptions) => {
         // Get the pagination template
         const template = templates[options.template]
         if (template === undefined) {
-          return callback(
+          callback(
             new Error(`unknown paginator template '${options.template}'`)
           )
+        } else {
+          // Setup the template context
+          // Extend the template context with the environment locals
+          const ctx = R.merge(
+            {
+              contents,
+              articles: this.articles,
+              prevPage: this.prevPage,
+              nextPage: this.nextPage
+            },
+            locals
+          )
+
+          // Finally render the template
+          template.render(ctx, callback)
         }
-
-        // Setup the template context
-        // Extend the template context with the environment locals
-        const ctx = R.merge(
-          {
-            contents,
-            articles: this.articles,
-            prevPage: this.prevPage,
-            nextPage: this.nextPage
-          },
-          locals
-        )
-
-        // Finally render the template
-        return template.render(ctx, callback)
       }
     }
   }
@@ -138,12 +140,21 @@ const createPage = (env: Wintersmith, options: IOptions) => {
     new PaginatorPage(pageNum, articles)
 }
 
+const createRV = (pages: IMyPaginator[]) => {
+  const rv = pages.reduce<{[k: string]: IMyPaginator}>(
+    (acc, page) => ({
+      ...acc,
+      [`${page.pageNum}.page`]: page
+    }),
+    {}
+  )
+
+  return R.merge(rv, {'index.page': pages[0]})
+}
+
 export = (env: Wintersmith, callback: CB) => {
   // Assign defaults any option not set in the config file
-  const options: IOptions = R.mergeAll([
-    DEFAULT_OPTIONS,
-    env.config.paginator || {}
-  ])
+  const options: IOptions = R.mergeAll([DEFAULT_OPTIONS, env.config.paginator])
 
   const paginator = createPage(env, options)
 
@@ -177,7 +188,7 @@ export = (env: Wintersmith, callback: CB) => {
 
     // Callback with the generated contents
 
-    return cb(null, rv)
+    cb(null, rv)
   })
   // Add the article helper to the environment so we can use it later
   env.helpers.getArticles = getArticles
@@ -190,16 +201,4 @@ export = (env: Wintersmith, callback: CB) => {
       callback()
     })
     .catch(callback)
-}
-
-const createRV = (pages: IMyPaginator[]) => {
-  const rv = pages.reduce(
-    (acc, page) => ({
-      ...acc,
-      [`${page.pageNum}.page`]: page
-    }),
-    {}
-  )
-
-  return R.merge(rv, {'index.page': pages[0]})
 }
