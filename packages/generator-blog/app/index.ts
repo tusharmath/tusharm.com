@@ -8,14 +8,14 @@ interface IUserInput {
   date: string
   slug: string
   title: string
-  type: 'Article' | 'Project'
+  type: 'article' | 'project'
 }
 
 const CONTENT_PATH = 'packages/tusharm.com/contents/articles'
 
 export = class BlogGenerator extends Generator {
   private answers: IUserInput = {
-    type: 'Article',
+    type: 'article',
     title: 'Nothing',
     slug: 'nothing',
     date: dateFormat(new Date(), 'yyyy-mmm-dd')
@@ -49,7 +49,8 @@ export = class BlogGenerator extends Generator {
         type: 'list',
         name: 'type',
         message: 'Type of content',
-        choices: ['Article', 'Project']
+        choices: ['Article', 'Project'],
+        transformer: i => i.toLowerCase()
       }
     ])) as IUserInput
   }

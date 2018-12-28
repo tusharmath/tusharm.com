@@ -1,5 +1,5 @@
 ```metadata
-title: <%= date %>
+title: <%= title %>
 date: <%= date %>
 template: <%= type %>.pug
 ```
