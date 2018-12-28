@@ -7,14 +7,19 @@ notifications:
   email: false
 node_js:
   - 'stable'
-after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  local-dir: 'packages/tusharm.com/bin'
+  on:
+    branch: master
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
 script:
   - yarn lint
   - yarn test
-before_install: yarn global add greenkeeper-lockfile@1
+before_install: yarn global add greenkeeper-lockfile@2
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
