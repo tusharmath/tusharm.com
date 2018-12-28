@@ -1,28 +1,26 @@
 {
-	"locals": {
-		"url": "/",
-		"name": "Tushar Mathur's blog",
-		"owner": "Tushar Mathur",
-		"description": "A software developer, physics enthusiast, swimmer and a car geek"
-	},
-	"plugins": [
-		"./plugins/paginator.js"
-	],
-	"require": {
-		"moment": "moment",
-		"_": "underscore",
-		"typogr": "typogr"
-	},
-	"jade": {
-		"pretty": true
-	},
-	"markdown": {
-		"smartLists": true,
-		"smartypants": true
-	},
-	"paginator": {
-		"perPage": 5
-	},
-	"output": "./bin",
-	"github": "tusharmath"
+  "locals": {
+    "url": "/",
+    "name": "Tushar Mathur's blog",
+    "owner": "Tushar Mathur",
+    "description": "A software developer, physics enthusiast, swimmer and a car geek"
+  },
+  "plugins": ["./plugins/paginator.js"],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "perPage": 5
+  },
+  "output": "./bin",
+  "github": "tusharmath"
 }
