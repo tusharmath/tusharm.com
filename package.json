@@ -14,7 +14,6 @@
     "prepublishOnly": "tsc -d",
     "prettier": "git ls-files | grep -E \".*\\.(md|ts|json)$\" | xargs prettier --write --config=.prettierrc",
     "semantic-release": "semantic-release",
-    "test": "mocha --require=ts-node/register --watch-extensions ts test/*.ts",
     "travis-deploy-once": "travis-deploy-once --pro",
     "build": "npx wintersmith build -C ./packages/tusharm.com",
     "preview": "npx wintersmith preview -C ./packages/tusharm.com"
