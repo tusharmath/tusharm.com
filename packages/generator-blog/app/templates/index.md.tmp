@@ -1,0 +1,5 @@
+```metadata
+title: <%= date %>
+date: <%= date %>
+template: <%= type %>.pug
+```

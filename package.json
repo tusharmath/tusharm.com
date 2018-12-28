@@ -1,23 +1,41 @@
 {
-  "name": "tusharm.com",
-  "version": "0.0.1",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "moment": "^2.22.2",
-    "ramda": "^0.25.0",
-    "typogr": "^0.6.8",
-    "underscore": "^1.9.1",
-    "wintersmith": "^2.4.1"
-  },
-  "repository": "none",
+  "name": "tusharmath.github.io",
+  "private": true,
   "devDependencies": {
-    "prompt": "^1.0.0"
+    "cz-lerna-changelog": "^2.0.2",
+    "lerna": "^3.8.0",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
   },
-  "license": "MIT",
   "scripts": {
-    "preview": "wintersmith preview",
-    "build": "wintersmith build",
-    "deploy": "./script/deploy.sh",
-    "test": "echo \"no tests boss!\""
-  }
+    "start": "wintersmith preview",
+    "lint": "tslint --project .",
+    "prepublishOnly": "tsc -d",
+    "prettier": "git ls-files | grep -E \".*\\.(md|ts|json)$\" | xargs prettier --write --config=.prettierrc",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once --pro",
+    "build": "npx wintersmith build -C ./packages/tusharm.com",
+    "preview": "npx wintersmith preview -C ./packages/tusharm.com"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "author": "Tushar Mathur <tusharmath@gmail.com>",
+  "description": "Personal blog",
+  "keywords": [
+    ""
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tusharmath/tusharmath.github.io.git"
+  },
+  "version": "0.0.0-development"
 }

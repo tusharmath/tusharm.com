@@ -1,5 +1,9 @@
-temp
-node_modules
+node_modules/
+*.d.ts
+!global.d.ts
+*.tgz
+*.js
+*.map
+.idea/
 *.log
-bin/
-.vscode/
+!global.d.ts
