@@ -12,8 +12,9 @@ deploy:
   skip-cleanup: true
   github-token: $GH_TOKEN
   local-dir: 'packages/tusharm.com/bin'
+  target-branch: master
   on:
-    branch: master
+    branch: develop
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
