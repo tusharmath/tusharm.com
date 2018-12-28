@@ -58,9 +58,8 @@ const DEFAULT_OPTIONS: IOptions = {
  * Helper that returns a list of articles found in *contents*
  * note that each article is assumed to have its own directory in the articles directory
  */
-const getArticles = (
+const getArticles = (options: IOptions) => (
   contents: ContentGroup,
-  options: IOptions,
   category?: string
 ) => {
   const r = contents[options.articles]._.directories
@@ -162,7 +161,7 @@ export = (env: Wintersmith, callback: CB) => {
   // I.e. contents._.paginator
   env.registerGenerator('paginator', (contents, cb) => {
     // Find all articles
-    const articles = getArticles(contents, options)
+    const articles = getArticles(options)(contents)
 
     // Populate pages
     const numPages = Math.ceil(articles.length / options.perPage)
@@ -191,8 +190,8 @@ export = (env: Wintersmith, callback: CB) => {
     cb(null, rv)
   })
   // Add the article helper to the environment so we can use it later
-  env.helpers.getArticles = getArticles
-  callback()
+  env.helpers.getArticles = getArticles(options)
+
   // Setup Github Data
 
   getGitHubData(env.config.github)
