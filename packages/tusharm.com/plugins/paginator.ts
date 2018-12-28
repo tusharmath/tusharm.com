@@ -84,7 +84,7 @@ const createPage = (env: Wintersmith, options: IOptions) => {
     /* A page has a number and a list of articles */
     public constructor(
       public readonly pageNum: number,
-      private articles: Article[]
+      private readonly articles: MarkdownPage[]
     ) {
       super()
     }
@@ -134,7 +134,7 @@ const createPage = (env: Wintersmith, options: IOptions) => {
     }
   }
 
-  return (pageNum: number, articles: Article[]) =>
+  return (pageNum: number, articles: MarkdownPage[]) =>
     new PaginatorPage(pageNum, articles)
 }
 
@@ -184,12 +184,12 @@ export = (env: Wintersmith, callback: CB) => {
   callback()
   // Setup Github Data
 
-  // GetGitHubData(env.config.github)
-  //   .then(data => {
-  //     Env.helpers.github = data
-  //     Callback()
-  //   })
-  //   .catch(callback)
+  getGitHubData(env.config.github)
+    .then(data => {
+      env.helpers.github = data
+      callback()
+    })
+    .catch(callback)
 }
 
 const createRV = (pages: IMyPaginator[]) => {

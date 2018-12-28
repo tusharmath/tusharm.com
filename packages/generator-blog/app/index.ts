@@ -1,36 +1,35 @@
-import * as Generator from 'yeoman-generator'
+import * as dateFormat from 'dateformat'
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import slugify from 'slugify'
-import * as dateFormat from 'dateformat'
+import * as Generator from 'yeoman-generator'
 
-type UserInput = {
+interface UserInput {
+  date: string
+  slug: string
   title: string
   type: 'Article' | 'Project'
-  slug: string
-  date: string
 }
 
 const CONTENT_PATH = 'packages/tusharm.com/contents/articles'
 
 export = class BlogGenerator extends Generator {
-  configuring() {
-    this.destinationRoot(path.resolve(process.cwd(), CONTENT_PATH))
-  }
-
   private answers: UserInput = {
     type: 'Article',
     title: 'Nothing',
     slug: 'nothing',
     date: dateFormat(new Date(), 'yyyy-mmm-dd')
   }
-  async prompting() {
+  public configuring() {
+    this.destinationRoot(path.resolve(process.cwd(), CONTENT_PATH))
+  }
+  public async prompting() {
     this.answers = (await this.prompt([
       {
         type: 'input',
         name: 'title',
         message: 'Title',
-        validate: i => Boolean(i)
+        validate: Boolean
       },
       {
         type: 'input',
@@ -53,7 +52,7 @@ export = class BlogGenerator extends Generator {
     ])) as UserInput
   }
 
-  async writing() {
+  public async writing() {
     await fs.mkdirp(this.destinationPath(this.answers.slug))
 
     this.fs.copyTpl(
