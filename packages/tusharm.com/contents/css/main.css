@@ -1,6 +1,20 @@
-
-h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre {
-  margin: 0; padding: 0; border: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body,
+a,
+img,
+ul,
+ol,
+blockquote,
+pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 body {
@@ -16,7 +30,8 @@ body {
   margin: 0 auto;
 }
 
-body, a {
+body,
+a {
   color: #171717;
 }
 
@@ -61,18 +76,20 @@ h3 {
   margin-bottom: 0.8em;
 }
 
-ol, ul {
+ol,
+ul {
   margin: 0 1.4em 1.4em 4em;
 }
 
 li {
   margin-bottom: 0.5em;
+  margin-right: 0.5em;
 }
 
 blockquote {
   margin: 1.2em 3em;
   padding-left: 1em;
-  color:#808080;
+  color: #808080;
   font-style: italic;
 }
 
@@ -96,7 +113,8 @@ hr {
   margin: 0;
 }
 
-.header a, .header a:hover {
+.header a,
+.header a:hover {
   text-decoration: none;
   color: #171717;
 }
@@ -168,7 +186,8 @@ footer .copy p {
   margin-top: 1em;
 }
 
-footer .copy, footer .copy a {
+footer .copy,
+footer .copy a {
   color: #8e8e8e;
 }
 
@@ -178,13 +197,12 @@ footer .copy, footer .copy a {
   margin: 3em 0 4em;
 }
 
-article[class='article'] section.content > p:first-child:first-letter
-{
-color: #000;
-float: left;
-font-size: 4em;
-line-height: .5em;
-margin: 7px 6px 4px 0px;
+article[class='article'] section.content > p:first-child:first-letter {
+  color: #000;
+  float: left;
+  font-size: 4em;
+  line-height: 0.5em;
+  margin: 7px 6px 4px 0px;
 }
 
 .article header {
@@ -215,7 +233,7 @@ margin: 7px 6px 4px 0px;
 }
 
 .article.intro .content p {
- /* display: inline;*/
+  /* display: inline;*/
 }
 
 .article.intro .content .more {
@@ -229,10 +247,11 @@ margin: 7px 6px 4px 0px;
   width: 100%;
   height: 50%;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
-.more, .date {
+.more,
+.date {
   font-family: 'Merriweather', serif;
   font-variant: small-caps;
   text-transform: lowercase;
@@ -257,18 +276,20 @@ margin: 7px 6px 4px 0px;
   font-style: italic;
 }
 
-.archive a, .archive span{
+.archive a,
+.archive span {
   display: block;
   float: left;
   margin-bottom: -1px;
   text-decoration: none;
 }
 .archive li:not(:last-child) {
-	border-bottom: 1px solid #d2d2d2;
-	margin-bottom: -1px;
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: -1px;
 }
 
-.archive a.last, .archive span.last {
+.archive a.last,
+.archive span.last {
   border: 0;
   margin-bottom: 0;
 }
@@ -280,7 +301,7 @@ margin: 7px 6px 4px 0px;
 }
 
 .archive .year-label,
-.archive .month-label{
+.archive .month-label {
   width: 4em;
   font-family: 'Merriweather', serif;
   font-variant: small-caps;
@@ -360,54 +381,98 @@ code.lang-markdown .bullet {
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-.tomorrow-comment, pre .comment, pre .title {
+.tomorrow-comment,
+pre .comment,
+pre .title {
   color: #8e908c;
 }
 
-.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+.tomorrow-red,
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
   color: #c82829;
 }
 
-.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+.tomorrow-orange,
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
   color: #f5871f;
 }
 
-.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
+.tomorrow-yellow,
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
   color: #eab700;
 }
 
-.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+.tomorrow-green,
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
   color: #718c00;
 }
 
-.tomorrow-aqua, pre .css .hexcolor {
+.tomorrow-aqua,
+pre .css .hexcolor {
   color: #3e999f;
 }
 
-.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+.tomorrow-blue,
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
   color: #4271ae;
 }
 
-.tomorrow-purple, pre .keyword, pre .javascript .function {
+.tomorrow-purple,
+pre .keyword,
+pre .javascript .function {
   color: #8959a8;
 }
 
 .youtube {
-  width:100%;
+  width: 100%;
   height: 420px;
 }
 
 /* media queries */
 
 @media (min-width: 1600px) {
-  body { font-size: 18px; }
+  body {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 900px) {
-	.top-nav {
-		display:none;
-	}
-  body { font-size: 14px; }
+  .top-nav {
+    display: none;
+  }
+  body {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 690px) {
@@ -458,49 +523,48 @@ code.lang-markdown .bullet {
   }
 }
 
-.word{
-	margin-bottom: 12px;
-	border-bottom: 1px dashed #D2D2D2;
-	padding-bottom: 12px;
+.word {
+  margin-bottom: 12px;
+  border-bottom: 1px dashed #d2d2d2;
+  padding-bottom: 12px;
 }
 
-.word .mnemonics{
-	font-size: .7em;
+.word .mnemonics {
+  font-size: 0.7em;
 }
 
-
-.top-nav ul{
+.top-nav ul {
 }
 
-.top-nav ul li{
-    display: inline-block;
-    box-shadow: 0px 1px 8px 0px #000;
+.top-nav ul li {
+  display: inline-block;
+  box-shadow: 0px 5px 8px -3px #000000ad;
 }
 
-.top-nav ul li a{
-	padding: 6px 14px;
-	background-color: #FF0000;
-	color: #FFF;
-	display: inline-block;
-    font-family: 'Merriweather', serif;
+.top-nav ul li a {
+  padding: 6px 14px;
+  background-color: #ff0000;
+  color: #fff;
+  display: inline-block;
+  font-family: 'Merriweather', serif;
 }
 
 .top-nav {
-    position: fixed;
-    right: 40px;
-    top: 0;
+  position: fixed;
+  right: 40px;
+  top: 0;
 }
 
-.top-nav ul li a:hover{
-    color:#fff;
+.top-nav ul li a:hover {
+  color: #fff;
 }
-.top-nav .red-line{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 4px;
-	background-color: #F00;
+.top-nav .red-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #f00;
 }
 
 .hljs {
@@ -514,5 +578,5 @@ pre {
 }
 
 iframe {
-  border: 1px dashed #d2d2d2
+  border: 1px dashed #d2d2d2;
 }
