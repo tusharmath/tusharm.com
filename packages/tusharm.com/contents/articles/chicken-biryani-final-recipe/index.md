@@ -80,16 +80,16 @@ Create a tick paste of the following items and add it to the chicken —
 2. In a separate pan boil water with —
 
 | Item         | Quantity |
-| ------------ | -------- |
+| ------------ | -------: |
 | Cloves       | 4 pieces |
 | Bay Leaves   | 2 leaves |
-| Cardamom     | 3 seeds  |
+| Cardamom     |  3 seeds |
 | Cinnamon     | 2 sticks |
 | Peppercorns  | 5 pieces |
-| Nutmeg       | 1/4th    |
-| Mace         | 1 piece  |
-| Star Aniseed | 1 piece  |
-| Black Cumin  | 1 tsp    |
+| Nutmeg       |    1/4th |
+| Mace         |  1 piece |
+| Star Aniseed |  1 piece |
+| Black Cumin  |    1 tsp |
 
 3. Cook the rice till they are 80% done.
 
@@ -116,7 +116,7 @@ Create a tick paste of the following items and add it to the chicken —
 The final steps are to cover the pan with a lid and let it cook in the following manner
 
 | Heat         | Duration |
-| ------------ | -------- |
+| :----------- | :------- |
 | High         | 5 mins   |
 | Medium       | 15 mins  |
 | Low          | 30 mins  |
