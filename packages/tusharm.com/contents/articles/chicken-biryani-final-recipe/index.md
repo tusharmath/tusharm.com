@@ -40,7 +40,7 @@ Create a powder with the following items —
 
 # Marinate
 
-Create a tick paste of the following items and add it to the chicken —
+Create a thick paste of the following items and add it to the chicken —
 
 | Item                    |            Quantity |
 | :---------------------- | ------------------: |
