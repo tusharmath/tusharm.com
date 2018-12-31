@@ -40,7 +40,7 @@ Create a powder with the following items —
 
 # Marinate
 
-Create a thick paste of the following items and add it to the 500gm of chicken —
+Create a thick paste of the following items and add it to 500gm of chicken to marinate it for at least 4hrs.
 
 | Item                    |            Quantity |
 | :---------------------- | ------------------: |
