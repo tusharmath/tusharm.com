@@ -580,3 +580,19 @@ pre {
 iframe {
   border: 1px dashed #d2d2d2;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+}
+
+table tr:nth-child(2n) {
+  background-color: #79797912;
+}
+
+table td,
+table th {
+  padding: 0.5em;
+  border: 1px solid #0000000f;
+}
