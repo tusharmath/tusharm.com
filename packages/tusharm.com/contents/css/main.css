@@ -587,7 +587,7 @@ table {
   margin-bottom: 1.5em;
 }
 
-table tr:nth-child(2n) {
+thead, table tr:nth-child(2n) {
   background-color: #79797912;
 }
 
