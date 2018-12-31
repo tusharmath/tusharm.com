@@ -123,4 +123,4 @@ The final steps are to cover the pan with a lid and let it cook in the following
 | Low          | 30 mins  |
 | Off the heat | 15 mins  |
 
-Done.
+Ready to be served
