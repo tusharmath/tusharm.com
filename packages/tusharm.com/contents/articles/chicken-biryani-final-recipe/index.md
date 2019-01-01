@@ -63,16 +63,8 @@ Create a thick paste of the following items and add it to 500gm of chicken to ma
 1. Take 4 potatoes and peel them.
 2. Slice them in the shape of wedges.
 3. Boil them till they are 50% done.
-4. Add the following items.
-
-| Item                  |  Quantity |
-| :-------------------- | --------: |
-| [Spice mix]           |     2 tsp |
-| Ginger & Garlic Paste |     2 tsp |
-| Lemon Juice           | 1/2 Lemon |
-| Salt                  |  to taste |
-
-5. Shallow fry the potatoes until they turn light brown from the outside.
+4. Shallow fry the potatoes until they turn light brown from the outside.
+6. Add salt and [spice mix].
 
 # Rice
 
@@ -123,4 +115,9 @@ The final steps are to cover the pan with a lid and let it cook in the following
 | Low          | 30 mins  |
 | Off the heat | 15 mins  |
 
-Ready to be served
+Ready to be served.
+
+
+# Tips
+- Start the cooking process only after assembling is complete.
+
