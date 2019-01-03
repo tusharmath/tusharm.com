@@ -5,7 +5,7 @@
     "owner": "Tushar Mathur",
     "description": "A software developer, physics enthusiast, swimmer and a car geek"
   },
-  "plugins": ["./plugins/paginator.js"],
+  "plugins": ["./plugins/paginator.js", "./plugins/github.js"],
   "require": {
     "moment": "moment",
     "_": "underscore",

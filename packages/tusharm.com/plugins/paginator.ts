@@ -1,4 +1,3 @@
-import Axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
 import * as R from 'remeda'
 
 interface IOptions {
@@ -7,43 +6,6 @@ interface IOptions {
   first: string
   perPage: number
   template: string
-}
-const MAX_PER_PAGE = 100
-const baseURL = (username: string) => `http://api.github.com/users/${username}`
-const requestParams = (): AxiosRequestConfig =>
-  typeof process.env.GH_TOKEN === 'string'
-    ? {
-        headers: {
-          authorization: `bearer ${process.env.GH_TOKEN}`
-        }
-      }
-    : {}
-const requestPage = (username: string, page: number) =>
-  Axios.get<GithubRepos>(
-    `${baseURL(username)}/repos?per_page=${MAX_PER_PAGE}&page=${page + 1}`,
-    requestParams()
-  )
-const getGitHubData = async (username: string) => {
-  const response = await Axios.get<GithubUsers>(
-    `${baseURL(username)}`,
-    requestParams()
-  )
-  const pageCount = Math.ceil(response.data.public_repos / MAX_PER_PAGE)
-
-  const pages = await Promise.all<AxiosResponse<GithubRepos>>(
-    Array.from({length: pageCount}, (_, i) => requestPage(username, i))
-  )
-
-  const repos = R.pipe(
-    pages,
-    R.flatMap(R.prop('data')),
-    R.filter(i => !i.fork && i.description !== null),
-    R.sortBy(R.prop('created_at'))
-  ).reverse()
-
-  const popular = repos.filter(i => i.watchers_count + i.stargazers_count > 0)
-
-  return {repos, popular}
 }
 
 const DEFAULT_OPTIONS: IOptions = {
@@ -191,13 +153,5 @@ export = (env: Wintersmith, callback: CB) => {
   })
   // Add the article helper to the environment so we can use it later
   env.helpers.getArticles = getArticles(options)
-
-  // Setup Github Data
-
-  getGitHubData(env.config.github)
-    .then(data => {
-      env.helpers.github = data
-      callback()
-    })
-    .catch(callback)
+  callback()
 }
