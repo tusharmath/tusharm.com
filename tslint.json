@@ -15,7 +15,8 @@
     "file-name-casing": [true, "kebab-case"],
     "object-literal-sort-keys": [false],
     "no-null-keyword": [false],
-    "comment-format": [false]
+    "comment-format": [false],
+    "no-magic-numbers": [false]
   },
   "rulesDirectory": []
 }
