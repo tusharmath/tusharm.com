@@ -64,7 +64,7 @@ Create a thick paste of the following items and add it to 500gm of chicken to ma
 2. Slice them in the shape of wedges.
 3. Boil them till they are 50% done.
 4. Shallow fry the potatoes until they turn light brown from the outside.
-6. Add salt and [spice mix].
+5. Add salt and [spice mix].
 
 # Rice
 
@@ -117,7 +117,6 @@ The final steps are to cover the pan with a lid and let it cook in the following
 
 Ready to be served.
 
-
 # Tips
-- Start the cooking process only after assembling is complete.
 
+- Start the cooking process only after assembling is complete.
