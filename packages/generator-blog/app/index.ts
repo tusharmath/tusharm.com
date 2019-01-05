@@ -49,8 +49,10 @@ export = class BlogGenerator extends Generator {
         type: 'list',
         name: 'type',
         message: 'Type of content',
-        choices: ['Article', 'Project'],
-        transformer: i => i.toLowerCase()
+        choices: [
+          {name: 'Article', value: 'article'},
+          {name: 'Project', value: 'project'}
+        ]
       }
     ])) as IUserInput
   }
