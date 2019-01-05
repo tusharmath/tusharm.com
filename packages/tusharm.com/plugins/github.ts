@@ -56,10 +56,15 @@ const getGitHubData = async (username: string) => {
 }
 
 export = (env: Wintersmith, callback: CB) => {
-  getGitHubData(env.config.github)
-    .then(data => {
-      env.helpers.github = data
-      callback()
-    })
-    .catch(callback)
+  if (process.env.GH_TOKEN === undefined) {
+    env.helpers.github = {repos: [], popular: []}
+    callback()
+  } else {
+    getGitHubData(env.config.github)
+      .then(data => {
+        env.helpers.github = data
+        callback()
+      })
+      .catch(callback)
+  }
 }
