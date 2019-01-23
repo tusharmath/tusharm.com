@@ -2,4 +2,5 @@
 title: <%= title %>
 date: <%= date %>
 template: <%= type %>.pug
+hide: true
 ```
