@@ -1,4 +1,4 @@
-import Axios, {AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios'
+import Axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
 import * as debug from 'debug'
 import * as R from 'remeda'
 
