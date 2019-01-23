@@ -16,21 +16,8 @@ const DEFAULT_OPTIONS: IOptions = {
   perPage: 2 // Number of articles per page
 }
 
-const matchesCategory = (i: MarkdownPage, category?: string) => {
-  if (typeof category === 'string') {
-    return category === i.metadata.category
-  }
-
-  return true
-}
-
-const isHidden = (i: MarkdownPage) => {
-  if (typeof i.metadata.hide === 'boolean') {
-    return i.metadata.hide
-  }
-
-  return false
-}
+const matchesCategory = (category?: string) => (i: MarkdownPage) =>
+  typeof category === 'string' ? category === i.metadata.category : true
 
 /**
  * Helper that returns a list of articles found in *contents*
@@ -43,7 +30,7 @@ const getArticles = (options: IOptions) => (
 ) => {
   const r = contents[options.articles]._.directories
     .map(item => item.index)
-    .filter(i => matchesCategory(i, category) && !isHidden(i))
+    .filter(matchesCategory(category))
     .sort((a, b) => b.date - a.date)
 
   return r
@@ -128,6 +115,9 @@ const createRV = (pages: IMyPaginator[]) => {
   return R.merge(rv, {'index.page': pages[0]})
 }
 
+const isVisible = (i: MarkdownPage) =>
+  typeof i.metadata.hide === 'boolean' ? !i.metadata.hide : true
+
 export = (env: Wintersmith, callback: CB) => {
   // Assign defaults any option not set in the config file
   const options: IOptions = R.mergeAll([DEFAULT_OPTIONS, env.config.paginator])
@@ -138,7 +128,7 @@ export = (env: Wintersmith, callback: CB) => {
   // I.e. contents._.paginator
   env.registerGenerator('paginator', (contents, cb) => {
     // Find all articles
-    const articles = getArticles(options)(contents)
+    const articles = getArticles(options)(contents).filter(isVisible)
 
     // Populate pages
     const numPages = Math.ceil(articles.length / options.perPage)
