@@ -2,6 +2,7 @@
 title: Chicken Biryani (The Final Recipe)
 date: 2018-Dec-31
 template: article.pug
+hide: true
 ```
 
 This biryani consists of 7 steps and serves 4 people
