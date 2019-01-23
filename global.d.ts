@@ -2,7 +2,13 @@ type CB = <T>(err?: Error | null, data?: T) => void
 
 type MarkdownPage = {
   filepath: {}
-  metadata: {[K: string]: string | boolean | number | Date}
+  metadata: {
+    title: string
+    data: string
+    template: string
+    hide?: boolean
+    category?: string
+  }
   markdown: string
   date: number
 }
