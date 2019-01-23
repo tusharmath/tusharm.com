@@ -16,19 +16,34 @@ const DEFAULT_OPTIONS: IOptions = {
   perPage: 2 // Number of articles per page
 }
 
+const matchesCategory = (i: MarkdownPage, category?: string) => {
+  if (typeof category === 'string') {
+    return category === i.metadata.category
+  }
+
+  return true
+}
+
+const isHidden = (i: MarkdownPage) => {
+  if (typeof i.metadata.hide === 'boolean') {
+    return i.metadata.hide
+  }
+
+  return false
+}
+
 /**
  * Helper that returns a list of articles found in *contents*
  * note that each article is assumed to have its own directory in the articles directory
  */
+
 const getArticles = (options: IOptions) => (
   contents: ContentGroup,
   category?: string
 ) => {
   const r = contents[options.articles]._.directories
     .map(item => item.index)
-    .filter(i =>
-      typeof category === 'string' ? category === i.metadata.category : true
-    )
+    .filter(i => matchesCategory(i, category) && !isHidden(i))
     .sort((a, b) => b.date - a.date)
 
   return r
