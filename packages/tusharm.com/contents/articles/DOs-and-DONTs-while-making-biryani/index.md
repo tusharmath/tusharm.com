@@ -1,6 +1,5 @@
 ```metadata
 title: DOs and DON'Ts while making biryani
-
 date: 2013-06-11
 template: article.pug
 ```
@@ -29,3 +28,9 @@ It took a lot of perseverance in getting the recipe just right. So here are some
 1. Don't use too much of curd, it makes the meat bland and tasteless. Curd only helps in cooking, it does't add any taste to the biryani.
 2. Don't give direct heat to the meat, put the vessel over a pan or some other metal layer. It takes time to cook, mutton might take up to 1:45 hrs to cook and chicken can take up to 1:15 hrs. So have patience.
 3. Don't add raw onions in the marinade, it will not taste good.
+
+---
+
+**Update:** Checkout my blog post on [the final recipe].
+
+[the final recipe]: https://tusharm.com/articles/chicken-biryani-final-recipe/
