@@ -37,7 +37,7 @@ export = class BlogGenerator extends Generator {
         type: 'input',
         name: 'slug',
         message: 'Slug',
-        default: (a: {title: string}) => slugify(a.title)
+        default: (a: {title: string}) => slugify(a.title).toLowerCase()
       },
       {
         type: 'input',
