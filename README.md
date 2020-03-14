@@ -7,11 +7,11 @@ Personal blog
 # Start
 
 ```bash
-npm start
+yarn start
 ```
 
 # New Blog
 
 ```bash
-yo blog
+yarn article
 ```

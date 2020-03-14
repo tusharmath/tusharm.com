@@ -10,6 +10,7 @@
     "yo": "^3.1.1"
   },
   "scripts": {
+    "article": "yarn run yo ./packages/generator-blog/app",
     "lint": "tslint --project .",
     "prettier": "git ls-files | grep -E \".*\\.(md|ts|json|css)$\" | xargs prettier --write --config=.prettierrc",
     "semantic-release": "semantic-release",
