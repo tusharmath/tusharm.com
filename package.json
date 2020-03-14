@@ -14,6 +14,7 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once --pro",
     "postinstall": "yarn tsc",
+    "commit:articles": "git add packages/tusharm.com/contents/articles; git commit -m 'doc(articles): update articles'",
     "build": "yarn tsc && npx wintersmith build -C ./packages/tusharm.com",
     "start": "yarn tsc && npx wintersmith preview -C ./packages/tusharm.com"
   },
