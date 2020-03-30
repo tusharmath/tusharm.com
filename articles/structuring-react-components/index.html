@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="google-site-verification" content="M2S6XRgNZy5AWcjY2MUVhaCDJ8uDRDkHfly4lnaz-lI"><meta name="viewport" content="width=device-width"><title>structuring react components - Tushar Mathur's blog</title><link rel="alternate" href="//feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek"><link rel="stylesheet" href="/bg.svg" type="image/svg"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><link rel="stylesheet" href="/css/main.css" type="text/css"><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-39050808-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+</script></head><body class="article-detail"><header class="header"><div class="top-nav"><div class="red-line"></div><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/archive.html">Archives</a></li><li><a href="/about.html">About Me</a></li></ul></div><div class="content-wrap"><h1>structuring react components</h1><p class="author">by <span class="author"></span>Tushar Mathur</p></div></header><div id="content"><div class="content-wrap"><article class="article"><section class="content"><p>Rather than making one huge component do everything, have smaller more specialized ones that perform one thing at a<span class="widont">&nbsp;</span>time.</p>
+<hr>
+<h1 id="part-1-the-problem-statement-">Part 1 (The Problem<span class="widont">&nbsp;</span>Statement)</h1>
+<p>So say I want to list out all the repositories of a github user (eg. <a href="https://github.com/sindresorhus?tab=repositories">sindresorhus</a>).</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/5/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>So here I am using the <a href="https://github.com/whatwg/fetch">fetch</a> method to make a request to the github’s <span class="caps">API</span> getting the response, parsing it to <code>json</code> and setting it on to the state. The fetching is done as soon as the component is about to mount. The <code>render()</code> method is called automatically as soon as the state is<span class="widont">&nbsp;</span>updated.</p>
+<p>There is a problem though — state which is initially set to <code>null</code> will throw an exception when I will try to access <code>state.repos</code>. So I need to add another condition to the render function<span class="widont">&nbsp;</span>—</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/6/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>So far so good. I want to add another functionality now, being able to do a real time search on the repository<span class="widont">&nbsp;</span>names.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/9/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>So I added an input box and attached an event handler for the <code>onKeyUp</code> event. I also keep two lists, <code>repos</code> and <code>fRepos</code> where <code>fRepos</code> represents the filtered list of the<span class="widont">&nbsp;</span>repositories.</p>
+<p>I want to add one more feature. I want to show text — <code>no repositories found</code> when the repositories don’t match the search<span class="widont">&nbsp;</span>input.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/10/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>So I have added a simple if condition that renders the list if the <code>fRepos.length &gt; 0</code> otherwise, just show <code>no repositories found</code>.</p>
+<p>Okay, this is good, does the job but if you go to the results page, you will see that it also shows the message initially when the repositories are yet to be loaded from the <span class="caps">API</span>. I should ideally show a <code>loading...</code> message, till the time the fetch request doesn’t get<span class="widont">&nbsp;</span>completed.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mn3tvuac/11/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="part-2-breaking-components-">Part 2 (Breaking<span class="widont">&nbsp;</span>Components)</h1>
+<p>If you observe the <code>render()</code> function, it pretty messy right now. It tries to render different things on different occasion. This logic will only get complicated unless I decompose the render<span class="widont">&nbsp;</span>function.</p>
+<p>For example — if I have a component <code>A</code> that renders child components <code>P, Q, R</code> in different combinations, then the logic of rendering them individually can actually lie inside the individual components <code>P, Q, R</code>, instead of their parent <code>A</code>. This helps us achieve <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">single responsibility principle</a> where the render function of <code>A</code> only determines which all components it will <code>mount</code>. Whether they actually render or not is their (<code>P, Q, R</code>) own responsibility.</p>
+<p>In our case we can remove all the <code>if</code> conditions from the main <code>Repositories</code> component and create smaller specialized ones that encapsulate when they should<span class="widont">&nbsp;</span>render.</p>
+<p>To start with the component decomposition, we can create a component called <code>NoRepositories</code> which shows the ‘No Repositories found’ message when the filtered results are empty. Similarly we can create a component <code>UnorderedList</code> which renders only when a list of items is provided to<span class="widont">&nbsp;</span>it.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/1/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>Effectively we got rid of one condition from the render method. We can apply the same concept for the loading message also, by creating a <code>Loading</code> component. The subtle difference here is that, I want to hide input box and the user name, at the time of loading. This can be done by making the content a child of <code>Loading</code> component —</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>So we have concluded part one of the refactoring where each component decides by it self, when should it be shown and how it should be<span class="widont">&nbsp;</span>shown.</p>
+<h1 id="part-3-control-rendering-declaratively-">Part 3 (Control rendering<span class="widont">&nbsp;</span>declaratively)</h1>
+<p>We removed the <code>if conditions</code> from the render function, to control which child component needs to be rendered and moved it to the render function of the individual child components. Here we will remove all forms of conditional rendering from all the render functions. To do this I will create a <a href="https://github.com/wycats/javascript-decorators">decorator</a> — <a href="https://www.npmjs.com/package/react-render-if">renderIf</a>.</p>
+<pre><code class="language-javascript"><span class="keyword">const</span> toArray = <span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">Array</span>.prototype.slice.call(x)
+<span class="keyword">const</span> renderIf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">const</span> predicates = toArray(<span class="built_in">arguments</span>)
+  <span class="keyword">return</span> <span class="function"><span class="params">component</span> =&gt;</span> {
+    <span class="keyword">var</span> prototype = component.prototype
+    <span class="keyword">const</span> render = prototype.render
+    prototype.render = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+      <span class="keyword">return</span> predicates.every(<span class="function"><span class="params">i</span> =&gt;</span> i(<span class="keyword">this</span>)) ? render.call(<span class="keyword">this</span>) : <span class="literal">null</span>
+    }
+    <span class="keyword">return</span> component
+  }
+}</code></pre>
+<p>The decorator takes in a list of predicate functions and evaluates them with the first param as the current instance of the component. If all the predicates return true, then the component is<span class="widont">&nbsp;</span>rendered.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>The declarative approach makes it much easier for me to understand the render function’s main<span class="widont">&nbsp;</span>responsibility.</p>
+<p>I have removed all the <code>if conditions</code> from the code except for the one in the <code>Loading</code> component. To remove it I will again have to split the component into two components viz. — <code>LoadingMessage</code> and <code>LoadingContent</code>, then apply the <code>renderIf</code> decorator.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/5/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="part-4-make-declaratives-reusable-">Part 4 (Make declaratives<span class="widont">&nbsp;</span>reusable)</h1>
+<p>We can write helper functions such as — <code>isEmpty</code> to check if the list is empty and <code>have</code> to check if the property exists on the component. Using <a href="/articles/structuring-react-components/lodash.com/docs">lodash</a> it will be much easier to write these helpers. Apart from the original 2 helpers, I have also added their negations — <code>isntEmpty</code> <span class="amp">&amp;</span> <code>notHave</code>.</p>
+<p><strong><span class="caps">FINAL</span> <span class="caps">CODE</span></strong></p>
+<iframe width="100%" height="300" src="//jsfiddle.net/m5e40ywL/9/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</section></article></div></div><footer><div class="content-wrap"><div class="nav"><a href="/">« Full blog</a><a href="https://github.com/tusharmath/tusharmath.github.io/edit/develop/packages/tusharm.com/contents/articles/structuring-react-components//index.md">Edit »</a></div><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'tusharmcom'; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript>Please enable JavaScript to view the<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="dsq-brlink" href="http://disqus.com"></a><section class="about"><p>I constantly try to make my everyday tasks simpler and more productive, that’s why I love developing apps for free. Checkout the list of my <a href="/projects.html">projects</a> or click <a href="/about.html">here</a> to know more about me.</p>
+<p>In my leisure time I like to learn about physics and cars. I practice swimming and like to be a gourmet from time to time.</p>
+<br><div><a class="twitter-follow-button" href="https://twitter.com/tusharmath" data-show-count="false">Follow @tusharmath</a></div><div><iframe src="//ghbtns.com/github-btn.html?user=tusharmath&amp;type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe></div></section><section class="copy"><p>&copy; 2020 Tushar Mathur<span> powered by&nbsp;</span><a href="http://wintersmith.io">Wintersmith</a></p></section></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script src="/js/analytics.js"></script></body></html>

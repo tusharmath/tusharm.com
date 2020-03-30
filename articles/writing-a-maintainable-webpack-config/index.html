@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="google-site-verification" content="M2S6XRgNZy5AWcjY2MUVhaCDJ8uDRDkHfly4lnaz-lI"><meta name="viewport" content="width=device-width"><title>Writing a maintainable webpack config - Tushar Mathur's blog</title><link rel="alternate" href="//feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek"><link rel="stylesheet" href="/bg.svg" type="image/svg"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><link rel="stylesheet" href="/css/main.css" type="text/css"><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-39050808-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+</script></head><body class="article-detail"><header class="header"><div class="top-nav"><div class="red-line"></div><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/archive.html">Archives</a></li><li><a href="/about.html">About Me</a></li></ul></div><div class="content-wrap"><h1>Writing a maintainable webpack config</h1><p class="author">by <span class="author"></span>Tushar Mathur</p></div></header><div id="content"><div class="content-wrap"><article class="article"><section class="content"><p>Over a period of time webpack configs usually become really large and hard to maintain. In one of my cases <code>webpack.config.js</code> had become more than <strong>1000</strong> lines!
+In this blog I am going to talk about how to write <strong>composable</strong> webpack configs that are easy to read and<span class="widont">&nbsp;</span>maintainable.</p>
+<p>I will be using a lot of <a href="http://ramdajs.com/docs/">ramda</a> and if you are unfamiliar with its syntax I would recommend you to go thru this <a href="http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/">post</a> by <a href="http://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/">Randy Coulman</a> on getting started with<span class="widont">&nbsp;</span>it.</p>
+<hr>
+<h1 id="typical-configs">Typical configs</h1>
+<ol>
+<li>Has an <code>entry</code> and <code>output</code> setting.</li>
+<li>Uses a custom loader for non <code>.js</code> files.</li>
+<li>Creates optimized builds in <strong>production</strong> mode, based on <strong>NODE_ENV</strong>.</li>
+<li>Adds version control to the assets generated, by attaching a <code>chunkhash</code> to its<span class="widont">&nbsp;</span>name.</li>
+</ol>
+<p>It would look something like<span class="widont">&nbsp;</span>this—</p>
+<pre><code>const baseConfig = {
+  entry: &#39;./src/main.ts&#39;,
+  output: {
+    path: path.resolve(__dirname, &#39;dist&#39;),
+    filename:
+      process.env.NODE_ENV === &#39;production&#39;
+        ? &#39;[name]-[chunkhash].js&#39;
+        : &#39;[name].js&#39;
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [{ loader: &#39;ts-loader&#39; }]
+      }
+    ]
+  },
+  mode: process.env.NODE_ENV === &#39;production&#39; ? &#39;production&#39; : &#39;development&#39;
+}
+
+export = baseConfig</code></pre><p>The above config has a few issues<span class="widont">&nbsp;</span>—</p>
+<ol>
+<li>It is one big monolithic<span class="widont">&nbsp;</span>object.</li>
+<li>Exposes unnecessary inner details about about how one can configure<span class="widont">&nbsp;</span>“webpack”.</li>
+<li>The conditional logic is tightly coupled with the structure of the<span class="widont">&nbsp;</span>config.</li>
+</ol>
+<p>Lets look at some of the optimizations that we can do to make this config more<span class="widont">&nbsp;</span>maintainable.</p>
+<h1 id="extracting-node_env-check">Extracting NODE_ENV check</h1>
+<p>In the above config the check for <code>NODE_ENV</code> is being done twice and can be moved out to a function <code>isProduction</code> using <a href="https://ramdajs.com/docs/#pathEq">R.pathEq</a>.</p>
+<pre><code class="language-patch"><span class="addition">+ import * as R from 'ramda'</span>
+<span class="addition">+ const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')</span>
+
+  const baseConfig = {
+    entry: './src/main.ts',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename:
+<span class="deletion">-       process.env.NODE_ENV === 'production'</span>
+<span class="addition">+       isProduction(process)</span>
+          ? '[name]-[chunkhash].js'
+          : '[name].js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: [{ loader: 'ts-loader' }]
+        }
+      ]
+    },
+<span class="deletion">-   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'</span>
+<span class="addition">+   mode: isProduction(process) ? 'production': 'development'</span>
+  }
+  export = baseConfig</code></pre>
+<h1 id="configuration-setters">Configuration Setters</h1>
+<p>A setter function is a function that takes in a <code>WebpackConfig</code> and returns a new <code>WebpackConfig</code>, with some new properties attached to<span class="widont">&nbsp;</span>it.</p>
+<p>For eg. we can have a function <code>setEntry</code> that sets <code>entry</code> property in the config. We are going to use <a href="https://ramdajs.com/docs/#assoc">R.assoc</a> to set config properties for this<span class="widont">&nbsp;</span>purpose.</p>
+<pre><code class="language-patch">  import * as R from 'ramda'
+
+  const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+<span class="addition">+ const setEntry = R.assoc('entry')</span>
+
+  const baseConfig = {
+<span class="deletion">-   entry: './src/main.ts',</span>
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename:
+        isProduction(process)
+          ? '[name]-[chunkhash].js'
+          : '[name].js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: [{ loader: 'ts-loader' }]
+        }
+      ]
+    },
+  mode: isProduction(process) ? 'production': 'development'
+ }
+
+<span class="deletion">- export = baseConfig</span>
+<span class="addition">+ export = setEntry('./src/main.ts', baseConfig)</span></code></pre>
+<p>Similarly we can write setters for <code>output</code> using <code>R.assocPath</code>.</p>
+<pre><code class="language-patch">  import * as R from 'ramda'
+
+  const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+  const setEntry = R.assoc('entry')
+<span class="addition">+ const setOutputPath = R.assocPath(['output', 'path'])</span>
+
+  const baseConfig = {
+    output: {
+<span class="deletion">-     path: path.resolve(__dirname, 'dist'),</span>
+      filename: isProduction(process)
+          ? '[name]-[chunkhash].js'
+          : '[name].js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: [{ loader: 'ts-loader' }]
+        }
+      ]
+    },
+  mode: isProduction(process) ? 'production': 'development'
+ }
+
+<span class="deletion">- export = setEntry('./src/main.ts', baseConfig)</span>
+<span class="addition">+ export = setOutputPath(</span>
+<span class="addition">+    path.resolve(__dirname, 'dist'),</span>
+<span class="addition">+    setEntry('./src/main.ts', baseConfig)</span>
+<span class="addition">+ )</span></code></pre>
+<p>The above composition between <code>setEntry</code> and <code>setOutputPath</code> looks overly complicated around the <code>export =</code> statement lets see if we can optimize it<span class="widont">&nbsp;</span>further.</p>
+<h1 id="composing-setters">Composing setters</h1>
+<p>Since the setter functions take in a <code>WebpackConfig</code> and return a new <code>WebpackConfig</code> without causing any side effects, we can use <a href="https://ramdajs.com/docs/#compose">R.compose</a> to compose multiple setter functions into<span class="widont">&nbsp;</span>one.</p>
+<pre><code class="language-patch"> import * as R from 'ramda'
+
+ const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+ const setEntry = R.assoc('entry')
+ const setOutputPath = R.assocPath(['output', 'path'])
+
+const baseConfig = {
+  output: {
+    filename: isProduction(process)
+        ? '[name]-[chunkhash].js'
+        : '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [{ loader: 'ts-loader' }]
+      }
+    ]
+  },
+  mode: isProduction(process) ? 'production': 'development'
+}
+
+<span class="addition">+ const setAppConfig = R.compose(</span>
+<span class="addition">+   setOutputPath(path.resolve(__dirname, 'dist')),</span>
+<span class="addition">+   setEntry('./src/main.ts')</span>
+<span class="addition">+ )</span>
+
+<span class="deletion">- export = setOutputPath(</span>
+<span class="deletion">-    path.resolve(__dirname, 'dist'),</span>
+<span class="deletion">-    setEntry('./src/main.ts', baseConfig)</span>
+<span class="deletion">- )</span>
+<span class="addition">+ export = setAppConfig(baseConfig)</span></code></pre>
+<p><code>setAppConfig</code> is setter that is composed of two setters viz. <code>setOutputPath</code> and <code>setEntry</code>. We will see that this composition turns out to be really powerful in structuring more complicated<span class="widont">&nbsp;</span>configs.</p>
+<h1 id="array-based-setters">Array based setters</h1>
+<p><a href="https://ramdajs.com/docs/#assocPath">R.assocPath</a> works well when you want to set properties inside a deeply nested object. Similarly, to create a setter for <code>module.rules</code>, we can use a mix of other powerful ramda functions that work on arrays as follows<span class="widont">&nbsp;</span>—</p>
+<pre><code class="language-patch">  import * as R from 'ramda'
+
+  const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+  const setEntry = R.assoc('entry')
+  const setOutputPath = R.assocPath(['output', 'path'])
+<span class="addition">+ const setRule = R.useWith(R.over(R.lensPath(['module', 'rules'])), [</span>
+<span class="addition">+   R.append,</span>
+<span class="addition">+   R.identity</span>
+<span class="addition">+ ])</span>
+
+  const baseConfig = {
+    output: {
+      filename: isProduction(process)
+          ? '[name]-[chunkhash].js'
+          : '[name].js'
+    },
+    module: {
+      rules: [
+<span class="deletion">-       {</span>
+<span class="deletion">-         test: /\.tsx?$/,</span>
+<span class="deletion">-         use: [{ loader: 'ts-loader' }]</span>
+<span class="deletion">-       }</span>
+      ]
+    },
+  mode: isProduction(process) ? 'production': 'development'
+ }
+
+
+ const setAppConfig = R.compose(
+   setOutputPath(path.resolve(__dirname, 'dist')),
+   setEntry('./src/main.ts'),
+<span class="addition">+  setRule({test: /\.tsx?$/, use: [{ loader: 'ts-loader' }]})</span>
+ )
+
+ export = setAppConfig(baseConfig)</code></pre>
+<p>Its alright if you don’t understand the internals of <code>setRule</code> function. What’s more important is to know what it does, which is — Its a function that takes two arguments a value and a config and appends the value at the path <code>module.rules[]</code> inside the config and returns a new config<span class="widont">&nbsp;</span>object.</p>
+<h1 id="conditional-setters">Conditional Setters</h1>
+<p>The <code>output.filename</code> and the <code>mode</code> properties are conditionally set based on if <code>isProduction</code> returns <code>true</code> or <code>false</code>.
+This can be improved by having a default property set in the base config and then conditionally applying a setter on that base<span class="widont">&nbsp;</span>config.</p>
+<pre><code class="language-patch">  import * as R from 'ramda'
+
+  const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+  const setEntry = R.assoc('entry')
+  const setOutputPath = R.assocPath(['output', 'path'])
+  const setRule = R.useWith(R.over(R.lensPath(['module', 'rules'])), [
+    R.append,
+    R.identity
+  ])
+<span class="addition">+ const setOutputFilename = R.assocPath(['output', 'filename'])</span>
+<span class="addition">+ const setMode = R.assoc('mode')</span>
+
+  const baseConfig = {
+    output: {
+<span class="deletion">-     filename: isProduction(process)</span>
+<span class="deletion">-         ? '[name]-[chunkhash].js'</span>
+<span class="deletion">-         : '[name].js'</span>
+<span class="addition">+     filename: '[name].js'</span>
+    },
+    module: {rules: []},
+<span class="deletion">-   mode: isProduction(process) ? 'production': 'development'</span>
+<span class="addition">+   mode: 'development'</span>
+ }
+
+ const setAppConfig = R.compose(
+   setOutputPath(path.resolve(__dirname, 'dist')),
+   setEntry('./src/main.ts'),
+   setRule({test: /\.tsx?$/, use: [{ loader: 'ts-loader' }]}),
+<span class="addition">+  isProduction(process) ? setOutputFilename('[name]-[chunkhash].js'): R.identity,</span>
+<span class="addition">+  isProduction(process) ? setMode('production'): R.identity</span>
+ )
+
+ export = setAppConfig(baseConfig)</code></pre>
+<p><code>R.identity</code> works as a setter that returns the provided <code>webpack.config</code> as is, ie. without changing<span class="widont">&nbsp;</span>it.</p>
+<h1 id="higher-order-setters">Higher Order Setters</h1>
+<p>Higher order setters are setters that take in a setter as an input and returns a new setter as an output. In our case we will create a new higher order setter called <code>whenever</code> which will help us in applying a particular setter only if the given condition is <code>true</code>.</p>
+<pre><code class="language-patch">  import * as R from 'ramda'
+
+  const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+  const setEntry = R.assoc('entry')
+  const setOutputPath = R.assocPath(['output', 'path'])
+  const setRule = R.useWith(R.over(R.lensPath(['module', 'rules'])), [
+    R.append,
+    R.identity
+  ])
+  const setOutputFilename = R.assocPath(['output', 'filename'])
+  const setMode = R.assoc('mode')
+<span class="addition">+ const whenever = R.ifElse(</span>
+<span class="addition">+   R.nthArg(0),</span>
+<span class="addition">+   R.converge(R.call, [R.nthArg(1), R.nthArg(2)]),</span>
+<span class="addition">+   R.nthArg(2)</span>
+<span class="addition">+ )</span>
+<span class="addition">+ const inProduction = whenever(isProduction(process))</span>
+
+  const baseConfig = {
+    output: {
+      filename: '[name].js'
+    },
+    module: {rules: []},
+    mode: 'development
+  }
+
+ const setAppConfig = R.compose(
+   setOutputPath(path.resolve(__dirname, 'dist')),
+   setEntry('./src/main.ts'),
+   setRule({test: /\.tsx?$/, use: [{ loader: 'ts-loader' }]}),
+<span class="deletion">-  isProduction(process) ? setOutputFilename('[name]-[chunkhash].js'): R.identity,</span>
+<span class="deletion">-  isProduction(process) ? setMode('production'): R.identity</span>
+<span class="addition">+  inProduction(setOutputFilename('[name]-[chunkhash].js')),</span>
+<span class="addition">+  inProduction(setMode('production'))</span>
+ )
+
+ export = setAppConfig(baseConfig)</code></pre>
+<p>The <code>whenever</code> function takes in two arguments — condition and a setter and returns another setter function that when called with a config calls the passed setter if the condition is true, otherwise returns the passed config as<span class="widont">&nbsp;</span>is.</p>
+<h1 id="grouping-setters">Grouping Setters</h1>
+<p>Using <a href="https://ramdajs.com/docs/#compose">R.compose</a> we can now group the setters into two setters — <code>setDefaultConfig</code> and <code>setProductionConfig</code>.</p>
+<pre><code class="language-patch">  import * as R from 'ramda'
+
+  const isProduction = R.pathEq(['env', 'NODE_ENV'], 'production')
+  const setEntry = R.assoc('entry')
+  const setOutputPath = R.assocPath(['output', 'path'])
+  const setRule = R.useWith(R.over(R.lensPath(['module', 'rules'])), [
+    R.append,
+    R.identity
+  ])
+  const setOutputFilename = R.assocPath(['output', 'filename'])
+  const setMode = R.assoc('mode')
+  const whenever = R.ifElse(
+    R.nthArg(0),
+    R.converge(R.call, [R.nthArg(1), R.nthArg(2)]),
+    R.nthArg(2)
+  )
+  const inProduction = whenever(isProduction(process))
+
+<span class="addition">+ const setDefaultConfig = R.compose(</span>
+<span class="addition">+   setOutputPath(path.resolve(__dirname, 'dist')),</span>
+<span class="addition">+   setEntry('./src/main.ts'),</span>
+<span class="addition">+   setRule({test: /\.tsx?$/, use: [{ loader: 'ts-loader' }]}),</span>
+<span class="addition">+ )</span>
+
+<span class="addition">+ const setProductionConfig = R.compose(</span>
+<span class="addition">+   setOutputFilename('[name]-[chunkhash].js'),</span>
+<span class="addition">+   setMode('production')</span>
+<span class="addition">+ )</span>
+
+  const baseConfig = {
+    output: {
+      filename: '[name].js'
+    },
+    module: {rules: []},
+    mode: 'development
+  }
+
+ const setAppConfig = R.compose(
+<span class="deletion">-  setOutputPath(path.resolve(__dirname, 'dist')),</span>
+<span class="deletion">-  setEntry('./src/main.ts'),</span>
+<span class="deletion">-  setRule({test: /\.tsx?$/, use: [{ loader: 'ts-loader' }]}),</span>
+<span class="addition">+  setDefaultConfig,</span>
+<span class="deletion">-  inProduction(setOutputFilename('[name]-[chunkhash].js'))</span>
+<span class="deletion">-  inProduction(setMode('production'))</span>
+<span class="addition">+  inProduction(setProductionConfig)</span>
+ )
+
+ export = setAppConfig(baseConfig)</code></pre>
+<h1 id="final-config">Final Config</h1>
+<p>Finally our overall code looks somewhat like this<span class="widont">&nbsp;</span>—</p>
+<pre><code class="language-ts"><span class="keyword">import</span> * <span class="keyword">as</span> R <span class="keyword">from</span> <span class="string">'ramda'</span>
+
+<span class="keyword">const</span> isProduction = R.pathEq([<span class="string">'env'</span>, <span class="string">'NODE_ENV'</span>], <span class="string">'production'</span>)
+<span class="keyword">const</span> setEntry = R.assoc(<span class="string">'entry'</span>)
+<span class="keyword">const</span> setOutputPath = R.assocPath([<span class="string">'output'</span>, <span class="string">'path'</span>])
+<span class="keyword">const</span> setRule = R.useWith(R.over(R.lensPath([<span class="string">'module'</span>, <span class="string">'rules'</span>])), [
+  R.append,
+  R.identity
+])
+<span class="keyword">const</span> setOutputFilename = R.assocPath([<span class="string">'output'</span>, <span class="string">'filename'</span>])
+<span class="keyword">const</span> setMode = R.assoc(<span class="string">'mode'</span>)
+<span class="keyword">const</span> whenever = R.ifElse(
+  R.nthArg(<span class="number">0</span>),
+  R.converge(R.call, [R.nthArg(<span class="number">1</span>), R.nthArg(<span class="number">2</span>)]),
+  R.nthArg(<span class="number">2</span>)
+)
+<span class="keyword">const</span> inProduction = whenever(isProduction(process))
+
+<span class="keyword">const</span> setDefaultConfig = R.compose(
+  setOutputPath(path.resolve(__dirname, <span class="string">'dist'</span>)),
+  setEntry(<span class="string">'./src/main.ts'</span>),
+  setRule({test: <span class="regexp">/\.tsx?$/</span>, use: [{loader: <span class="string">'ts-loader'</span>}]})
+)
+
+<span class="keyword">const</span> setProductionConfig = R.compose(
+  setOutputFilename(<span class="string">'[name]-[chunkhash].js'</span>),
+  setMode(<span class="string">'production'</span>)
+)
+
+<span class="keyword">const</span> baseConfig = {
+  output: {
+    filename: <span class="string">'[name].js'</span>
+  },
+  <span class="keyword">module</span>: {rules: []},
+  mode: <span class="string">'development'</span>
+}
+
+<span class="keyword">const</span> setAppConfig = R.compose(
+  setDefaultConfig,
+  inProduction(setProductionConfig)
+)
+
+<span class="keyword">export</span> = setAppConfig(baseConfig)</code></pre>
+</section></article></div></div><footer><div class="content-wrap"><div class="nav"><a href="/">« Full blog</a><a href="https://github.com/tusharmath/tusharmath.github.io/edit/develop/packages/tusharm.com/contents/articles/writing-a-maintainable-webpack-config//index.md">Edit »</a></div><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'tusharmcom'; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript>Please enable JavaScript to view the<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="dsq-brlink" href="http://disqus.com"></a><section class="about"><p>I constantly try to make my everyday tasks simpler and more productive, that’s why I love developing apps for free. Checkout the list of my <a href="/projects.html">projects</a> or click <a href="/about.html">here</a> to know more about me.</p>
+<p>In my leisure time I like to learn about physics and cars. I practice swimming and like to be a gourmet from time to time.</p>
+<br><div><a class="twitter-follow-button" href="https://twitter.com/tusharmath" data-show-count="false">Follow @tusharmath</a></div><div><iframe src="//ghbtns.com/github-btn.html?user=tusharmath&amp;type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe></div></section><section class="copy"><p>&copy; 2020 Tushar Mathur<span> powered by&nbsp;</span><a href="http://wintersmith.io">Wintersmith</a></p></section></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script src="/js/analytics.js"></script></body></html>
