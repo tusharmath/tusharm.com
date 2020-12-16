@@ -18,13 +18,14 @@ Here are some of the things I have learned from my experience, that helped ensur
 
 - People, should be allowed to communicate if they agree or disagree with something.
 - Derogatory, rude, and offensive feedback should be flagged.
+- Nitpicking should be marked explicitly, use `#nitpick` wherever applicable.
 - Feedback should emphasize on facts instead of feelings and opinions.
-- Prefer face to face debates instead of doing it online (Github, Gitlab etc.)
+- Prefer face to face debates instead of doing it online (Github, Gitlab etc.) but record conclusions online.
 
 ## 💁‍♀️ Peer Reviews
 
-- Hierarchal reviews (eg. captain reviewing the contributor) should be avoided as much as possible.
-- All reviews typically should be preferably done within your team and within peers.
+- Hierarchical reviews (eg. captain reviewing the contributor) should be avoided as much as possible.
+- All reviews should be preferably done within your team and amongst peers.
 - There should be minimum dependencies between teams for pull request approvals.
 
 ## 📝 Contribution Guidelines
@@ -41,10 +42,12 @@ Here are some of the things I have learned from my experience, that helped ensur
 
 ## 🤷‍♀️ Subjective vs Objective Feedback
 
-- There should be a very clear distinction between Objective and Subjective feedback while sharing it with the contributor.
+- There should be a very clear distinction between Objective and Subjective feedback while sharing it with the contributor. Use tags such as `IMO` ie. "In my opinion", `IMO` or `IMHO` ie "In my humble opinion"
 - Objective feedback is the one that has been agreed upon as a group. It is in adherence to the project's contribution guidelines, is logically correct, or is objectively superior in terms of performance, maintenance or reliability. It should remain **non-negotiable**.
 - Subjective feedback is an opinionated way of doing something. This should not be mandated even if it's given by the domain owner or your captain.
-- This distinction can save a lot of bike shedding time later.
+- This distinction can save a lot of [bike shedding] time later.
+
+[bike shedding]: https://en.wiktionary.org/wiki/bikeshedding
 
 ## 🧐 Review Context
 
@@ -54,8 +57,8 @@ Here are some of the things I have learned from my experience, that helped ensur
 
 ## ✋ Deferring Proposed Changes
 
-- Sometimes, the proposed changes are quite large and contributors needs to meet external deadlines.
-- The contributors should be completely allowed to make an issue (on Jira!) for followup changes after the current PR is merged.
+- Sometimes, the proposed changes are quite large and contributors need to meet external deadlines.
+- The contributors should be completely allowed to make an issue (on Jira!) for follow-up changes after the current PR is merged.
 - Alternatively use a TODO comment with a due date and name tag eg: `TODO(1-JAN-2020@tusharmath)` inside the codebase.
 - Setup lint rules on the CI that flags such todo comments when the due date is missed.
 
