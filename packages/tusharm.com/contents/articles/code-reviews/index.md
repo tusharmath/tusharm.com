@@ -42,7 +42,7 @@ Here are some of the things I have learned from my experience, that helped ensur
 
 ## 🤷‍♀️ Subjective vs Objective Feedback
 
-- There should be a very clear distinction between Objective and Subjective feedback while sharing it with the contributor. Use tags such as `IMO` ie. "In my opinion", `IMO` or `IMHO` ie "In my humble opinion"
+- There should be a very clear distinction between Objective and Subjective feedback while sharing it with the contributor. Use tags such as `IMO` ie. "In my opinion", or `IMHO` ie "In my humble opinion"
 - Objective feedback is the one that has been agreed upon as a group. It is in adherence to the project's contribution guidelines, is logically correct, or is objectively superior in terms of performance, maintenance or reliability. It should remain **non-negotiable**.
 - Subjective feedback is an opinionated way of doing something. This should not be mandated even if it's given by the domain owner or your captain.
 - This distinction can save a lot of [bike shedding] time later.
