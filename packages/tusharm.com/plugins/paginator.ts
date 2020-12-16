@@ -13,7 +13,7 @@ const DEFAULT_OPTIONS: IOptions = {
   articles: 'articles', // Directory containing contents to paginate
   first: 'index.html', // Filename/url for first page
   filename: 'page/%d/index.html', // Filename for rest of pages
-  perPage: 2 // Number of articles per page
+  perPage: 2, // Number of articles per page
 }
 
 const matchesCategory = (category?: string) => (i: MarkdownPage) =>
@@ -29,7 +29,7 @@ const getArticles = (options: IOptions) => (
   category?: string
 ) => {
   const r = contents[options.articles]._.directories
-    .map(item => item.index)
+    .map((item) => item.index)
     .filter(matchesCategory(category))
     .sort((a, b) => b.date - a.date)
 
@@ -57,9 +57,9 @@ const createPage = (env: Wintersmith, options: IOptions) => {
     public getFilename(): string {
       if (this.pageNum === 1) {
         return options.first
-      } else {
-        return options.filename.replace('%d', this.pageNum.toString())
       }
+
+      return options.filename.replace('%d', this.pageNum.toString())
     }
 
     public getView(): ViewFunction {
@@ -87,7 +87,7 @@ const createPage = (env: Wintersmith, options: IOptions) => {
               contents,
               articles: this.articles,
               prevPage: this.prevPage,
-              nextPage: this.nextPage
+              nextPage: this.nextPage,
             },
             locals
           )
@@ -107,7 +107,7 @@ const createRV = (pages: IMyPaginator[]) => {
   const rv = pages.reduce<{[k: string]: IMyPaginator}>(
     (acc, page) => ({
       ...acc,
-      [`${page.pageNum}.page`]: page
+      [`${page.pageNum}.page`]: page,
     }),
     {}
   )

@@ -18,7 +18,7 @@ export = class BlogGenerator extends Generator {
     type: 'article',
     title: 'Nothing',
     slug: 'nothing',
-    date: dateFormat(new Date(), 'yyyy-mmm-dd')
+    date: dateFormat(new Date(), 'yyyy-mmm-dd'),
   }
 
   public configuring(): void {
@@ -26,24 +26,24 @@ export = class BlogGenerator extends Generator {
   }
 
   public async prompting(): Promise<void> {
-    this.answers = (await this.prompt([
+    this.answers = await this.prompt([
       {
         type: 'input',
         name: 'title',
         message: 'Title',
-        validate: Boolean
+        validate: Boolean,
       },
       {
         type: 'input',
         name: 'slug',
         message: 'Slug',
-        default: (a: {title: string}) => slugify(a.title).toLowerCase()
+        default: (a: {title: string}) => slugify(a.title).toLowerCase(),
       },
       {
         type: 'input',
         name: 'date',
         message: 'Date',
-        default: this.answers.date
+        default: this.answers.date,
       },
       {
         type: 'list',
@@ -51,10 +51,10 @@ export = class BlogGenerator extends Generator {
         message: 'Type of content',
         choices: [
           {name: 'Article', value: 'article'},
-          {name: 'Project', value: 'project'}
-        ]
-      }
-    ])) as IUserInput
+          {name: 'Project', value: 'project'},
+        ],
+      },
+    ])
   }
 
   public async writing(): Promise<void> {
