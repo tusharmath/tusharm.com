@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="google-site-verification" content="M2S6XRgNZy5AWcjY2MUVhaCDJ8uDRDkHfly4lnaz-lI"><meta name="viewport" content="width=device-width"><title>Javascript Interview Questions - Tushar Mathur's blog</title><link rel="alternate" href="//feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek"><link rel="stylesheet" href="/bg.svg" type="image/svg"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><link rel="stylesheet" href="/css/main.css" type="text/css"><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-39050808-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+</script></head><body class="article-detail"><header class="header"><div class="top-nav"><div class="red-line"></div><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/archive.html">Archives</a></li><li><a href="/about.html">About Me</a></li></ul></div><div class="content-wrap"><h1>Javascript Interview Questions</h1><p class="author">by <span class="author"></span>Tushar Mathur</p></div></header><div id="content"><div class="content-wrap"><article class="article"><section class="content"><h1 id="chapter-3-types-values-and-variables">Chapter 3 - Types, Values and<span class="widont">&nbsp;</span>Variables</h1>
+<ol>
+<li><p>What are the different categories of objects in Javascript?
+Ans. Primitive: <code>undefined</code>, <code>null</code>, String, Boolean, Number
+Object type: Array, Object, Function, Date, Error,<span class="widont">&nbsp;</span>RegEx</p>
+</li>
+<li><p>State some method less types in <span class="caps">JS</span>.
+Ans. <code>undefined</code> and <code>null</code> are the two<span class="widont">&nbsp;</span>types.</p>
+</li>
+<li><p>Give examples of mutable and non-mutable object types.
+Ans. <strong>Mutable:</strong> Object, Array and <strong>Non-Mutable:</strong> Boolean, Numbers,<span class="widont">&nbsp;</span>Strings</p>
+</li>
+<li><p>Are Strings mutable in <span class="caps">JS</span>?
+Ans. No they are non-mutable<span class="widont">&nbsp;</span>objects.</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> str = <span class="string">'tushar'</span>
+
+<span class="built_in">console</span>.log(str) <span class="comment">//tushar</span>
+<span class="built_in">console</span>.log(str[<span class="number">2</span>]) <span class="comment">//s</span>
+
+str[<span class="number">2</span>] = <span class="string">'x'</span>
+
+<span class="built_in">console</span>.log(str[<span class="number">2</span>]) <span class="comment">//s</span>
+<span class="built_in">console</span>.log(str) <span class="comment">//tushar</span></code></pre>
+</li>
+<li><p>How can you specify integer literals?<span class="widont">&nbsp;</span>Ans.</p>
+<pre><code class="language-javascript"><span class="comment">//Decimal</span>
+<span class="keyword">var</span> e = <span class="number">10</span>
+
+<span class="comment">//Hexadecimal</span>
+<span class="keyword">var</span> f = <span class="number">0xa</span>
+
+<span class="comment">//Octal (not supported by ECMAScript standard)</span>
+<span class="keyword">var</span> g = <span class="number">07</span>
+
+<span class="comment">//Exponents to the base 10</span>
+<span class="keyword">var</span> h = <span class="number">2e5</span> <span class="comment">// Represents 2,00,000</span></code></pre>
+</li>
+<li><p>How to check if the number is a finite number without using isNaN or isFinite methods?
+Ans. No, because of its unusual<span class="widont">&nbsp;</span>behavior.</p>
+<pre><code class="language-javascript"><span class="literal">NaN</span> == <span class="literal">NaN</span> <span class="comment">//false</span>
+
+x = <span class="literal">NaN</span>
+x != x <span class="comment">//true</span></code></pre>
+</li>
+<li><p>What happens to precision when you use floating point numbers such as .1, .2 etc?
+Ans. Binary floating point numbers have to round of such<span class="widont">&nbsp;</span>values.</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> x = <span class="number">0.3</span> - <span class="number">0.2</span> <span class="comment">// 30 cents minus 20 cents =&gt; 0.09999999999999998</span>
+<span class="keyword">var</span> y = <span class="number">0.2</span> - <span class="number">0.1</span> <span class="comment">// 20 cents minus 10 cents =&gt; 0.1</span>
+x == y <span class="comment">// =&gt; false: the two values are not the same!</span>
+x == <span class="number">0.1</span> <span class="comment">// =&gt; false: .3-.2 is not equal to .1</span>
+y == <span class="number">0.1</span> <span class="comment">// =&gt; true: .2-.1 is equal to .1</span></code></pre>
+</li>
+<li><p>What is the default unit of difference of two dates?
+Ans.<span class="widont">&nbsp;</span>Milliseconds.</p>
+</li>
+<li><p>How are strings encoded in Javascript?
+Ans. Javascript uses <span class="caps">UTF</span> 16 encoding. In a string each char is represented by a 16 bit value. Incase you want to store a value which is bigger than 16 bit you can use a sequence of multiple 16 bit values. Overall the string manipulation methods apply on 16bits only and not on characters. The length property will also tell<span class="widont">&nbsp;</span>the</p>
+</li>
+<li><p>How to represent a string literal in multiple lines?
+Ans. Use backslash ‘&#8217; for<span class="widont">&nbsp;</span>Eg.</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> x =
+  <span class="string">'tushar\
+mathur\
+is\
+a\
+good\
+boy'</span></code></pre>
+</li>
+<li><p>How is a <span class="caps">NULL</span> character represented in Javascript?
+Ans. Null character can be represented using ‘\0’ or<span class="widont">&nbsp;</span>\u0000</p>
+</li>
+<li><p>How are RegEx represented in Javascript?
+Ans. RegEx are not primitive types but can still be initialized using literals with forward slashes, for<span class="widont">&nbsp;</span>e.g.</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> pattern = <span class="regexp">/[1-9][0-9]*/</span></code></pre>
+</li>
+<li><p>What are <em>falsy</em> values in Javascript?
+Ans. <code>undefined</code>, <code>null</code>, 0, -0, NaN, “” are all <em>falsy</em> values. When equated to false the result is always true. Other than these values everything else is javascript is a <em>truthy</em><span class="widont">&nbsp;</span>values.</p>
+</li>
+<li><p>What is the difference between <code>null</code> and <code>undefined</code>?
+Ans. Comparison of <code>null</code> and <code>undefined</code> -</p>
+<ul>
+<li>Both are falsy<span class="widont">&nbsp;</span>values.</li>
+<li>Both represent absence of<span class="widont">&nbsp;</span>values.</li>
+<li>Both are method less<span class="widont">&nbsp;</span>types.</li>
+<li><code>typeof null</code> returns <code>object</code> where as <code>typeof undefined</code> returns <code>undefined</code>.</li>
+<li>Undefined has a deeper meaning - represents that the variable has not be assigned a value and is generally considered as a system level absence of<span class="widont">&nbsp;</span>value.</li>
+<li><code>null</code> can be considered as a program level absence of<span class="widont">&nbsp;</span>value.</li>
+</ul>
+</li>
+<li><p>What is a method?
+Ans. When functions are referred as properties of objects, they are called as<span class="widont">&nbsp;</span>methods.</p>
+</li>
+<li><p>If string, number, boolean are of primitive types then why do they have methods and properties associated with them?
+Ans. Whenever a property is accessed in any of the string, number or boolean type object the interpreter creates a temporary object using there constructors. It then refers to the properties and methods and later discards that<span class="widont">&nbsp;</span>object.</p>
+</li>
+<li><p>What will be the output of the following<span class="widont">&nbsp;</span>code?</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> s = <span class="string">'tushar'</span>
+s.len = <span class="number">4</span>
+<span class="keyword">var</span> t = s.len
+<span class="built_in">console</span>.log(t)</code></pre>
+<p>Ans. The output will be <code>undefined</code>. Because strings are primitive type objects and in the second line when the <code>len</code> property is accessed it is done so by creating a temporary object which is later discarded. In the third line when <code>len</code> is again accessed a new temporary object is created using <code>s</code> string which has no information about the <code>len</code> property.</p>
+</li>
+<li><p>What will be the output of the following<span class="widont">&nbsp;</span>code?</p>
+<pre><code class="language-javascript">x = <span class="number">10</span>
+y = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">10</span>)
+
+<span class="built_in">console</span>.log(x == y, x === y)</code></pre>
+<p>Ans. The output will <code>true</code> and <code>false</code>. This is because the <code>typeof x</code> and <code>typeof y</code> are different as x is a primitive type <code>number</code> and y is of object type <code>object</code>.</p>
+</li>
+<li><p>Compare and contrast primitive and object types.<span class="widont">&nbsp;</span>Ans.</p>
+<p><strong>Primitive:</strong> <code>null</code>, <code>undefined</code>, <code>number</code>, <code>string</code>, <code>boolean</code></p>
+<ul>
+<li>They are compared using only values and thus are also called as <em>value<span class="widont">&nbsp;</span>type</em></li>
+<li>They are immutable. You can not modify the values but you can create a<span class="widont">&nbsp;</span>copy.</li>
+</ul>
+<p><strong>Object:</strong> <code>Function</code>, <code>Object</code>, <code>Array</code>, <code>Date</code>, <code>Error</code>, <code>TypeError</code>, <code>RegEx</code></p>
+<ul>
+<li>They are <em>reference type</em> and two objects are equal only if their references are<span class="widont">&nbsp;</span>equal.</li>
+<li>They are mutable.</li>
+</ul>
+</li>
+<li><p>Can <code>undefined</code> and <code>null</code> be type casted to <code>Object</code> type?
+Ans. No, it will throw a <code>TypeError</code> exception.</p>
+</li>
+<li><p>How are arrays converted to strings?
+Ans.
+<code>javascript [].toString() // =&gt; &quot;&quot; [1].toString() // =&gt; &quot;1&quot; or &quot;a&quot; [1,2,3].toString() // =&gt; &quot;1, 2, 3&quot; or &quot;a, b, c&quot;</code></p>
+</li>
+<li><p>How are different types of values converted to number type?
+Ans.
+_ Strings that can be parsed as numbers are converted to numbers else produce a <code>NaN</code> value. Empty strings are 0.
+_ <code>true</code> is 1 and <code>false</code> is 0. * Arrays with single elements are parsed and the first element is parsed again to check if it can be a number else <code>NaN</code> is returned by<span class="widont">&nbsp;</span>default.</p>
+</li>
+<li><p>How are primitive to Object conversion carried out?
+Ans. Simply using there wrapper<span class="widont">&nbsp;</span>objects.</p>
+</li>
+<li><p>Is is legal to use a variable without declaring it?
+Ans. It is not allowed in Strict mode. In case you still do it you will assign the variable as a property to the global<span class="widont">&nbsp;</span>object</p>
+</li>
+<li><p>What happens in the following code<span class="widont">&nbsp;</span>-</p>
+<pre><code class="language-javascript">a = <span class="number">100</span>(
+  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    a = <span class="number">200</span>
+    b = <span class="number">300</span>
+  })()
+)
+
+<span class="built_in">console</span>.log(a + b)</code></pre>
+<p>Ans. The answer is <code>500</code>. Because if we use a non declared variable anywhere in the code it is assigned to the Global object as a<span class="widont">&nbsp;</span>property.</p>
+</li>
+<li><p>What is the output of the following code<span class="widont">&nbsp;</span>-</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> _whatIsMyName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)
+}
+
+<span class="keyword">var</span> item = {
+  <span class="attr">name</span>: <span class="string">'Grandpa'</span>,
+  <span class="attr">whatIsMyName</span>: _whatIsMyName,
+  <span class="attr">child</span>: {
+    <span class="attr">name</span>: <span class="string">'Father'</span>,
+    <span class="attr">whatIsMyName</span>: _whatIsMyName,
+    <span class="attr">child</span>: {
+      <span class="attr">name</span>: <span class="string">'Son'</span>,
+      <span class="attr">whatIsMyName</span>: _whatIsMyName
+    }
+  }
+}
+
+item.whatIsMyName()
+item.child.whatIsMyName()
+item.child.child.whatIsMyName()</code></pre>
+<p>Ans.</p>
+<pre><code class="language-bash">Grandpa
+Father
+Son</code></pre>
+</li>
+<li><p>Determine the output of the following code<span class="widont">&nbsp;</span>-</p>
+<pre><code class="language-javascript"><span class="keyword">var</span> b = <span class="string">'mangoes'</span>
+<span class="keyword">var</span> c = <span class="string">'apples'</span>
+;(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="built_in">console</span>.log(b, c)
+  <span class="keyword">var</span> b = <span class="number">100</span>
+  c = <span class="number">30</span>
+})()</code></pre>
+<p>Ans. The output will be <code>undefined</code>. This feature of Javascript is called as <em>Hoisting</em>. Accessibility to variables which are yet to be<span class="widont">&nbsp;</span>initialized.</p>
+</li>
+</ol>
+<hr>
+<p>More on <strong>Type Conversion</strong> later, till then take a look at this <a href="/articles/Javascript-Interview-Question/type-conversions.png">snapshot</a> from the<span class="widont">&nbsp;</span>book.</p>
+</section></article></div></div><footer><div class="content-wrap"><div class="nav"><a href="/">« Full blog</a><a href="https://github.com/tusharmath/tusharmath.github.io/edit/develop/packages/tusharm.com/contents/articles/Javascript-Interview-Question/Chapter-3.html/index.md">Edit »</a></div><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'tusharmcom'; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript>Please enable JavaScript to view the<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="dsq-brlink" href="http://disqus.com"></a><section class="about"><p>I constantly try to make my everyday tasks simpler and more productive, that’s why I love developing apps for free. Checkout the list of my <a href="/projects.html">projects</a> or click <a href="/about.html">here</a> to know more about me.</p>
+<p>In my leisure time I like to learn about physics and cars. I practice swimming and like to be a gourmet from time to time.</p>
+<br><div><a class="twitter-follow-button" href="https://twitter.com/tusharmath" data-show-count="false">Follow @tusharmath</a></div><div><iframe src="//ghbtns.com/github-btn.html?user=tusharmath&amp;type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe></div></section><section class="copy"><p>&copy; 2020 Tushar Mathur<span> powered by&nbsp;</span><a href="http://wintersmith.io">Wintersmith</a></p></section></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script src="/js/analytics.js"></script></body></html>

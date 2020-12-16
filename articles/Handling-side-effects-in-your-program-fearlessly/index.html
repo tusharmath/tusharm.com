@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="google-site-verification" content="M2S6XRgNZy5AWcjY2MUVhaCDJ8uDRDkHfly4lnaz-lI"><meta name="viewport" content="width=device-width"><title>Handling side-effects in your program fearlessly - Tushar Mathur's blog</title><link rel="alternate" href="//feed.xml" type="application/rss+xml" title="A software developer, physics enthusiast, swimmer and a car geek"><link rel="stylesheet" href="/bg.svg" type="image/svg"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><link rel="stylesheet" href="/css/main.css" type="text/css"><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-39050808-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+</script></head><body class="article-detail"><header class="header"><div class="top-nav"><div class="red-line"></div><ul><li><a href="/">Home</a></li><li><a href="/projects.html">Projects</a></li><li><a href="/archive.html">Archives</a></li><li><a href="/about.html">About Me</a></li></ul></div><div class="content-wrap"><h1>Handling side-effects in your program fearlessly</h1><p class="author">by <span class="author"></span>Tushar Mathur</p></div></header><div id="content"><div class="content-wrap"><article class="article"><section class="content"><h1 id="what-is-an-effect-">What is an<span class="widont">&nbsp;</span>effect?</h1>
+<p>In software, a program is categorized as “effectful” if it needs to interact with the external environment for it to complete its purpose. For example <code>console.log</code> in <span class="caps">JS</span>, actually paints pixels on the screen and is thus an effectful function. Similarly using <code>fetch</code> to make an http call in the browser is a side-effect because for it to run it needs access to network. Simpler code pieces such as <code>new Date()</code> which returns the current date/time is also effectful because it relies on the system’s<span class="widont">&nbsp;</span>clock.</p>
+<h1 id="concurrency-and-effects-">Concurrency and Effects.</h1>
+<p><span class="caps">TODO</span>???</p>
+<h1 id="effects-in-functional-programming-">Effects in Functional<span class="widont">&nbsp;</span>Programming?</h1>
+<p>In functional programming you work with pure functions. A pure function is<span class="widont">&nbsp;</span>—</p>
+<ol>
+<li>Total: They return an output for every input. They shouldn’t be throwing exceptions or just exit without<span class="widont">&nbsp;</span>completing.</li>
+<li>Deterministic: For the same input they return the same<span class="widont">&nbsp;</span>output.</li>
+<li>Pure: Their only effect is computing the output. They don’t depend on external<span class="widont">&nbsp;</span>environments.</li>
+</ol>
+<hr>
+<pre><code class="language-ts"><span class="comment">// impure function</span>
+<span class="keyword">const</span> putStrLn = <span class="function"><span class="params">msg</span> =&gt;</span> <span class="built_in">console</span>.log(msg)</code></pre>
+<h1 id="how-to-compose-effect-">How to compose<span class="widont">&nbsp;</span>effect?</h1>
+<h1 id="type-safe-effect-">Type-safe effect?</h1>
+<h1 id="error-handling-inside-effects-">Error handling inside<span class="widont">&nbsp;</span>effects?</h1>
+<h1 id="testing-effects-">Testing effects?</h1>
+<h1 id="effects-in-an-environment-">Effects in an<span class="widont">&nbsp;</span>environment?</h1>
+<h1 id="intro-to-fio-">Intro to <span class="caps">FIO</span>?</h1>
+</section></article></div></div><footer><div class="content-wrap"><div class="nav"><a href="/">« Full blog</a><a href="https://github.com/tusharmath/tusharmath.github.io/edit/develop/packages/tusharm.com/contents/articles/Handling-side-effects-in-your-program-fearlessly//index.md">Edit »</a></div><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'tusharmcom'; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript>Please enable JavaScript to view the<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="dsq-brlink" href="http://disqus.com"></a><section class="about"><p>I constantly try to make my everyday tasks simpler and more productive, that’s why I love developing apps for free. Checkout the list of my <a href="/projects.html">projects</a> or click <a href="/about.html">here</a> to know more about me.</p>
+<p>In my leisure time I like to learn about physics and cars. I practice swimming and like to be a gourmet from time to time.</p>
+<br><div><a class="twitter-follow-button" href="https://twitter.com/tusharmath" data-show-count="false">Follow @tusharmath</a></div><div><iframe src="//ghbtns.com/github-btn.html?user=tusharmath&amp;type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe></div></section><section class="copy"><p>&copy; 2020 Tushar Mathur<span> powered by&nbsp;</span><a href="http://wintersmith.io">Wintersmith</a></p></section></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script src="/js/analytics.js"></script></body></html>
