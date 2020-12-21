@@ -1,6 +1,8 @@
 # tusharmath.github.io
 
-[![Build Status](https://travis-ci.org/tusharmath/tusharmath.github.io.svg?branch=develop)](https://travis-ci.org/tusharmath/tusharmath.github.io)
+![Build Status][build image]
+
+[build image]: https://github.com/tusharmath/tusharmath.github.io/workflows/Build%20and%20Deploy/badge.svg
 
 Personal blog
 
