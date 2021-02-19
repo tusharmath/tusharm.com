@@ -2,7 +2,7 @@
 title: Removing jamf profiles from Mac OS
 date: 2021-Jan-07
 template: article.pug
-hide: false
+hide: true
 category: article
 ```
 
